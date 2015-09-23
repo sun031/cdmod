@@ -1,0 +1,760 @@
+\hypertarget{a00002}{}\subsection{src/swcdshot2.cpp File Reference}
+\label{a00002}\index{src/swcdshot2.\+cpp@{src/swcdshot2.\+cpp}}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{a00002_a707cef9b52a1fbb50f69a5bdcdc504fe}{}\index{swcdshot2.\+cpp@{swcdshot2.\+cpp}!absorb@{absorb}}
+\index{absorb@{absorb}!swcdshot2.\+cpp@{swcdshot2.\+cpp}}
+\paragraph[{absorb(int ntap, int nx, int nz, float $\ast$taper, float $\ast$$\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void absorb (
+\begin{DoxyParamCaption}
+\item[{int}]{ntap, }
+\item[{int}]{nx, }
+\item[{int}]{nz, }
+\item[{float $\ast$}]{taper, }
+\item[{float $\ast$$\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{a00002_a707cef9b52a1fbb50f69a5bdcdc504fe}
+
+\begin{DoxyCode}
+00598 \{
+00599     \textcolor{keywordtype}{int} ix, iz;
+00600     \textcolor{comment}{/* upper boundary */}
+00601     \textcolor{keywordflow}{for} (ix=0; ix<nx; ix++)
+00602     \{
+00603         \textcolor{keywordflow}{for} (iz=0; iz<ntap; iz++)
+00604         \{
+00605             p[ix][iz] *= taper[iz];
+00606         \}
+00607     \}
+00608 
+00609     \textcolor{comment}{/* left boundary */}
+00610     \textcolor{keywordflow}{for} (ix=0; ix<ntap; ix++)
+00611     \{
+00612         \textcolor{keywordflow}{for} (iz=0; iz<nz; iz++)
+00613         \{
+00614             p[ix][iz] *= taper[ix];
+00615         \}
+00616     \}
+00617 
+00618     \textcolor{comment}{/*lower boundary*/}
+00619     \textcolor{keywordflow}{for} (ix=0; ix<nx; ix++)
+00620     \{
+00621         \textcolor{keywordflow}{for} (iz=0; iz<ntap; iz++)
+00622         \{
+00623             p[ix][nz-iz-1] *= taper[iz];
+00624         \}
+00625     \}
+00626 
+00627     \textcolor{comment}{/*right boundary*/}
+00628     \textcolor{keywordflow}{for} (ix=0; ix<ntap; ix++)
+00629     \{
+00630         \textcolor{keywordflow}{for} (iz=0; iz<nz; iz++)
+00631         \{
+00632             p[nx-ix-1][iz] *= taper[ix];
+00633         \}
+00634     \}
+00635 
+00636     \textcolor{comment}{/*end of absorb()*/}
+00637 \}
+\end{DoxyCode}
+\hypertarget{a00002_a334ef00cfa7f725b18826a364b9151d5}{}\index{swcdshot2.\+cpp@{swcdshot2.\+cpp}!cd\+\_\+coeff\+\_\+scalar@{cd\+\_\+coeff\+\_\+scalar}}
+\index{cd\+\_\+coeff\+\_\+scalar@{cd\+\_\+coeff\+\_\+scalar}!swcdshot2.\+cpp@{swcdshot2.\+cpp}}
+\paragraph[{cd\+\_\+coeff\+\_\+scalar(int np, float $\ast$d)}]{\setlength{\rightskip}{0pt plus 5cm}void cd\+\_\+coeff\+\_\+scalar (
+\begin{DoxyParamCaption}
+\item[{int}]{np, }
+\item[{float $\ast$}]{d}
+\end{DoxyParamCaption}
+)}\label{a00002_a334ef00cfa7f725b18826a364b9151d5}
+
+\begin{DoxyCode}
+00702 \{
+00703     \textcolor{keywordtype}{int} i;
+00704     \textcolor{keywordtype}{int} nphalf;
+00705     \textcolor{keywordtype}{float} sum=0;
+00706 
+00707     \textcolor{keywordtype}{float} *w;
+00708 
+00709     w = alloc1float(np);
+00710 
+00711     \hyperlink{a00002_a35ea5f95e81dc63ba8b8002f55d11c7c}{hanning}(np, w);
+00712 
+00713     nphalf=np/2;
+00714     \textcolor{keywordflow}{for} (i=1; i<=nphalf; i++)
+00715     \{
+00716         d[i] = 2.0*pow(-1.0, \textcolor{keywordtype}{float}(i+1))/float(i*i) * w[nphalf+i];
+00717         sum += d[i];
+00718     \}
+00719 
+00720     d[0] = -2.0*sum;
+00721 
+00722     free1float(w);
+00723 
+00724     \textcolor{keywordflow}{return};
+00725 
+00726 \}
+\end{DoxyCode}
+\hypertarget{a00002_a77f8852395acfbe8480c185d9a6af713}{}\index{swcdshot2.\+cpp@{swcdshot2.\+cpp}!cerjan@{cerjan}}
+\index{cerjan@{cerjan}!swcdshot2.\+cpp@{swcdshot2.\+cpp}}
+\paragraph[{cerjan(int ntap, float coeff, float $\ast$taper)}]{\setlength{\rightskip}{0pt plus 5cm}void cerjan (
+\begin{DoxyParamCaption}
+\item[{int}]{ntap, }
+\item[{float}]{coeff, }
+\item[{float $\ast$}]{taper}
+\end{DoxyParamCaption}
+)}\label{a00002_a77f8852395acfbe8480c185d9a6af713}
+
+\begin{DoxyCode}
+00587 \{
+00588     \textcolor{keywordtype}{int} i;
+00589     \textcolor{keywordtype}{float} a;
+00590     \textcolor{keywordflow}{for} (i=0; i<ntap; i++)
+00591     \{
+00592         a = (float)(ntap-i)*(float)(ntap-i);
+00593         taper[i] = exp(-coeff*coeff*a);
+00594     \}
+00595 \}
+\end{DoxyCode}
+\hypertarget{a00002_ad90abc83e502e0cf87b482e8a67bc9e3}{}\index{swcdshot2.\+cpp@{swcdshot2.\+cpp}!exten\+Model@{exten\+Model}}
+\index{exten\+Model@{exten\+Model}!swcdshot2.\+cpp@{swcdshot2.\+cpp}}
+\paragraph[{exten\+Model(int nx, int nz, int ntap, float $\ast$$\ast$v, float $\ast$$\ast$vv)}]{\setlength{\rightskip}{0pt plus 5cm}void exten\+Model (
+\begin{DoxyParamCaption}
+\item[{int}]{nx, }
+\item[{int}]{nz, }
+\item[{int}]{ntap, }
+\item[{float $\ast$$\ast$}]{v, }
+\item[{float $\ast$$\ast$}]{vv}
+\end{DoxyParamCaption}
+)}\label{a00002_ad90abc83e502e0cf87b482e8a67bc9e3}
+
+\begin{DoxyCode}
+00552 \{
+00553     \textcolor{keywordtype}{int} ix, iz;
+00554 
+00555     \textcolor{comment}{/*internal zone*/}
+00556     \textcolor{comment}{//for (ix=0; ix<nx-2*ntap; ix++)}
+00557     \textcolor{comment}{//\{}
+00558     \textcolor{comment}{//  for (iz=0; iz<nz-2*ntap; iz++)}
+00559     \textcolor{comment}{//  \{}
+00560     \textcolor{comment}{//      vv[ix+ntap][iz+ntap] = v[ix][iz];}
+00561     \textcolor{comment}{//  \}}
+00562     \textcolor{comment}{//\}}
+00563 
+00564     \textcolor{comment}{/*upper and lower boundary*/}
+00565     \textcolor{keywordflow}{for} (ix=0; ix<nx; ix++)
+00566     \{
+00567         \textcolor{keywordflow}{for} (iz=0; iz<ntap; iz++)
+00568         \{
+00569             vv[ix][iz] = vv[ix][ntap];
+00570             vv[ix][nz-iz-1] = vv[ix][nz-ntap-1];
+00571         \}
+00572     \}
+00573 
+00574     \textcolor{comment}{/*left and right boundary*/}
+00575     \textcolor{keywordflow}{for} (ix=0; ix<ntap; ix++)
+00576     \{
+00577         \textcolor{keywordflow}{for} (iz=0; iz<nz; iz++)
+00578         \{
+00579             vv[ix][iz] = vv[ntap][iz];
+00580             vv[nx-ix-1][iz] = vv[nx-ntap-1][iz];
+00581         \}
+00582     \}
+00583 
+00584 \}
+\end{DoxyCode}
+\hypertarget{a00002_a04b292299a5a7ebbba7b88f61efee2da}{}\index{swcdshot2.\+cpp@{swcdshot2.\+cpp}!get\+\_\+file\+\_\+snap@{get\+\_\+file\+\_\+snap}}
+\index{get\+\_\+file\+\_\+snap@{get\+\_\+file\+\_\+snap}!swcdshot2.\+cpp@{swcdshot2.\+cpp}}
+\paragraph[{get\+\_\+file\+\_\+snap(char $\ast$dest, char $\ast$src, int num)}]{\setlength{\rightskip}{0pt plus 5cm}void get\+\_\+file\+\_\+snap (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dest, }
+\item[{char $\ast$}]{src, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}\label{a00002_a04b292299a5a7ebbba7b88f61efee2da}
+
+\begin{DoxyCode}
+00640 \{
+00641     \textcolor{keywordtype}{char} a[10];
+00642     strcpy(dest, src);
+00643     strcat(dest, \textcolor{stringliteral}{"\_t"});
+00644     sprintf(a, \textcolor{stringliteral}{"%05d"}, num);
+00645     strcat(dest, a);
+00646     strcat(dest, \textcolor{stringliteral}{".bin"});
+00647     \textcolor{keywordflow}{return};
+00648 \}
+\end{DoxyCode}
+\hypertarget{a00002_a35ea5f95e81dc63ba8b8002f55d11c7c}{}\index{swcdshot2.\+cpp@{swcdshot2.\+cpp}!hanning@{hanning}}
+\index{hanning@{hanning}!swcdshot2.\+cpp@{swcdshot2.\+cpp}}
+\paragraph[{hanning(int n,float $\ast$w)}]{\setlength{\rightskip}{0pt plus 5cm}void hanning (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{float $\ast$}]{w}
+\end{DoxyParamCaption}
+)}\label{a00002_a35ea5f95e81dc63ba8b8002f55d11c7c}
+
+\begin{DoxyCode}
+00740 \{
+00741     \textcolor{keywordtype}{int} i;
+00742 
+00743     \textcolor{keywordflow}{for}(i=0; i<n; i++)
+00744     \{
+00745         w[i] = 0.5*(1-cos(2.0*PI*(i+1)/(n+1)));
+00746     \}
+00747 
+00748 \}
+\end{DoxyCode}
+\hypertarget{a00002_a19d2e3a4f2ab4b079420a1be709d06bb}{}\index{swcdshot2.\+cpp@{swcdshot2.\+cpp}!main@{main}}
+\index{main@{main}!swcdshot2.\+cpp@{swcdshot2.\+cpp}}
+\paragraph[{main(int argc, char $\ast$$\ast$argv) }]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\label{a00002_a19d2e3a4f2ab4b079420a1be709d06bb}
+
+\begin{DoxyCode}
+00082 \{
+00083     \textcolor{keywordtype}{int} nx, nz;
+00084     
+00086     \textcolor{keywordtype}{int} nxmod, nzmod; 
+00087 
+00088     \textcolor{keywordtype}{float} fx, fz;
+00089 
+00090     \textcolor{keywordtype}{int} nt; \textcolor{comment}{/* number of time sampling*/}
+00091 
+00092     \textcolor{keywordtype}{int} it;
+00093     \textcolor{keywordtype}{int} mt; \textcolor{comment}{/*every mt time step to output a snapshot*/}
+00094 
+00095     \textcolor{keywordtype}{int} ix, iz;     \textcolor{comment}{/* counter */}
+00096 
+00097     \textcolor{keywordtype}{float} *wlvt;    \textcolor{comment}{/*wavelet*/}
+00098     \textcolor{keywordtype}{float} **v;  \textcolor{comment}{/*velocity model*/}
+00099     \textcolor{keywordtype}{float} **vv; \textcolor{comment}{/*velocity in calculating zone*/}
+00100 
+00101     \textcolor{keywordtype}{float} **pp, **p, **pm;  \textcolor{comment}{/*wavefield at t+dt, t, t-dt*/}
+00102 
+00103     \textcolor{keywordtype}{float} **s;  \textcolor{comment}{/*spatial distribution of source*/}
+00104 
+00105     \textcolor{keywordtype}{float} **hseis;  \textcolor{comment}{/*shor records*/}
+00106     \textcolor{keywordtype}{float} hsz;  \textcolor{comment}{/*depth of seismic line, =0 in this code*/}
+00107     \textcolor{keywordtype}{int} izhsz;
+00108 
+00109     \textcolor{keywordtype}{float} **vseis;
+00110     \textcolor{keywordtype}{float} vsx;
+00111     \textcolor{keywordtype}{int} ixvsx;
+00112 
+00113     \textcolor{keywordtype}{int} np;
+00114     \textcolor{keywordtype}{float} *d;
+00115 
+00116     \textcolor{keywordtype}{float} dx, dz;   \textcolor{comment}{/*space sampling interval*/}
+00117     \textcolor{keywordtype}{float} fpeak;    \textcolor{comment}{/*peak frequency*/}
+00118     \textcolor{keywordtype}{float} fmax;
+00119     \textcolor{keywordtype}{float} dt;   \textcolor{comment}{/* time sampling interval*/}
+00120 
+00121     \textcolor{keywordtype}{float} vmin, vmax;   \textcolor{comment}{/* min and max value of velocity*/}
+00122 
+00123     \textcolor{keywordtype}{float} tdelay;   \textcolor{comment}{/*time delay of wavelet*/}
+00124     \textcolor{keywordtype}{int} ntdelay;
+00125 
+00126     time\_t t0, t1, t2;
+00127 
+00128     \textcolor{keywordtype}{float} dtstable;
+00129     \textcolor{keywordtype}{float} dxstable;
+00130 
+00131     \textcolor{keywordtype}{int} ntap;
+00132     \textcolor{keywordtype}{float} coeff;
+00133     \textcolor{keywordtype}{float} *taper;
+00134 
+00135     \textcolor{keywordtype}{float} xs, zs;
+00136     \textcolor{keywordtype}{int} ixs, izs;
+00137 
+00138     \textcolor{keywordtype}{float} sx, gx;
+00139     \textcolor{keywordtype}{int} isx, igx;
+00140 
+00141     \textcolor{keywordtype}{int} verbose=0;
+00142 
+00143     \textcolor{keywordtype}{char} file\_tmp[BUFSIZ];
+00144     \textcolor{keywordtype}{char} *file\_snap=\textcolor{stringliteral}{""};
+00145     \textcolor{keywordtype}{char} *file\_vseis=\textcolor{stringliteral}{""};
+00146 
+00147     FILE *fp\_snap = NULL;
+00148     FILE *fp\_vel = stdin;
+00149     FILE *fp\_seis = stdout;
+00150     FILE *fp\_vseis = NULL;
+00151 
+00152     \textcolor{comment}{//FILE *fp\_hseis = stdin;}
+00153 
+00154     \textcolor{comment}{/* SEGY fields */}
+00155     \textcolor{keywordtype}{long} tracl=0;       \textcolor{comment}{/* trace number within a line */}
+00156     \textcolor{keywordtype}{long} tracr=0;       \textcolor{comment}{/* trace number within a reel */}
+00157 
+00158     \textcolor{comment}{/* hook up getpar to handle the parameters */}
+00159     initargs(argc, argv);
+00160     requestdoc(0);
+00161 
+00162     t0=time(NULL);
+00163 
+00164     \textcolor{comment}{/* get required parameters */}
+00165     \textcolor{keywordflow}{if} (!getparint(\textcolor{stringliteral}{"nxmod"}, &nxmod))
+00166         err(\textcolor{stringliteral}{"must specify nxmod!\(\backslash\)n"});
+00167     \textcolor{keywordflow}{if} (!getparint(\textcolor{stringliteral}{"nzmod"}, &nzmod))
+00168         err(\textcolor{stringliteral}{"must specify nzmod!\(\backslash\)n"});
+00169     \textcolor{keywordflow}{if} (!getparstring(\textcolor{stringliteral}{"file\_snap"}, &file\_snap))
+00170         err(\textcolor{stringliteral}{"must specify file\_snap!\(\backslash\)n"});
+00171     \textcolor{keywordflow}{if} (!getparstring(\textcolor{stringliteral}{"file\_vseis"}, &file\_vseis))
+00172         err(\textcolor{stringliteral}{"must specify file\_vseis!\(\backslash\)n"});
+00173 
+00174     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"dt"}, &dt))
+00175         err(\textcolor{stringliteral}{"must specify dt!\(\backslash\)n"});
+00176     \textcolor{keywordflow}{if} (!getparint(\textcolor{stringliteral}{"nt"}, &nt))
+00177         err(\textcolor{stringliteral}{"must specify nt!\(\backslash\)n"});
+00178 
+00179     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"xs"}, &xs))
+00180         err(\textcolor{stringliteral}{"must specify dt!\(\backslash\)n"});
+00181     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"zs"}, &zs))
+00182         err(\textcolor{stringliteral}{"must specify dt!\(\backslash\)n"});
+00183 
+00184     \textcolor{comment}{/*optional parameters*/}
+00185     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"dx"}, &dx))
+00186         dx = 10;
+00187     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"dz"}, &dz))
+00188         dz = 10;
+00189     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"fpeak"}, &fpeak))
+00190         fpeak = 25;
+00191     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"fmax"}, &fmax))
+00192         fmax = 2.0*fpeak;
+00193     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"tdelay"}, &tdelay))
+00194         tdelay = 0;
+00195 
+00196     \textcolor{keywordflow}{if} (!getparint(\textcolor{stringliteral}{"np"}, &np))
+00197         np = 9;
+00198 
+00199     \textcolor{keywordflow}{if} (!getparint(\textcolor{stringliteral}{"mt"}, &mt))
+00200         mt = 1;
+00201 
+00202     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"coeff"}, &coeff))
+00203         coeff = 0.0053;
+00204     \textcolor{keywordflow}{if} (!getparint(\textcolor{stringliteral}{"ntap"}, &ntap))
+00205         ntap = 45;
+00206 
+00207     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"fx"}, &fx))
+00208         fx = 0;
+00209     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"fz"}, &fz))
+00210         fz = 0;
+00211 
+00212     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"hsz"}, &hsz))
+00213         hsz = 0;
+00214 
+00215     \textcolor{keywordflow}{if} (!getparfloat(\textcolor{stringliteral}{"vsx"}, &vsx))
+00216         vsx = nxmod/2+ntap;
+00217 
+00218     \textcolor{keywordflow}{if} (!getparint(\textcolor{stringliteral}{"verbose"}, &verbose))
+00219         verbose = 1;
+00220 
+00221 
+00222     \textcolor{comment}{/************************************************************************/}
+00223 
+00224     nx = nxmod + 2*ntap;
+00225     nz = nzmod + 2*ntap;
+00226 
+00227     \textcolor{keywordflow}{if} (verbose)
+00228     \{
+00229         fprintf(stderr, \textcolor{stringliteral}{"\(\backslash\)nxs=%g\(\backslash\)n"}, xs);
+00230         fprintf(stderr, \textcolor{stringliteral}{"nx=%d, nz=%d\(\backslash\)n"}, nx, nz);
+00231     \}
+00232 
+00233     \textcolor{comment}{/************************************************************************/}
+00234 
+00235 
+00236     vv = alloc2float(nz, nx);
+00237     memset((\textcolor{keywordtype}{void} *) vv[0], 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}) * nx * nz);
+00238 
+00239     pp = alloc2float(nz, nx);
+00240     p = alloc2float(nz, nx);
+00241     pm = alloc2float(nz, nx);
+00242 
+00243     memset((\textcolor{keywordtype}{void} *) pp[0], 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}) * nx * nz);
+00244     memset((\textcolor{keywordtype}{void} *) p[0], 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}) * nx * nz);
+00245     memset((\textcolor{keywordtype}{void} *) pm[0], 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}) * nx * nz);
+00246 
+00247     s = alloc2float(nz, nx);
+00248     memset((\textcolor{keywordtype}{void} *)s[0], 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}) * nx *nz);
+00249 
+00250     hseis=alloc2float(nt, nx);
+00251     memset((\textcolor{keywordtype}{void} *)hseis[0], 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float})*nx*nt);
+00252 
+00253     vseis=alloc2float(nt, nz);
+00254     memset((\textcolor{keywordtype}{void} *)vseis[0], 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float})*nz*nt);
+00255 
+00256     taper=alloc1float(ntap);
+00257     memset((\textcolor{keywordtype}{void} *)taper, 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float})*ntap);
+00258 
+00259 
+00260     v = alloc2float(nzmod, nxmod);
+00261     memset((\textcolor{keywordtype}{void} *) v[0], 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}) * nxmod * nzmod);
+00262 
+00263     d = alloc1float(np);
+00264 
+00265     \textcolor{comment}{/* read velocities */}
+00266     efread(v[0],\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),nxmod*nzmod,fp\_vel);
+00267     efclose(fp\_vel);
+00268 
+00269     \textcolor{keywordflow}{for} (ix=0; ix<nx-2*ntap; ix++)
+00270     \{
+00271         \textcolor{keywordflow}{for} (iz=0; iz<nz-2*ntap; iz++)
+00272         \{
+00273             vv[ntap+ix][ntap+iz] = v[ix][iz];
+00274         \}
+00275     \}
+00276 
+00277     \hyperlink{a00002_ad90abc83e502e0cf87b482e8a67bc9e3}{extenModel}(nx, nz, ntap, vv, vv);
+00278     vmin=vmax=vv[0][0];
+00279     \textcolor{keywordflow}{for} (ix = 0; ix < nx; ix++)
+00280     \{
+00281         \textcolor{keywordflow}{for} (iz = 0; iz < nz; iz++)
+00282         \{
+00283             vmin=MIN(vmin, vv[ix][iz]);
+00284             vmax=MAX(vmax, vv[ix][iz]);
+00285         \}
+00286     \}
+00287 
+00288     fprintf(stderr,\textcolor{stringliteral}{"vmin=%g, vmax=%g\(\backslash\)n"}, vmin, vmax);
+00289     \textcolor{keywordflow}{if}(vmin==0)
+00290         err(\textcolor{stringliteral}{"error. vmin=%g"},vmin);
+00291 
+00292     \textcolor{comment}{/*stable condtions*/}
+00293     dxstable=vmin/(2*fmax);
+00294     \textcolor{keywordflow}{if} (MAX(dx, dz)>dxstable)
+00295     \{
+00296         warn(\textcolor{stringliteral}{"stable grid size must be smaller than %g"}, dxstable);
+00297     \}
+00298 
+00299     \textcolor{comment}{//dtstable=sqrt(2)*MIN(dx, dz)/(PI*vmax);}
+00300     dtstable = 1.0/1.3167/vmax/sqrt(1./dx/dx+1./dz/dz);
+00301     \textcolor{keywordflow}{if} (dt>dtstable)
+00302     \{
+00303         err(\textcolor{stringliteral}{"unstable. dt must be smaller than %g"}, dtstable);
+00304     \}
+00305 
+00306     \textcolor{comment}{/*source*/}
+00307     ntdelay=tdelay/dt;
+00308     wlvt = alloc1float(nt+ntdelay);
+00309     \hyperlink{a00002_a6b20993ec01a368bf2e7936b5b22f1d7}{ricker1\_wavelet}(nt+ntdelay, dt, fpeak, wlvt);
+00310 
+00311     ixs = (int) ((xs-fx) / dx) + ntap;
+00312     izs = (int) ((zs-fz) / dz) + ntap;
+00313     izhsz = (int) ((hsz-fz) / dz) + ntap;
+00314     ixvsx = (int) ((vsx-fx) / dx) + ntap;
+00315 
+00316     warn(\textcolor{stringliteral}{"ixs=%d, izs=%d\(\backslash\)n"}, ixs, izs);
+00317 
+00318     \hyperlink{a00002_a77f8852395acfbe8480c185d9a6af713}{cerjan}(ntap, coeff, taper);
+00319     \hyperlink{a00002_a97972f13a27a253327d118dc9a7559c8}{src\_spatial\_distribution}(nx, nz, ixs, izs, s);
+00320 
+00321     \hyperlink{a00002_a334ef00cfa7f725b18826a364b9151d5}{cd\_coeff\_scalar}(np, d);
+00322 
+00323 \textcolor{comment}{//    for(ix=0; ix<np; ix++)}
+00324 \textcolor{comment}{//    \{}
+00325 \textcolor{comment}{//        warn("d[%d]=%g\(\backslash\)n", ix, d[ix]);}
+00326 \textcolor{comment}{//    \}}
+00327 
+00328     \textcolor{comment}{/*verbose*/}
+00329     \textcolor{keywordflow}{if} (verbose)
+00330     \{
+00331         fprintf(stderr, \textcolor{stringliteral}{"nx=%d nz=%d\(\backslash\)n"}, nx, nz);
+00332         fprintf(stderr, \textcolor{stringliteral}{"ntap=%d coeff=%g\(\backslash\)n"}, ntap, coeff);
+00333         fprintf(stderr, \textcolor{stringliteral}{"dtstable=%g dxstable=%g\(\backslash\)n"}, dtstable, dxstable);
+00334         fprintf(stderr, \textcolor{stringliteral}{"dt=%g dx=%g dz=%g\(\backslash\)n"}, dt, dx, dz);
+00335         fprintf(stderr, \textcolor{stringliteral}{"ntdelay=%d tdelay=%g\(\backslash\)n"}, ntdelay, tdelay);
+00336     \}
+00337 
+00338     memset((\textcolor{keywordtype}{void} *) pp[0], 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}) * nx * nz);
+00339     memset((\textcolor{keywordtype}{void} *) p[0], 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}) * nx * nz);
+00340     memset((\textcolor{keywordtype}{void} *) pm[0], 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}) * nx * nz);
+00341 
+00342     t2=time(NULL);
+00343 
+00344     warn(\textcolor{stringliteral}{"preprocessing time cost(s):%f"}, difftime(t2,t0));
+00345 
+00346     \textcolor{comment}{/*forward modeling*/}
+00347     \textcolor{keywordflow}{for} (it=0; it<ntdelay; it++)
+00348     \{
+00349 
+00350         \textcolor{keywordflow}{for} (ix=0; ix<nx; ix++)
+00351         \{
+00352             \textcolor{keywordflow}{for} (iz=0; iz<nz; iz++)
+00353             \{
+00354                 p[ix][iz] += wlvt[it]*s[ix][iz];
+00355             \}
+00356         \}
+00357 
+00358         \hyperlink{a00002_a335451e1ec7e61be5649569b8d4b3a3c}{time\_one\_step\_cd}(nx, nz, dt, dx, dz, np, d, vv, pp, pm, p);
+00359 
+00360         \hyperlink{a00002_a707cef9b52a1fbb50f69a5bdcdc504fe}{absorb}(ntap, nx, nz, taper, pm);
+00361         \hyperlink{a00002_a707cef9b52a1fbb50f69a5bdcdc504fe}{absorb}(ntap, nx, nz, taper, p);
+00362         \hyperlink{a00002_a707cef9b52a1fbb50f69a5bdcdc504fe}{absorb}(ntap, nx, nz, taper, pp);
+00363 
+00364         \textcolor{keywordflow}{for} (ix=0; ix<nx; ix++)
+00365         \{
+00366             \textcolor{keywordflow}{for} (iz=0; iz<nz; iz++)
+00367             \{
+00368                 pm[ix][iz] = p[ix][iz];
+00369                 p[ix][iz] = pp[ix][iz];
+00370             \}
+00371         \}
+00372 
+00373     \}
+00374 
+00375     t1=time(NULL);
+00376 
+00377     \textcolor{keywordflow}{for} (it = 0; it < nt; it++)
+00378     \{
+00379 
+00380         \textcolor{keywordflow}{if} (verbose && (it%100==0) )
+00381         \{
+00382             t2 = time(NULL);
+00383             warn(\textcolor{stringliteral}{"it=%d, nt=%d, time1=%g, time2=%g"}, it, nt, difftime(t2, t1), difftime(t2, t0));
+00384         \}
+00385 
+00386         \textcolor{keywordflow}{for} (ix=0; ix<nx; ix++)
+00387         \{
+00388             \textcolor{keywordflow}{for} (iz=0; iz<nz; iz++)
+00389             \{
+00390                 p[ix][iz] += wlvt[it+ntdelay]*s[ix][iz];
+00391             \}
+00392         \}
+00393 
+00394         \hyperlink{a00002_a335451e1ec7e61be5649569b8d4b3a3c}{time\_one\_step\_cd}(nx, nz, dt, dx, dz, np, d, vv, pp, pm, p);
+00395 
+00396         \hyperlink{a00002_a707cef9b52a1fbb50f69a5bdcdc504fe}{absorb}(ntap, nx, nz, taper, pm);
+00397         \hyperlink{a00002_a707cef9b52a1fbb50f69a5bdcdc504fe}{absorb}(ntap, nx, nz, taper, p);
+00398         \hyperlink{a00002_a707cef9b52a1fbb50f69a5bdcdc504fe}{absorb}(ntap, nx, nz, taper, pp);
+00399 
+00400         \textcolor{keywordflow}{for} (ix=0; ix<nx; ix++)
+00401         \{
+00402             \textcolor{keywordflow}{for} (iz=0; iz<nz; iz++)
+00403             \{
+00404                 pm[ix][iz] = p[ix][iz];
+00405                 p[ix][iz] = pp[ix][iz];
+00406             \}
+00407         \}
+00408 
+00409         \textcolor{keywordflow}{for} (ix=0; ix<nx; ix++)
+00410         \{
+00411             hseis[ix][it] = p[ix][izhsz];
+00412         \}
+00413         \textcolor{keywordflow}{for}(iz=0; iz<nz; iz++)
+00414         \{
+00415             vseis[iz][it] = p[ixvsx][iz];
+00416         \}
+00417 
+00418         \textcolor{keywordflow}{if} (it % mt == 0)
+00419         \{
+00420 
+00421             \textcolor{keywordflow}{for} (ix=0; ix<nxmod; ix++)
+00422             \{
+00423                 \textcolor{keywordflow}{for} (iz=0; iz<nzmod; iz++)
+00424                 \{
+00425                     v[ix][iz] = p[ntap+ix][ntap+iz];
+00426                 \}
+00427             \}
+00428 
+00429             \hyperlink{a00002_a04b292299a5a7ebbba7b88f61efee2da}{get\_file\_snap}(file\_tmp, file\_snap, it);
+00430             fp\_snap = efopen(file\_tmp, \textcolor{stringliteral}{"w"});
+00431             efwrite((\textcolor{keywordtype}{void} *) v[0], \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}), nxmod * nzmod, fp\_snap);
+00432             efclose(fp\_snap);
+00433         \}
+00434 
+00435         \textcolor{keywordflow}{if} (verbose && (it%100==0) )
+00436         \{
+00437             t1 = time(NULL);
+00438         \}
+00439 
+00440     \} \textcolor{comment}{/*end of time loop*/}
+00441     \textcolor{comment}{/*end of forward modeling*/}
+00442 
+00443     warn(\textcolor{stringliteral}{"Writing final shot records..."});
+00444 
+00445     \textcolor{comment}{/************************************************************************/}
+00446     fp\_vseis = efopen(file\_vseis, \textcolor{stringliteral}{"w"});
+00447 
+00448     \textcolor{keywordflow}{for} (ix=ntap; ix<nx-ntap; ix++)
+00449     \{
+00450         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.ns = nt;
+00451         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.dt = dt*1000000;
+00452 
+00453         \textcolor{comment}{//tr.fldr = ixs-ntap;}
+00454 
+00455         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.sx = fx + (float)(ixs-ntap)*dx;
+00456         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.sy = fx + (float)(izs-ntap)*dz;
+00457         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.gx = fx + (float)(ix-ntap)*dx;
+00458         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.gy = fx + (float)(izhsz-ntap)*dz;
+00459 
+00460         \textcolor{comment}{//tr.cdp = (tr.sx+tr.gx)/2;}
+00461         \textcolor{comment}{//tr.offset = tr.gx-tr.sx;}
+00462 
+00463         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.d1=dz;
+00464         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.d2=dx;
+00465 
+00466         \textcolor{comment}{//tracl++;}
+00467         \textcolor{comment}{//tr.tracl=tracl;}
+00468         \textcolor{keywordflow}{for} (it=0; it<nt; it++)
+00469         \{
+00470             \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.data[it] = hseis[ix][it];
+00471         \}
+00472 
+00473         fputtr(fp\_seis, &\hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr});
+00474 
+00475     \}
+00476 
+00477     \textcolor{comment}{//tracl=0;}
+00478     \textcolor{keywordflow}{for} (iz=ntap; iz<nz-ntap; iz++)
+00479     \{
+00480         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.ns = nt;
+00481         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.dt = dt*1000000;
+00482 
+00483         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.sx = fx + (float)(ixs-ntap)*dx;
+00484         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.sy = fx + (float)(izs-ntap)*dz;
+00485         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.gx = fx + (float)(ixvsx-ntap)*dx;
+00486         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.gy = fx + (float)(iz-ntap)*dz;
+00487 
+00488         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.d1=dz;
+00489         \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.d2=dx;
+00490 
+00491         \textcolor{comment}{//tracl++;}
+00492         \textcolor{comment}{//tr.tracl=tracl;}
+00493         \textcolor{keywordflow}{for} (it=0; it<nt; it++)
+00494         \{
+00495             \hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr}.data[it] = vseis[iz][it];
+00496         \}
+00497 
+00498         fputtr(fp\_vseis, &\hyperlink{a00002_a21ee33da3f54e2ea55665c50bfebd740}{tr});
+00499 
+00500     \}
+00501     \textcolor{comment}{/*free memory*/}
+00502     free2float(vv);
+00503     free2float(pp);
+00504     free2float(p);
+00505     free2float(pm);
+00506     free1float(taper);
+00507     free2float(hseis);
+00508     free2float(vseis);
+00509     free2float(v);
+00510     free2float(s);
+00511 
+00512     t2=time(NULL);
+00513     warn(\textcolor{stringliteral}{"total time: %g"}, difftime(t2,t0));
+00514 
+00515     \textcolor{keywordflow}{return} 0;
+00516 \}
+\end{DoxyCode}
+\hypertarget{a00002_a6b20993ec01a368bf2e7936b5b22f1d7}{}\index{swcdshot2.\+cpp@{swcdshot2.\+cpp}!ricker1\+\_\+wavelet@{ricker1\+\_\+wavelet}}
+\index{ricker1\+\_\+wavelet@{ricker1\+\_\+wavelet}!swcdshot2.\+cpp@{swcdshot2.\+cpp}}
+\paragraph[{ricker1\+\_\+wavelet(int nt, float dt, float fpeak, float $\ast$wavelet)}]{\setlength{\rightskip}{0pt plus 5cm}void ricker1\+\_\+wavelet (
+\begin{DoxyParamCaption}
+\item[{int}]{nt, }
+\item[{float}]{dt, }
+\item[{float}]{fpeak, }
+\item[{float $\ast$}]{wavelet}
+\end{DoxyParamCaption}
+)}\label{a00002_a6b20993ec01a368bf2e7936b5b22f1d7}
+
+\begin{DoxyCode}
+00537 \{
+00538     \textcolor{keywordtype}{int} it;
+00539     \textcolor{keywordtype}{float} t1, t0;
+00540 
+00541     t0 = 1.0 / fpeak;
+00542 
+00543     \textcolor{keywordflow}{for} (it = 0; it < nt; it++)
+00544     \{
+00545         t1 = it * dt;
+00546         wavelet[it] = exp(-PI * PI * fpeak * fpeak * (t1 - t0) * (t1 - t0))
+00547                       * (1.0 - 2. * PI * PI * fpeak * fpeak * (t1 - t0) * (t1 - t0));
+00548     \}
+00549 \}
+\end{DoxyCode}
+\hypertarget{a00002_a97972f13a27a253327d118dc9a7559c8}{}\index{swcdshot2.\+cpp@{swcdshot2.\+cpp}!src\+\_\+spatial\+\_\+distribution@{src\+\_\+spatial\+\_\+distribution}}
+\index{src\+\_\+spatial\+\_\+distribution@{src\+\_\+spatial\+\_\+distribution}!swcdshot2.\+cpp@{swcdshot2.\+cpp}}
+\paragraph[{src\+\_\+spatial\+\_\+distribution(int nx, int nz, int ixs, int izs, float $\ast$$\ast$s)}]{\setlength{\rightskip}{0pt plus 5cm}void src\+\_\+spatial\+\_\+distribution (
+\begin{DoxyParamCaption}
+\item[{int}]{nx, }
+\item[{int}]{nz, }
+\item[{int}]{ixs, }
+\item[{int}]{izs, }
+\item[{float $\ast$$\ast$}]{s}
+\end{DoxyParamCaption}
+)}\label{a00002_a97972f13a27a253327d118dc9a7559c8}
+
+\begin{DoxyCode}
+00751 \{
+00752     \textcolor{keywordtype}{int} ix, iz;
+00753     \textcolor{keywordtype}{float} xn, zn;
+00754 
+00755     \textcolor{keywordflow}{for} (ix=0; ix<nx; ix++)
+00756     \{
+00757         xn = ix-ixs;
+00758         \textcolor{keywordflow}{for} (iz=0; iz<nz; iz++)
+00759         \{
+00760             zn = iz-izs;
+00761             s[ix][iz] = exp(-xn*xn-zn*zn);
+00762         \}
+00763     \}
+00764     \textcolor{keywordflow}{return};
+00765 \}
+\end{DoxyCode}
+\hypertarget{a00002_a335451e1ec7e61be5649569b8d4b3a3c}{}\index{swcdshot2.\+cpp@{swcdshot2.\+cpp}!time\+\_\+one\+\_\+step\+\_\+cd@{time\+\_\+one\+\_\+step\+\_\+cd}}
+\index{time\+\_\+one\+\_\+step\+\_\+cd@{time\+\_\+one\+\_\+step\+\_\+cd}!swcdshot2.\+cpp@{swcdshot2.\+cpp}}
+\paragraph[{time\+\_\+one\+\_\+step\+\_\+cd(int nx, int nz, float dt, float dx, float dz, int np, float $\ast$d, float $\ast$$\ast$v, float $\ast$$\ast$pp, float $\ast$$\ast$pm, float $\ast$$\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void time\+\_\+one\+\_\+step\+\_\+cd (
+\begin{DoxyParamCaption}
+\item[{int}]{nx, }
+\item[{int}]{nz, }
+\item[{float}]{dt, }
+\item[{float}]{dx, }
+\item[{float}]{dz, }
+\item[{int}]{np, }
+\item[{float $\ast$}]{d, }
+\item[{float $\ast$$\ast$}]{v, }
+\item[{float $\ast$$\ast$}]{pp, }
+\item[{float $\ast$$\ast$}]{pm, }
+\item[{float $\ast$$\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{a00002_a335451e1ec7e61be5649569b8d4b3a3c}
+
+\begin{DoxyCode}
+00673 \{
+00674     \textcolor{keywordtype}{int} ix, iz;
+00675     \textcolor{keywordtype}{float} dtdx, dtdz;
+00676     \textcolor{keywordtype}{float} diffx, diffz;
+00677 
+00678     dtdx = dt*dt/dx/dx;
+00679     dtdz = dt*dt/dz/dz;
+00680 
+00681     \textcolor{keywordflow}{for}(ix=np/2; ix<nx-np/2; ix++)
+00682     \{
+00683         \textcolor{keywordflow}{for} (iz=np/2; iz<nz-np/2; iz++)
+00684         \{
+00685             diffx = d[0]*p[ix][iz];
+00686             diffz = d[0]*p[ix][iz];
+00687 
+00688             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ip=1; ip<=np/2; ip++)
+00689             \{
+00690                 diffx += d[ip]*(p[ix+ip][iz]+p[ix-ip][iz]);
+00691                 diffz += d[ip]*(p[ix][iz+ip]+p[ix][iz-ip]);
+00692             \}
+00693 
+00694             pp[ix][iz] = 2.0*p[ix][iz] - pm[ix][iz] +
+00695                          v[ix][iz]*v[ix][iz]*(dtdx*diffx+dtdz*diffz);
+00696         \}
+00697     \}
+00698 
+00699 \}
+\end{DoxyCode}
+
+
+\subsubsection{Variable Documentation}
+\hypertarget{a00002_a381b0229c6cf78ce56a4749e35972291}{}\index{swcdshot2.\+cpp@{swcdshot2.\+cpp}!sdoc@{sdoc}}
+\index{sdoc@{sdoc}!swcdshot2.\+cpp@{swcdshot2.\+cpp}}
+\paragraph[{sdoc}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ sdoc\mbox{[}$\,$\mbox{]}}\label{a00002_a381b0229c6cf78ce56a4749e35972291}
+\hypertarget{a00002_a21ee33da3f54e2ea55665c50bfebd740}{}\index{swcdshot2.\+cpp@{swcdshot2.\+cpp}!tr@{tr}}
+\index{tr@{tr}!swcdshot2.\+cpp@{swcdshot2.\+cpp}}
+\paragraph[{tr}]{\setlength{\rightskip}{0pt plus 5cm}segy tr}\label{a00002_a21ee33da3f54e2ea55665c50bfebd740}

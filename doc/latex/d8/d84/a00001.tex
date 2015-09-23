@@ -1,0 +1,148 @@
+\hypertarget{a00001}{}\subsection{src/cdcoeff.c File Reference}
+\label{a00001}\index{src/cdcoeff.\+c@{src/cdcoeff.\+c}}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{a00001_aebeab242545084906cda6e74300f4011}{}\index{cdcoeff.\+c@{cdcoeff.\+c}!cdcoeff@{cdcoeff}}
+\index{cdcoeff@{cdcoeff}!cdcoeff.\+c@{cdcoeff.\+c}}
+\paragraph[{cdcoeff(int m, int n, double $\ast$cc) }]{\setlength{\rightskip}{0pt plus 5cm}void cdcoeff (
+\begin{DoxyParamCaption}
+\item[{int}]{m, }
+\item[{int}]{n, }
+\item[{double $\ast$}]{cc}
+\end{DoxyParamCaption}
+)}\label{a00001_aebeab242545084906cda6e74300f4011}
+
+
+calculation of C\+D coefficients 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & order of the derivatives, m=1,2,3,4 \\
+\hline
+\mbox{\tt in}  & {\em n} & order of spatial accuray, e.\+g., n=4, 10 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00031 \{
+00032     m = abs(m);
+00033     n = abs(n);
+00034     
+00035     \textcolor{keywordtype}{double} PI = acos(-1);
+00036     \textcolor{keywordtype}{double} kn = PI;
+00037     
+00038     \textcolor{keywordtype}{int} k; 
+00039     \textcolor{keywordtype}{int} nn;
+00040     
+00041     \textcolor{keywordtype}{double} complex tmp, tmp1, tmp2;
+00042     \textcolor{keywordtype}{double} complex sum;
+00043     
+00044     tmp = pow(I,m)*\hyperlink{a00001_aaa44a6c56572fc4081f172df9aac983f}{factorial}(m)*0.5/PI;
+00045         
+00046     nn = n;
+00047     \textcolor{keywordflow}{for}(n=1; n<=nn; n++)
+00048     \{
+00049         sum = 0.0;
+00050         \textcolor{keywordflow}{for}(k=0; k<=m; k++)
+00051         \{
+00052             tmp1 = exp(I*kn*n)+pow(-1, m-k+1)*exp(-I*kn*n);
+00053             tmp2 = \hyperlink{a00001_aaa44a6c56572fc4081f172df9aac983f}{factorial}(m-k)*pow(n*I, k+1);
+00054         
+00055             sum += pow(-1.0, k)*pow(kn, m-k)*tmp1/tmp2;
+00056             
+00057 \textcolor{comment}{//          printf("tmp1=,%f, %f\(\backslash\)n", creal(tmp1), cimag(tmp1));}
+00058 \textcolor{comment}{//          printf("tmp2=,%f, %f\(\backslash\)n", creal(tmp2), cimag(tmp2));}
+00059 \textcolor{comment}{//          printf("sum=,%f, %f\(\backslash\)n", creal(sum), cimag(sum));}
+00060 
+00061         \}
+00062         tmp2 = tmp*sum;
+00063         cc[n] = creal(tmp2);
+00064 \textcolor{comment}{//      printf("n=%d, coeff=%f\(\backslash\)n", n, cc[n]);}
+00065     \}
+00066     
+00067     \textcolor{comment}{// n=0}
+00068     tmp = pow(I, m)*pow(kn, m+1)*0.5/PI*(1+pow(-1,m))/(m+1);
+00069     cc[0] = creal(tmp);
+00070     
+00071     \textcolor{keywordflow}{for}(n=0; n<=nn; n++)
+00072     \{
+00073         printf(\textcolor{stringliteral}{"cc[%d]=%f\(\backslash\)n"}, n, cc[n]);
+00074     \}
+00075     
+00076     \textcolor{keywordflow}{return};
+00077 \}
+\end{DoxyCode}
+\hypertarget{a00001_a3ac5877a236e4d1e769ecd715f44b559}{}\index{cdcoeff.\+c@{cdcoeff.\+c}!cdcoeff\+\_\+stg@{cdcoeff\+\_\+stg}}
+\index{cdcoeff\+\_\+stg@{cdcoeff\+\_\+stg}!cdcoeff.\+c@{cdcoeff.\+c}}
+\paragraph[{cdcoeff\+\_\+stg(int m, int n, double $\ast$cc) }]{\setlength{\rightskip}{0pt plus 5cm}void cdcoeff\+\_\+stg (
+\begin{DoxyParamCaption}
+\item[{int}]{m, }
+\item[{int}]{n, }
+\item[{double $\ast$}]{cc}
+\end{DoxyParamCaption}
+)}\label{a00001_a3ac5877a236e4d1e769ecd715f44b559}
+
+\begin{DoxyCode}
+00080 \{
+00081     m = abs(m);
+00082     n = abs(n);
+00083 
+00084     \textcolor{keywordflow}{return}; 
+00085 \}
+\end{DoxyCode}
+\hypertarget{a00001_aaa44a6c56572fc4081f172df9aac983f}{}\index{cdcoeff.\+c@{cdcoeff.\+c}!factorial@{factorial}}
+\index{factorial@{factorial}!cdcoeff.\+c@{cdcoeff.\+c}}
+\paragraph[{factorial(int m) }]{\setlength{\rightskip}{0pt plus 5cm}int factorial (
+\begin{DoxyParamCaption}
+\item[{int}]{m}
+\end{DoxyParamCaption}
+)}\label{a00001_aaa44a6c56572fc4081f172df9aac983f}
+
+
+calculate factorial 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & \\
+\hline
+\mbox{\tt out}  & {\em fact} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+00012 \{
+00013     \textcolor{keywordtype}{int} fact=1;
+00014     \textcolor{keywordtype}{int} i;
+00015     \textcolor{keywordflow}{for}(i=0; i<m; i++)
+00016     \{
+00017         fact *= (i+1); 
+00018     \}
+00019     
+00020     \textcolor{keywordflow}{if}(m==0)
+00021         fact = 1;
+00022         
+00023     \textcolor{keywordflow}{return} fact;
+00024 \}
+\end{DoxyCode}
+\hypertarget{a00001_ac26bf1b1b45ee7970f3ac54892104b13}{}\index{cdcoeff.\+c@{cdcoeff.\+c}!main@{main}}
+\index{main@{main}!cdcoeff.\+c@{cdcoeff.\+c}}
+\paragraph[{main() }]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00001_ac26bf1b1b45ee7970f3ac54892104b13}
+
+\begin{DoxyCode}
+00091 \{
+00092     \textcolor{keywordtype}{int} m=2;
+00093     \textcolor{keywordtype}{int} n=10;
+00094     \textcolor{keywordtype}{int} result;
+00095     \textcolor{keywordtype}{double} cc[2*n+1];
+00096     
+00097     result = \hyperlink{a00001_aaa44a6c56572fc4081f172df9aac983f}{factorial}(m);
+00098     printf(\textcolor{stringliteral}{"result=%d\(\backslash\)n"}, result);
+00099     
+00100     \hyperlink{a00001_aebeab242545084906cda6e74300f4011}{cdcoeff}(m,n,cc);
+00101 \}
+\end{DoxyCode}

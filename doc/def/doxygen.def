@@ -1,0 +1,4737 @@
+AutoGen Definitions dummy;
+class = {
+  cp-id     = 'de/d21/a00006';
+  cp-name   = 'std::allocator';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'de/d21/a00006_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 273;
+        node-label = 'allocator<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'de/d5e/a00007';
+  cp-name   = 'std::array';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'de/d5e/a00007_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 275;
+        node-label = 'array<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/dee/a00008';
+  cp-name   = 'std::auto_ptr';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'd4/dee/a00008_1af6e485beee07fd401de29c8cdf898c69';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T*
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'operator->';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd4/dee/a00008_1aa237cc2bf5b88b78926c2b559c16bf13';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ptr';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 277;
+        node-label = 'auto_ptr<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd0/d33/a00027';
+  cp-name   = 'std::bad_alloc';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd6/d5b/a00026';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 279;
+        node-label = 'bad_alloc';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'dc/d3c/a00028';
+  cp-name   = 'std::bad_cast';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd6/d5b/a00026';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 281;
+        node-label = 'bad_cast';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd5/d16/a00029';
+  cp-name   = 'std::bad_exception';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd6/d5b/a00026';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 283;
+        node-label = 'bad_exception';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd5/d79/a00030';
+  cp-name   = 'std::bad_typeid';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd6/d5b/a00026';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 285;
+        node-label = 'bad_typeid';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'dc/dee/a00053';
+  cp-name   = 'std::basic_fstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd1/d84/a00052';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd1/dea/a00054';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd4/d6d/a00055';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 287;
+        node-label = 'basic_fstream<Char>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd2/dee/a00049';
+  cp-name   = 'std::basic_ifstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd4/dca/a00048';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd5/de0/a00050';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd2/d79/a00051';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 289;
+        node-label = 'basic_ifstream<Char>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd6/d2d/a00047';
+  cp-name   = 'std::basic_ios';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd3/dea/a00046';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd4/dca/a00048';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd4/dca/a00048';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd4/dca/a00048';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd4/dca/a00048';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd4/dca/a00048';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd4/dca/a00048';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'df/d5f/a00064';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'df/d5f/a00064';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'df/d5f/a00064';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'df/d5f/a00064';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'df/d5f/a00064';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'df/d5f/a00064';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd4/dca/a00048';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'df/d5f/a00064';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd1/d6e/a00073';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'db/db6/a00074';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 291;
+        node-label = 'basic_ios<Char>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/d84/a00052';
+  cp-name   = 'std::basic_iostream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd4/dca/a00048';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'df/d5f/a00064';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'dc/dee/a00053';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'dc/dee/a00053';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd9/d2e/a00056';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd9/d2e/a00056';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'dc/dee/a00053';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd9/d2e/a00056';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 293;
+        node-label = 'basic_iostream<Char>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/dca/a00048';
+  cp-name   = 'std::basic_istream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd6/d2d/a00047';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd2/dee/a00049';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd2/dee/a00049';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd1/d84/a00052';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd1/d84/a00052';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd3/d8b/a00059';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd3/d8b/a00059';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd2/dee/a00049';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd1/d84/a00052';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd3/d8b/a00059';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'df/d03/a00062';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd1/d6f/a00063';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 295;
+        node-label = 'basic_istream<Char>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd3/d8b/a00059';
+  cp-name   = 'std::basic_istringstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd4/dca/a00048';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd9/d73/a00060';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd4/de8/a00061';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 297;
+        node-label = 'basic_istringstream<Char>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'de/de1/a00065';
+  cp-name   = 'std::basic_ofstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'df/d5f/a00064';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd9/db3/a00066';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'dc/ddf/a00067';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 299;
+        node-label = 'basic_ofstream<Char>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'df/d5f/a00064';
+  cp-name   = 'std::basic_ostream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd6/d2d/a00047';
+    ref-prot = public;
+    ref-virt = virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd1/d84/a00052';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd1/d84/a00052';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'de/de1/a00065';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'de/de1/a00065';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'da/d24/a00068';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'da/d24/a00068';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd1/d84/a00052';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'de/de1/a00065';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'da/d24/a00068';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd0/d89/a00071';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd6/d2c/a00072';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 301;
+        node-label = 'basic_ostream<Char>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'da/d24/a00068';
+  cp-name   = 'std::basic_ostringstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'df/d5f/a00064';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd4/d31/a00069';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd2/db1/a00070';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 303;
+        node-label = 'basic_ostringstream<Char>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'da/da0/a00009';
+  cp-name   = 'std::basic_string';
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd7/dec/a00010';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'da/d45/a00011';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 305;
+        node-label = 'basic_string<Char>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'df/d86/a00012';
+  cp-name   = 'std::basic_string::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 307;
+        node-label = 'basic_string<Char>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd7/dd4/a00013';
+  cp-name   = 'std::basic_string::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 309;
+        node-label = 'basic_string<Char>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd2/de7/a00014';
+  cp-name   = 'std::basic_string::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 311;
+        node-label = 'basic_string<Char>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'dd/d1b/a00015';
+  cp-name   = 'std::basic_string::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 313;
+        node-label = 'basic_string<Char>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd9/d2e/a00056';
+  cp-name   = 'std::basic_stringstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd1/d84/a00052';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd1/d22/a00057';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd7/df7/a00058';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 315;
+        node-label = 'basic_stringstream<Char>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd7/d7a/a00016';
+  cp-name   = 'std::bitset';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 317;
+        node-label = 'bitset<Bits>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/d51/a00017';
+  cp-name   = 'std::complex';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 319;
+        node-label = 'complex';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/d2b/a00018';
+  cp-name   = 'std::deque';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd1/d2b/a00018_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 321;
+        node-label = 'deque<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'dd/da2/a00019';
+  cp-name   = 'std::deque::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 323;
+        node-label = 'deque<T>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'db/db2/a00020';
+  cp-name   = 'std::deque::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 325;
+        node-label = 'deque<T>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'de/d11/a00021';
+  cp-name   = 'std::deque::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 327;
+        node-label = 'deque<T>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd7/de0/a00022';
+  cp-name   = 'std::deque::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 329;
+        node-label = 'deque<T>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd0/dc0/a00033';
+  cp-name   = 'std::domain_error';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'dc/d87/a00032';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 331;
+        node-label = 'domain_error';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd3/d52/a00023';
+  cp-name   = 'std::error_category';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 333;
+        node-label = 'error_category';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'dc/de2/a00024';
+  cp-name   = 'std::error_code';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 335;
+        node-label = 'error_code';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd3/dfe/a00025';
+  cp-name   = 'std::error_condition';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 337;
+        node-label = 'error_condition';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd6/d5b/a00026';
+  cp-name   = 'std::exception';
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd0/d33/a00027';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'dc/d3c/a00028';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd5/d16/a00029';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd5/d79/a00030';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'df/d61/a00031';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'dc/d87/a00032';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd1/dc6/a00037';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 339;
+        node-label = 'exception';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'dd/d32/a00041';
+  cp-name   = 'std::forward_list';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dd/d32/a00041_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 341;
+        node-label = 'forward_list<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd5/db6/a00042';
+  cp-name   = 'std::forward_list::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 343;
+        node-label = 'forward_list<T>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd6/d42/a00043';
+  cp-name   = 'std::forward_list::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 345;
+        node-label = 'forward_list<T>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd5/df9/a00044';
+  cp-name   = 'std::forward_list::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 347;
+        node-label = 'forward_list<T>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd6/d97/a00045';
+  cp-name   = 'std::forward_list::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 349;
+        node-label = 'forward_list<T>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/dea/a00054';
+  cp-name   = 'std::fstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'dc/dee/a00053';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 351;
+        node-label = 'fstream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd5/de0/a00050';
+  cp-name   = 'std::ifstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd2/dee/a00049';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 353;
+        node-label = 'ifstream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'db/df3/a00034';
+  cp-name   = 'std::invalid_argument';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'dc/d87/a00032';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 355;
+        node-label = 'invalid_argument';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/d6e/a00073';
+  cp-name   = 'std::ios';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd6/d2d/a00047';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 357;
+        node-label = 'ios';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd3/dea/a00046';
+  cp-name   = 'std::ios_base';
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd6/d2d/a00047';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd6/d2d/a00047';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd6/d2d/a00047';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd6/d2d/a00047';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd6/d2d/a00047';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd6/d2d/a00047';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd6/d2d/a00047';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 359;
+        node-label = 'ios_base';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'df/d61/a00031';
+  cp-name   = 'std::ios_base::failure';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd6/d5b/a00026';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 361;
+        node-label = 'ios_base::failure';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'df/d03/a00062';
+  cp-name   = 'std::istream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd4/dca/a00048';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 363;
+        node-label = 'istream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd9/d73/a00060';
+  cp-name   = 'std::istringstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd3/d8b/a00059';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 365;
+        node-label = 'istringstream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/d8c/a00035';
+  cp-name   = 'std::length_error';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'dc/d87/a00032';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 367;
+        node-label = 'length_error';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd9/da5/a00075';
+  cp-name   = 'std::list';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd9/da5/a00075_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 369;
+        node-label = 'list<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'db/df8/a00076';
+  cp-name   = 'std::list::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 371;
+        node-label = 'list<T>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/d09/a00077';
+  cp-name   = 'std::list::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 373;
+        node-label = 'list<T>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd9/da4/a00078';
+  cp-name   = 'std::list::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 375;
+        node-label = 'list<T>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/d51/a00079';
+  cp-name   = 'std::list::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 377;
+        node-label = 'list<T>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'dc/d87/a00032';
+  cp-name   = 'std::logic_error';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd6/d5b/a00026';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd0/dc0/a00033';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'db/df3/a00034';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd4/d8c/a00035';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'de/d8c/a00036';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 379;
+        node-label = 'logic_error';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'da/dec/a00080';
+  cp-name   = 'std::map';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'da/dec/a00080_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'da/dec/a00080_1a4736f9b2b54dddaa10b54581a23a1789';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+K
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'keys';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 381;
+        node-label = 'map<K, T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd8/d53/a00081';
+  cp-name   = 'std::map::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 383;
+        node-label = 'map<K, T>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/d63/a00082';
+  cp-name   = 'std::map::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 385;
+        node-label = 'map<K, T>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd2/d1f/a00083';
+  cp-name   = 'std::map::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 387;
+        node-label = 'map<K, T>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'df/d5d/a00084';
+  cp-name   = 'std::map::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 389;
+        node-label = 'map<K, T>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'df/d13/a00085';
+  cp-name   = 'std::multimap';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'df/d13/a00085_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'df/d13/a00085_1a4736f9b2b54dddaa10b54581a23a1789';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+K
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'keys';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 391;
+        node-label = 'multimap<K, T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'da/d2a/a00086';
+  cp-name   = 'std::multimap::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 393;
+        node-label = 'multimap<K, T>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/d1e/a00087';
+  cp-name   = 'std::multimap::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 395;
+        node-label = 'multimap<K, T>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'db/ddf/a00088';
+  cp-name   = 'std::multimap::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 397;
+        node-label = 'multimap<K, T>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'db/dab/a00089';
+  cp-name   = 'std::multimap::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 399;
+        node-label = 'multimap<K, T>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd9/dec/a00090';
+  cp-name   = 'std::multiset';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd9/dec/a00090_1a4736f9b2b54dddaa10b54581a23a1789';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+K
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'keys';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 401;
+        node-label = 'multiset<K>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'da/d82/a00091';
+  cp-name   = 'std::multiset::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 403;
+        node-label = 'multiset<K>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/dc1/a00092';
+  cp-name   = 'std::multiset::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 405;
+        node-label = 'multiset<K>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/d7d/a00093';
+  cp-name   = 'std::multiset::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 407;
+        node-label = 'multiset<K>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'dc/d54/a00094';
+  cp-name   = 'std::multiset::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 409;
+        node-label = 'multiset<K>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd9/db3/a00066';
+  cp-name   = 'std::ofstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'de/de1/a00065';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 411;
+        node-label = 'ofstream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd0/d89/a00071';
+  cp-name   = 'std::ostream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'df/d5f/a00064';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 413;
+        node-label = 'ostream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/d31/a00069';
+  cp-name   = 'std::ostringstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'da/d24/a00068';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 415;
+        node-label = 'ostringstream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'de/d8c/a00036';
+  cp-name   = 'std::out_of_range';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'dc/d87/a00032';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 417;
+        node-label = 'out_of_range';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd8/d41/a00038';
+  cp-name   = 'std::overflow_error';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd1/dc6/a00037';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 419;
+        node-label = 'overflow_error';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd9/d77/a00095';
+  cp-name   = 'std::priority_queue';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd9/d77/a00095_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 421;
+        node-label = 'priority_queue<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd9/df8/a00096';
+  cp-name   = 'std::queue';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd9/df8/a00096_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 423;
+        node-label = 'queue<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd3/de7/a00039';
+  cp-name   = 'std::range_error';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd1/dc6/a00037';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 425;
+        node-label = 'range_error';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/dc6/a00037';
+  cp-name   = 'std::runtime_error';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd6/d5b/a00026';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd8/d41/a00038';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'd3/de7/a00039';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'db/d3a/a00040';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 427;
+        node-label = 'runtime_error';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/d84/a00097';
+  cp-name   = 'std::set';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd1/d84/a00097_1a4736f9b2b54dddaa10b54581a23a1789';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+K
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'keys';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 429;
+        node-label = 'set<K>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/d44/a00098';
+  cp-name   = 'std::set::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 431;
+        node-label = 'set<K>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'da/d74/a00099';
+  cp-name   = 'std::set::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 433;
+        node-label = 'set<K>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd0/d61/a00100';
+  cp-name   = 'std::set::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 435;
+        node-label = 'set<K>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/d3a/a00101';
+  cp-name   = 'std::set::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 437;
+        node-label = 'set<K>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd9/dcc/a00102';
+  cp-name   = 'std::smart_ptr';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'd9/dcc/a00102_1af6e485beee07fd401de29c8cdf898c69';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T*
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'operator->';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd9/dcc/a00102_1aa237cc2bf5b88b78926c2b559c16bf13';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ptr';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 439;
+        node-label = 'smart_ptr<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd5/d1e/a00103';
+  cp-name   = 'std::stack';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd5/d1e/a00103_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 441;
+        node-label = 'stack<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd7/dec/a00010';
+  cp-name   = 'std::string';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'da/da0/a00009';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 443;
+        node-label = 'string';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd0/dc2/a00104';
+  cp-name   = 'std::string::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 445;
+        node-label = 'string::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd3/d32/a00105';
+  cp-name   = 'std::string::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 447;
+        node-label = 'string::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd7/d70/a00106';
+  cp-name   = 'std::string::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 449;
+        node-label = 'string::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'df/d98/a00107';
+  cp-name   = 'std::string::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 451;
+        node-label = 'string::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/d22/a00057';
+  cp-name   = 'std::stringstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd9/d2e/a00056';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 453;
+        node-label = 'stringstream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/dd6/a00108';
+  cp-name   = 'std::system_error';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 455;
+        node-label = 'system_error';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'dd/d42/a00109';
+  cp-name   = 'std::thread';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 457;
+        node-label = 'thread';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'db/d3a/a00040';
+  cp-name   = 'std::underflow_error';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd1/dc6/a00037';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 459;
+        node-label = 'underflow_error';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/d81/a00110';
+  cp-name   = 'std::unique_ptr';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'd4/d81/a00110_1af6e485beee07fd401de29c8cdf898c69';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T*
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'operator->';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd4/d81/a00110_1aa237cc2bf5b88b78926c2b559c16bf13';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ptr';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 461;
+        node-label = 'unique_ptr<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'dd/d6d/a00111';
+  cp-name   = 'std::unordered_map';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dd/d6d/a00111_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'dd/d6d/a00111_1a4736f9b2b54dddaa10b54581a23a1789';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+K
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'keys';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 463;
+        node-label = 'unordered_map<K, T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'db/d57/a00112';
+  cp-name   = 'std::unordered_map::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 465;
+        node-label = 'unordered_map<K, T>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd3/d00/a00113';
+  cp-name   = 'std::unordered_map::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 467;
+        node-label = 'unordered_map<K, T>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd8/d17/a00114';
+  cp-name   = 'std::unordered_map::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 469;
+        node-label = 'unordered_map<K, T>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd2/da3/a00115';
+  cp-name   = 'std::unordered_map::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 471;
+        node-label = 'unordered_map<K, T>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/d3e/a00116';
+  cp-name   = 'std::unordered_multimap';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd4/d3e/a00116_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd4/d3e/a00116_1a4736f9b2b54dddaa10b54581a23a1789';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+K
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'keys';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 473;
+        node-label = 'unordered_multimap<K, T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd9/d4b/a00117';
+  cp-name   = 'std::unordered_multimap::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 475;
+        node-label = 'unordered_multimap<K, T>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd8/d87/a00118';
+  cp-name   = 'std::unordered_multimap::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 477;
+        node-label = 'unordered_multimap<K, T>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'df/d6a/a00119';
+  cp-name   = 'std::unordered_multimap::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 479;
+        node-label = 'unordered_multimap<K, T>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/d98/a00120';
+  cp-name   = 'std::unordered_multimap::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 481;
+        node-label = 'unordered_multimap<K, T>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd8/dfa/a00121';
+  cp-name   = 'std::unordered_multiset';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd8/dfa/a00121_1a4736f9b2b54dddaa10b54581a23a1789';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+K
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'keys';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 483;
+        node-label = 'unordered_multiset<K>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'df/dc8/a00122';
+  cp-name   = 'std::unordered_multiset::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 485;
+        node-label = 'unordered_multiset<K>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'de/d36/a00123';
+  cp-name   = 'std::unordered_multiset::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 487;
+        node-label = 'unordered_multiset<K>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'da/d72/a00124';
+  cp-name   = 'std::unordered_multiset::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 489;
+        node-label = 'unordered_multiset<K>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'dc/dfe/a00125';
+  cp-name   = 'std::unordered_multiset::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 491;
+        node-label = 'unordered_multiset<K>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd7/d12/a00126';
+  cp-name   = 'std::unordered_set';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd7/d12/a00126_1a4736f9b2b54dddaa10b54581a23a1789';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+K
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'keys';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 493;
+        node-label = 'unordered_set<K>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'df/dcd/a00127';
+  cp-name   = 'std::unordered_set::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 495;
+        node-label = 'unordered_set<K>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/d88/a00128';
+  cp-name   = 'std::unordered_set::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 497;
+        node-label = 'unordered_set<K>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd9/d47/a00129';
+  cp-name   = 'std::unordered_set::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 499;
+        node-label = 'unordered_set<K>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd6/db3/a00130';
+  cp-name   = 'std::unordered_set::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 501;
+        node-label = 'unordered_set<K>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd7/d06/a00131';
+  cp-name   = 'std::valarray';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd7/d06/a00131_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 503;
+        node-label = 'valarray<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd5/deb/a00132';
+  cp-name   = 'std::vector';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd5/deb/a00132_1af400dbe3fe1572c567f882190c772196';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'elements';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 505;
+        node-label = 'vector<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd0/de8/a00133';
+  cp-name   = 'std::vector::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 507;
+        node-label = 'vector<T>::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'de/d76/a00134';
+  cp-name   = 'std::vector::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 509;
+        node-label = 'vector<T>::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd5/d5b/a00135';
+  cp-name   = 'std::vector::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 511;
+        node-label = 'vector<T>::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd0/d5e/a00136';
+  cp-name   = 'std::vector::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 513;
+        node-label = 'vector<T>::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd2/df5/a00137';
+  cp-name   = 'std::weak_ptr';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'd2/df5/a00137_1af6e485beee07fd401de29c8cdf898c69';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T*
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'operator->';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'd2/df5/a00137_1aa237cc2bf5b88b78926c2b559c16bf13';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+T
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ptr';
+      sec-mem-desc-file = '';
+      sec-mem-desc-line = '1';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+STL member.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 515;
+        node-label = 'weak_ptr<T>';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/d6d/a00055';
+  cp-name   = 'std::wfstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'dc/dee/a00053';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 517;
+        node-label = 'wfstream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd2/d79/a00051';
+  cp-name   = 'std::wifstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd2/dee/a00049';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 519;
+        node-label = 'wifstream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'db/db6/a00074';
+  cp-name   = 'std::wios';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd6/d2d/a00047';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 521;
+        node-label = 'wios';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd1/d6f/a00063';
+  cp-name   = 'std::wistream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd4/dca/a00048';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 523;
+        node-label = 'wistream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/de8/a00061';
+  cp-name   = 'std::wistringstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd3/d8b/a00059';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 525;
+        node-label = 'wistringstream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'dc/ddf/a00067';
+  cp-name   = 'std::wofstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'de/de1/a00065';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 527;
+        node-label = 'wofstream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd6/d2c/a00072';
+  cp-name   = 'std::wostream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'df/d5f/a00064';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 529;
+        node-label = 'wostream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd2/db1/a00070';
+  cp-name   = 'std::wostringstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'da/d24/a00068';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 531;
+        node-label = 'wostringstream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'da/d45/a00011';
+  cp-name   = 'std::wstring';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'da/da0/a00009';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 533;
+        node-label = 'wstring';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd4/ddd/a00138';
+  cp-name   = 'std::wstring::const_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 535;
+        node-label = 'wstring::const_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'de/d14/a00139';
+  cp-name   = 'std::wstring::const_reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 537;
+        node-label = 'wstring::const_reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd5/db1/a00140';
+  cp-name   = 'std::wstring::iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 539;
+        node-label = 'wstring::iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd5/d4e/a00141';
+  cp-name   = 'std::wstring::reverse_iterator';
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL iterator class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 541;
+        node-label = 'wstring::reverse_iterator';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'd7/df7/a00058';
+  cp-name   = 'std::wstringstream';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'd9/d2e/a00056';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '[STL]';
+  cp-fileline  = '1';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+STL class.
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 543;
+        node-label = 'wstringstream';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+file = {
+  file-id   = 'd8/d84/a00001';
+  file-name = 'cdcoeff.c';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd8/d84/a00001_1aebeab242545084906cda6e74300f4011';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'cdcoeff';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'm';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'n';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+double *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'cc';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/cdcoeff.c';
+      func-mem-desc-line = '30';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+calculation of CD coefficients
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param[in] m: order of the derivatives, m=1,2,3,4
+@param[in] n: order of spatial accuray, e.g., n=4, 10
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd8/d84/a00001_1aaa44a6c56572fc4081f172df9aac983f';
+        func-mem-ref-line = '11';
+        func-mem-ref-name = 'factorial';
+    };
+      func-mem-referenceby = {
+        func-mem-ref-id = 'd8/d84/a00001_1ac26bf1b1b45ee7970f3ac54892104b13';
+        func-mem-ref-line = '90';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd8/d84/a00001_1a3ac5877a236e4d1e769ecd715f44b559';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'cdcoeff_stg';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'm';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'n';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+double *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'cc';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/cdcoeff.c';
+      func-mem-desc-line = '79';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd8/d84/a00001_1aaa44a6c56572fc4081f172df9aac983f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'factorial';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'm';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/cdcoeff.c';
+      func-mem-desc-line = '11';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+calculate factorial
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\param[in] m 
+\param[out] fact
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceby = {
+        func-mem-ref-id = 'd8/d84/a00001_1aebeab242545084906cda6e74300f4011';
+        func-mem-ref-line = '30';
+        func-mem-ref-name = 'cdcoeff';
+    };
+      func-mem-referenceby = {
+        func-mem-ref-id = 'd8/d84/a00001_1ac26bf1b1b45ee7970f3ac54892104b13';
+        func-mem-ref-line = '90';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd8/d84/a00001_1ac26bf1b1b45ee7970f3ac54892104b13';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'main';
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/cdcoeff.c';
+      func-mem-desc-line = '90';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd8/d84/a00001_1aaa44a6c56572fc4081f172df9aac983f';
+        func-mem-ref-line = '11';
+        func-mem-ref-name = 'factorial';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd8/d84/a00001_1aebeab242545084906cda6e74300f4011';
+        func-mem-ref-line = '30';
+        func-mem-ref-name = 'cdcoeff';
+    };
+    }; /* func-member */
+    };
+  file-full-name  = '/media/weijia/ANU/exploration/cdmod/src/cdcoeff.c';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'd7/d46/a00002';
+  file-name = 'swcdshot2.cpp';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd7/d46/a00002_1a707cef9b52a1fbb50f69a5bdcdc504fe';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'absorb';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'ntap';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'nx';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'nz';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'taper';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float **
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'p';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+      func-mem-desc-line = '66';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceby = {
+        func-mem-ref-id = 'd7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb';
+        func-mem-ref-line = '81';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd7/d46/a00002_1a334ef00cfa7f725b18826a364b9151d5';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'cd_coeff_scalar';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'np';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'd';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+      func-mem-desc-line = '74';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd7/d46/a00002_1a35ea5f95e81dc63ba8b8002f55d11c7c';
+        func-mem-ref-line = '728';
+        func-mem-ref-name = 'hanning';
+    };
+      func-mem-referenceby = {
+        func-mem-ref-id = 'd7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb';
+        func-mem-ref-line = '81';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd7/d46/a00002_1a77f8852395acfbe8480c185d9a6af713';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'cerjan';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'ntap';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'coeff';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'taper';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+      func-mem-desc-line = '67';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceby = {
+        func-mem-ref-id = 'd7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb';
+        func-mem-ref-line = '81';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd7/d46/a00002_1ad90abc83e502e0cf87b482e8a67bc9e3';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'extenModel';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'nx';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'nz';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'ntap';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float **
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'v';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float **
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'vv';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+      func-mem-desc-line = '64';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceby = {
+        func-mem-ref-id = 'd7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb';
+        func-mem-ref-line = '81';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd7/d46/a00002_1a04b292299a5a7ebbba7b88f61efee2da';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'get_file_snap';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'dest';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+char *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'src';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'num';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+      func-mem-desc-line = '69';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceby = {
+        func-mem-ref-id = 'd7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb';
+        func-mem-ref-line = '81';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd7/d46/a00002_1a35ea5f95e81dc63ba8b8002f55d11c7c';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'hanning';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'n';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'w';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+      func-mem-desc-line = '73';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceby = {
+        func-mem-ref-id = 'd7/d46/a00002_1a334ef00cfa7f725b18826a364b9151d5';
+        func-mem-ref-line = '701';
+        func-mem-ref-name = 'cd_coeff_scalar';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'main';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'argc';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+char **
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'argv';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+      func-mem-desc-line = '81';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd7/d46/a00002_1ad90abc83e502e0cf87b482e8a67bc9e3';
+        func-mem-ref-line = '551';
+        func-mem-ref-name = 'extenModel';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd7/d46/a00002_1a6b20993ec01a368bf2e7936b5b22f1d7';
+        func-mem-ref-line = '520';
+        func-mem-ref-name = 'ricker1_wavelet';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd7/d46/a00002_1a77f8852395acfbe8480c185d9a6af713';
+        func-mem-ref-line = '586';
+        func-mem-ref-name = 'cerjan';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd7/d46/a00002_1a97972f13a27a253327d118dc9a7559c8';
+        func-mem-ref-line = '750';
+        func-mem-ref-name = 'src_spatial_distribution';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd7/d46/a00002_1a334ef00cfa7f725b18826a364b9151d5';
+        func-mem-ref-line = '701';
+        func-mem-ref-name = 'cd_coeff_scalar';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd7/d46/a00002_1a335451e1ec7e61be5649569b8d4b3a3c';
+        func-mem-ref-line = '650';
+        func-mem-ref-name = 'time_one_step_cd';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd7/d46/a00002_1a707cef9b52a1fbb50f69a5bdcdc504fe';
+        func-mem-ref-line = '597';
+        func-mem-ref-name = 'absorb';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd7/d46/a00002_1a04b292299a5a7ebbba7b88f61efee2da';
+        func-mem-ref-line = '639';
+        func-mem-ref-name = 'get_file_snap';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'd7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740';
+        func-mem-ref-line = '79';
+        func-mem-ref-name = 'tr';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd7/d46/a00002_1a6b20993ec01a368bf2e7936b5b22f1d7';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'ricker1_wavelet';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'nt';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'dt';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'fpeak';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'wavelet';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+      func-mem-desc-line = '62';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceby = {
+        func-mem-ref-id = 'd7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb';
+        func-mem-ref-line = '81';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd7/d46/a00002_1a97972f13a27a253327d118dc9a7559c8';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'src_spatial_distribution';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'nx';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'nz';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'ixs';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'izs';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float **
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 's';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+      func-mem-desc-line = '71';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceby = {
+        func-mem-ref-id = 'd7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb';
+        func-mem-ref-line = '81';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'd7/d46/a00002_1a335451e1ec7e61be5649569b8d4b3a3c';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'time_one_step_cd';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'nx';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'nz';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'dt';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'dx';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'dz';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+int
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'np';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float *
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'd';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float **
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'v';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float **
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'pp';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float **
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'pm';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+float **
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'p';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+      func-mem-desc-line = '75';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceby = {
+        func-mem-ref-id = 'd7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb';
+        func-mem-ref-line = '81';
+        func-mem-ref-name = 'main';
+    };
+    }; /* func-member */
+    };
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'd7/d46/a00002_1a381b0229c6cf78ce56a4749e35972291';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+char*
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'sdoc';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+=
+{
+    " 									",
+    " SWFDSHOT2 - Synthetize a 2D shot record with regular grid CD",
+    " 									",
+    " swfdshot2 <file_vel >file_seis nxmod= nzmod=	",
+    " dt= nt= xs= zs= file_snap= [optional parameters]	",
+    " 									",
+    " Required Parameters:							",
+    " <file_vel		file containing velocity model	",
+    " >file_seis		file containing shot record[nx][nt]		",
+    " nxmod=			number of x samples (2nd dimension)		",
+    " nzmod=			number of z samples (1st dimension)		",
+    " file_snap=	snapshot of forward modeling	",
+    " dt= ",
+    " nt= ",
+    " xs=			source x position. if not set, from header	",
+    " zs=0			source z position.	",
+    " 									",
+    " Optional Parameters:							",
+    " mt=1			number of time steps (dt) per output time step	",
+    " dx=10.0		x sampling interval				",
+    " fx=0.0		first x sample					",
+    " dz=10.0		z sampling interval				",
+    " fz=0.0		first z sample					",
+    " 									",
+    " fpeak=20Hz	peak frequency in ricker wavelet		",
+    " fmax=2.0*fpeak	the maximum frequency				",
+    " tdelay=0		time delay for wavelet		",
+    " np=9		    point number of CD operator		",
+    " hsz=			z coordinate of horizontal line of seismograms	",
+    " vsx=			x coordinate of vertical line of seismograms",
+    " 									",
+    " ntap=45		number of grids for taper	",
+    " coeff=0.053	attenuation coefficient	",
+    " verbose=0		=1 for diagnostic messages;	",
+    " 									",
+    " Notes:								",
+    " 									",
+    " Weijia Sun",
+    " Email: swj@mail.iggcas.ac.cn						",
+    " Date: Aug 9, 2012	Rev: 1.0"
+    " 									", 	NULL
+}
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+      var-mem-desc-line = '9';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'd7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+segy
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'tr';
+      var-mem-desc-file = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+      var-mem-desc-line = '79';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-referenceby = {
+        var-mem-ref-id = 'd7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb';
+        var-mem-ref-line = '81';
+        var-mem-ref-name = 'main';
+    };
+    }; /* var-member */
+    };
+  file-full-name  = '/media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */

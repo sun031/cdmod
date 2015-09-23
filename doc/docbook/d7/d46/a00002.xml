@@ -1,0 +1,895 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/d46/a00002">
+    <title>swcdshot2.cpp File Reference</title>
+<para>Include dependency diagram for swcdshot2.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../df/d15/a00416.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for swcdshot2.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d8/de7/a00417.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char* <link linkend="d7/d46/a00002_1a381b0229c6cf78ce56a4749e35972291">sdoc</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>segy <link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/d46/a00002_1a707cef9b52a1fbb50f69a5bdcdc504fe">absorb</link> (
+int ntap, int nx, int nz, float * taper, float ** p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/d46/a00002_1a334ef00cfa7f725b18826a364b9151d5">cd_coeff_scalar</link> (
+int np, float * d)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/d46/a00002_1a77f8852395acfbe8480c185d9a6af713">cerjan</link> (
+int ntap, float coeff, float * taper)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/d46/a00002_1ad90abc83e502e0cf87b482e8a67bc9e3">extenModel</link> (
+int nx, int nz, int ntap, float ** v, float ** vv)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/d46/a00002_1a04b292299a5a7ebbba7b88f61efee2da">get_file_snap</link> (
+char * dest, char * src, int num)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/d46/a00002_1a35ea5f95e81dc63ba8b8002f55d11c7c">hanning</link> (
+int n, float * w)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb">main</link> (
+int argc, char ** argv)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/d46/a00002_1a6b20993ec01a368bf2e7936b5b22f1d7">ricker1_wavelet</link> (
+int nt, float dt, float fpeak, float * wavelet)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/d46/a00002_1a97972f13a27a253327d118dc9a7559c8">src_spatial_distribution</link> (
+int nx, int nz, int ixs, int izs, float ** s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d7/d46/a00002_1a335451e1ec7e61be5649569b8d4b3a3c">time_one_step_cd</link> (
+int nx, int nz, float dt, float dx, float dz, int np, float * d, float ** v, float ** pp, float ** pm, float ** p)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /media/weijia/ANU/exploration/cdmod/src/swcdshot2.cpp</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="preprocessor">#include&#32;&lt;time.h&gt;</emphasis>
+2 <emphasis class="preprocessor">#include&#32;&quot;par.h&quot;</emphasis>
+3 <emphasis class="preprocessor">#include&#32;&quot;su.h&quot;</emphasis>
+4 <emphasis class="preprocessor">#include&#32;&quot;segy.h&quot;</emphasis>
+5 <emphasis class="preprocessor">#include&#32;&quot;mkl_dfti.h&quot;</emphasis>
+6 
+7 <emphasis class="comment">/***********************&#32;self&#32;documentation&#32;**********************/</emphasis>
+8 <emphasis class="keywordtype">char</emphasis>
+<link linkend="d7/d46/a00002_1a381b0229c6cf78ce56a4749e35972291">9 </link>*<link linkend="d7/d46/a00002_1a381b0229c6cf78ce56a4749e35972291">sdoc</link>[]&#32;=
+10 {
+11 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+12 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;SWFDSHOT2&#32;-&#32;Synthetize&#32;a&#32;2D&#32;shot&#32;record&#32;with&#32;regular&#32;grid&#32;CD&quot;</emphasis>,
+13 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+14 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;swfdshot2&#32;&lt;file_vel&#32;&gt;file_seis&#32;nxmod=&#32;nzmod=&#32;&#32;&quot;</emphasis>,
+15 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;dt=&#32;nt=&#32;xs=&#32;zs=&#32;file_snap=&#32;[optional&#32;parameters]&#32;&#32;&quot;</emphasis>,
+16 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+17 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;Required&#32;Parameters:&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+18 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;&lt;file_vel&#32;&#32;&#32;&#32;&#32;file&#32;containing&#32;velocity&#32;model&#32;&#32;&quot;</emphasis>,
+19 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;&gt;file_seis&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;file&#32;containing&#32;shot&#32;record[nx][nt]&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+20 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;nxmod=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;number&#32;of&#32;x&#32;samples&#32;(2nd&#32;dimension)&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+21 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;nzmod=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;number&#32;of&#32;z&#32;samples&#32;(1st&#32;dimension)&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+22 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;file_snap=&#32;&#32;&#32;&#32;snapshot&#32;of&#32;forward&#32;modeling&#32;&#32;&#32;&#32;&quot;</emphasis>,
+23 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;dt=&#32;&quot;</emphasis>,
+24 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;nt=&#32;&quot;</emphasis>,
+25 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;xs=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;source&#32;x&#32;position.&#32;if&#32;not&#32;set,&#32;from&#32;header&#32;&#32;&quot;</emphasis>,
+26 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;zs=0&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;source&#32;z&#32;position.&#32;&#32;&quot;</emphasis>,
+27 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+28 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;Optional&#32;Parameters:&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+29 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;mt=1&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;number&#32;of&#32;time&#32;steps&#32;(dt)&#32;per&#32;output&#32;time&#32;step&#32;&#32;&quot;</emphasis>,
+30 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;dx=10.0&#32;&#32;&#32;&#32;&#32;&#32;&#32;x&#32;sampling&#32;interval&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+31 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;fx=0.0&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;first&#32;x&#32;sample&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+32 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;dz=10.0&#32;&#32;&#32;&#32;&#32;&#32;&#32;z&#32;sampling&#32;interval&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+33 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;fz=0.0&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;first&#32;z&#32;sample&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+34 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+35 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;fpeak=20Hz&#32;&#32;&#32;&#32;peak&#32;frequency&#32;in&#32;ricker&#32;wavelet&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+36 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;fmax=2.0*fpeak&#32;&#32;&#32;&#32;the&#32;maximum&#32;frequency&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+37 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;tdelay=0&#32;&#32;&#32;&#32;&#32;&#32;time&#32;delay&#32;for&#32;wavelet&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+38 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;np=9&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;point&#32;number&#32;of&#32;CD&#32;operator&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+39 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;hsz=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;z&#32;coordinate&#32;of&#32;horizontal&#32;line&#32;of&#32;seismograms&#32;&#32;&quot;</emphasis>,
+40 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;vsx=&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x&#32;coordinate&#32;of&#32;vertical&#32;line&#32;of&#32;seismograms&quot;</emphasis>,
+41 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+42 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;ntap=45&#32;&#32;&#32;&#32;&#32;&#32;&#32;number&#32;of&#32;grids&#32;for&#32;taper&#32;&#32;&#32;&quot;</emphasis>,
+43 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;coeff=0.053&#32;&#32;&#32;attenuation&#32;coefficient&#32;&quot;</emphasis>,
+44 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;verbose=0&#32;&#32;&#32;&#32;&#32;=1&#32;for&#32;diagnostic&#32;messages;&#32;&quot;</emphasis>,
+45 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+46 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;Notes:&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+47 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+48 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;Weijia&#32;Sun&quot;</emphasis>,
+49 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;Email:&#32;swj@mail.iggcas.ac.cn&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,
+50 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;Date:&#32;Aug&#32;9,&#32;2012&#32;Rev:&#32;1.0&quot;</emphasis>
+51 &#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>,&#32;&#32;NULL
+52 };
+53 
+54 <emphasis class="comment">/*</emphasis>
+55 <emphasis class="comment">*&#32;Authors:&#32;&#32;IGGCAS:&#32;Weijia&#32;Sun</emphasis>
+56 <emphasis class="comment">*</emphasis>
+57 <emphasis class="comment">*</emphasis>
+58 <emphasis class="comment">*</emphasis>
+59 <emphasis class="comment">*/</emphasis>
+60 <emphasis class="comment">/****************&#32;end&#32;self&#32;doc&#32;********************************/</emphasis>
+61 
+62 <emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a6b20993ec01a368bf2e7936b5b22f1d7">ricker1_wavelet</link>(<emphasis class="keywordtype">int</emphasis>&#32;nt,&#32;<emphasis class="keywordtype">float</emphasis>&#32;dt,&#32;<emphasis class="keywordtype">float</emphasis>&#32;fpeak,&#32;<emphasis class="keywordtype">float</emphasis>&#32;*wavelet);
+63 
+64 <emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1ad90abc83e502e0cf87b482e8a67bc9e3">extenModel</link>(<emphasis class="keywordtype">int</emphasis>&#32;nx,&#32;<emphasis class="keywordtype">int</emphasis>&#32;nz,&#32;<emphasis class="keywordtype">int</emphasis>&#32;ntap,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**v,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**vv);
+65 
+66 <emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a707cef9b52a1fbb50f69a5bdcdc504fe">absorb</link>(<emphasis class="keywordtype">int</emphasis>&#32;ntap,&#32;<emphasis class="keywordtype">int</emphasis>&#32;nx,&#32;<emphasis class="keywordtype">int</emphasis>&#32;nz,&#32;<emphasis class="keywordtype">float</emphasis>&#32;*taper,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**p);
+67 <emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a77f8852395acfbe8480c185d9a6af713">cerjan</link>(<emphasis class="keywordtype">int</emphasis>&#32;ntap,&#32;<emphasis class="keywordtype">float</emphasis>&#32;coeff,&#32;<emphasis class="keywordtype">float</emphasis>&#32;*taper);
+68 
+69 <emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a04b292299a5a7ebbba7b88f61efee2da">get_file_snap</link>(<emphasis class="keywordtype">char</emphasis>&#32;*dest,&#32;<emphasis class="keywordtype">char</emphasis>&#32;*src,&#32;<emphasis class="keywordtype">int</emphasis>&#32;num);
+70 
+71 <emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a97972f13a27a253327d118dc9a7559c8">src_spatial_distribution</link>(<emphasis class="keywordtype">int</emphasis>&#32;nx,&#32;<emphasis class="keywordtype">int</emphasis>&#32;nz,&#32;<emphasis class="keywordtype">int</emphasis>&#32;ixs,&#32;<emphasis class="keywordtype">int</emphasis>&#32;izs,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**s);
+72 
+73 <emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a35ea5f95e81dc63ba8b8002f55d11c7c">hanning</link>(<emphasis class="keywordtype">int</emphasis>&#32;n,<emphasis class="keywordtype">float</emphasis>&#32;*w);
+74 <emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a334ef00cfa7f725b18826a364b9151d5">cd_coeff_scalar</link>(<emphasis class="keywordtype">int</emphasis>&#32;np,&#32;<emphasis class="keywordtype">float</emphasis>&#32;*d);
+75 <emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a335451e1ec7e61be5649569b8d4b3a3c">time_one_step_cd</link>(<emphasis class="keywordtype">int</emphasis>&#32;nx,&#32;<emphasis class="keywordtype">int</emphasis>&#32;nz,&#32;<emphasis class="keywordtype">float</emphasis>&#32;dt,&#32;<emphasis class="keywordtype">float</emphasis>&#32;dx,&#32;<emphasis class="keywordtype">float</emphasis>&#32;dz,&#32;<emphasis class="keywordtype">int</emphasis>&#32;np,&#32;<emphasis class="keywordtype">float</emphasis>&#32;*d,
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;**v,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**pp,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**pm,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**p);
+77 
+78 
+<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">79 </link>segy&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>;&#32;&#32;&#32;&#32;<emphasis class="comment">/*&#32;horizontal&#32;line&#32;seismogram&#32;traces&#32;*/</emphasis>
+80 
+<link linkend="d7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb">81 </link><emphasis class="keywordtype">int</emphasis>&#32;<link linkend="d7/d46/a00002_1a19d2e3a4f2ab4b079420a1be709d06bb">main</link>(<emphasis class="keywordtype">int</emphasis>&#32;argc,&#32;<emphasis class="keywordtype">char</emphasis>&#32;**argv)
+82 {
+83 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;nx,&#32;nz;
+84 &#32;&#32;&#32;&#32;
+86 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;nxmod,&#32;nzmod;&#32;
+88 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;fx,&#32;fz;
+89 
+90 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;nt;&#32;<emphasis class="comment">/*&#32;number&#32;of&#32;time&#32;sampling*/</emphasis>
+91 
+92 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;it;
+93 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;mt;&#32;<emphasis class="comment">/*every&#32;mt&#32;time&#32;step&#32;to&#32;output&#32;a&#32;snapshot*/</emphasis>
+94 
+95 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ix,&#32;iz;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">/*&#32;counter&#32;*/</emphasis>
+96 
+97 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;*wlvt;&#32;&#32;&#32;&#32;<emphasis class="comment">/*wavelet*/</emphasis>
+98 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;**v;&#32;&#32;<emphasis class="comment">/*velocity&#32;model*/</emphasis>
+99 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;**vv;&#32;<emphasis class="comment">/*velocity&#32;in&#32;calculating&#32;zone*/</emphasis>
+100 
+101 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;**pp,&#32;**p,&#32;**pm;&#32;&#32;<emphasis class="comment">/*wavefield&#32;at&#32;t+dt,&#32;t,&#32;t-dt*/</emphasis>
+102 
+103 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;**s;&#32;&#32;<emphasis class="comment">/*spatial&#32;distribution&#32;of&#32;source*/</emphasis>
+104 
+105 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;**hseis;&#32;&#32;<emphasis class="comment">/*shor&#32;records*/</emphasis>
+106 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;hsz;&#32;&#32;<emphasis class="comment">/*depth&#32;of&#32;seismic&#32;line,&#32;=0&#32;in&#32;this&#32;code*/</emphasis>
+107 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;izhsz;
+108 
+109 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;**vseis;
+110 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;vsx;
+111 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ixvsx;
+112 
+113 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;np;
+114 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;*d;
+115 
+116 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;dx,&#32;dz;&#32;&#32;&#32;<emphasis class="comment">/*space&#32;sampling&#32;interval*/</emphasis>
+117 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;fpeak;&#32;&#32;&#32;&#32;<emphasis class="comment">/*peak&#32;frequency*/</emphasis>
+118 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;fmax;
+119 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;dt;&#32;&#32;&#32;<emphasis class="comment">/*&#32;time&#32;sampling&#32;interval*/</emphasis>
+120 
+121 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;vmin,&#32;vmax;&#32;&#32;&#32;<emphasis class="comment">/*&#32;min&#32;and&#32;max&#32;value&#32;of&#32;velocity*/</emphasis>
+122 
+123 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;tdelay;&#32;&#32;&#32;<emphasis class="comment">/*time&#32;delay&#32;of&#32;wavelet*/</emphasis>
+124 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ntdelay;
+125 
+126 &#32;&#32;&#32;&#32;time_t&#32;t0,&#32;t1,&#32;t2;
+127 
+128 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;dtstable;
+129 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;dxstable;
+130 
+131 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ntap;
+132 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;coeff;
+133 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;*taper;
+134 
+135 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;xs,&#32;zs;
+136 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ixs,&#32;izs;
+137 
+138 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;sx,&#32;gx;
+139 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;isx,&#32;igx;
+140 
+141 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;verbose=0;
+142 
+143 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">char</emphasis>&#32;file_tmp[BUFSIZ];
+144 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">char</emphasis>&#32;*file_snap=<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+145 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">char</emphasis>&#32;*file_vseis=<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+146 
+147 &#32;&#32;&#32;&#32;FILE&#32;*fp_snap&#32;=&#32;NULL;
+148 &#32;&#32;&#32;&#32;FILE&#32;*fp_vel&#32;=&#32;stdin;
+149 &#32;&#32;&#32;&#32;FILE&#32;*fp_seis&#32;=&#32;stdout;
+150 &#32;&#32;&#32;&#32;FILE&#32;*fp_vseis&#32;=&#32;NULL;
+151 
+152 &#32;&#32;&#32;&#32;<emphasis class="comment">//FILE&#32;*fp_hseis&#32;=&#32;stdin;</emphasis>
+153 
+154 &#32;&#32;&#32;&#32;<emphasis class="comment">/*&#32;SEGY&#32;fields&#32;*/</emphasis>
+155 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">long</emphasis>&#32;tracl=0;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">/*&#32;trace&#32;number&#32;within&#32;a&#32;line&#32;*/</emphasis>
+156 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">long</emphasis>&#32;tracr=0;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">/*&#32;trace&#32;number&#32;within&#32;a&#32;reel&#32;*/</emphasis>
+157 
+158 &#32;&#32;&#32;&#32;<emphasis class="comment">/*&#32;hook&#32;up&#32;getpar&#32;to&#32;handle&#32;the&#32;parameters&#32;*/</emphasis>
+159 &#32;&#32;&#32;&#32;initargs(argc,&#32;argv);
+160 &#32;&#32;&#32;&#32;requestdoc(0);
+161 
+162 &#32;&#32;&#32;&#32;t0=time(NULL);
+163 
+164 &#32;&#32;&#32;&#32;<emphasis class="comment">/*&#32;get&#32;required&#32;parameters&#32;*/</emphasis>
+165 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparint(<emphasis class="stringliteral">&quot;nxmod&quot;</emphasis>,&#32;&amp;nxmod))
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;err(<emphasis class="stringliteral">&quot;must&#32;specify&#32;nxmod!\n&quot;</emphasis>);
+167 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparint(<emphasis class="stringliteral">&quot;nzmod&quot;</emphasis>,&#32;&amp;nzmod))
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;err(<emphasis class="stringliteral">&quot;must&#32;specify&#32;nzmod!\n&quot;</emphasis>);
+169 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparstring(<emphasis class="stringliteral">&quot;file_snap&quot;</emphasis>,&#32;&amp;file_snap))
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;err(<emphasis class="stringliteral">&quot;must&#32;specify&#32;file_snap!\n&quot;</emphasis>);
+171 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparstring(<emphasis class="stringliteral">&quot;file_vseis&quot;</emphasis>,&#32;&amp;file_vseis))
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;err(<emphasis class="stringliteral">&quot;must&#32;specify&#32;file_vseis!\n&quot;</emphasis>);
+173 
+174 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;dt&quot;</emphasis>,&#32;&amp;dt))
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;err(<emphasis class="stringliteral">&quot;must&#32;specify&#32;dt!\n&quot;</emphasis>);
+176 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparint(<emphasis class="stringliteral">&quot;nt&quot;</emphasis>,&#32;&amp;nt))
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;err(<emphasis class="stringliteral">&quot;must&#32;specify&#32;nt!\n&quot;</emphasis>);
+178 
+179 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;xs&quot;</emphasis>,&#32;&amp;xs))
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;err(<emphasis class="stringliteral">&quot;must&#32;specify&#32;dt!\n&quot;</emphasis>);
+181 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;zs&quot;</emphasis>,&#32;&amp;zs))
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;err(<emphasis class="stringliteral">&quot;must&#32;specify&#32;dt!\n&quot;</emphasis>);
+183 
+184 &#32;&#32;&#32;&#32;<emphasis class="comment">/*optional&#32;parameters*/</emphasis>
+185 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;dx&quot;</emphasis>,&#32;&amp;dx))
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dx&#32;=&#32;10;
+187 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;dz&quot;</emphasis>,&#32;&amp;dz))
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dz&#32;=&#32;10;
+189 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;fpeak&quot;</emphasis>,&#32;&amp;fpeak))
+190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fpeak&#32;=&#32;25;
+191 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;fmax&quot;</emphasis>,&#32;&amp;fmax))
+192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fmax&#32;=&#32;2.0*fpeak;
+193 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;tdelay&quot;</emphasis>,&#32;&amp;tdelay))
+194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tdelay&#32;=&#32;0;
+195 
+196 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparint(<emphasis class="stringliteral">&quot;np&quot;</emphasis>,&#32;&amp;np))
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;np&#32;=&#32;9;
+198 
+199 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparint(<emphasis class="stringliteral">&quot;mt&quot;</emphasis>,&#32;&amp;mt))
+200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mt&#32;=&#32;1;
+201 
+202 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;coeff&quot;</emphasis>,&#32;&amp;coeff))
+203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coeff&#32;=&#32;0.0053;
+204 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparint(<emphasis class="stringliteral">&quot;ntap&quot;</emphasis>,&#32;&amp;ntap))
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ntap&#32;=&#32;45;
+206 
+207 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;fx&quot;</emphasis>,&#32;&amp;fx))
+208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fx&#32;=&#32;0;
+209 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;fz&quot;</emphasis>,&#32;&amp;fz))
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fz&#32;=&#32;0;
+211 
+212 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;hsz&quot;</emphasis>,&#32;&amp;hsz))
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hsz&#32;=&#32;0;
+214 
+215 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparfloat(<emphasis class="stringliteral">&quot;vsx&quot;</emphasis>,&#32;&amp;vsx))
+216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vsx&#32;=&#32;nxmod/2+ntap;
+217 
+218 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!getparint(<emphasis class="stringliteral">&quot;verbose&quot;</emphasis>,&#32;&amp;verbose))
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;verbose&#32;=&#32;1;
+220 
+221 
+222 &#32;&#32;&#32;&#32;<emphasis class="comment">/************************************************************************/</emphasis>
+223 
+224 &#32;&#32;&#32;&#32;nx&#32;=&#32;nxmod&#32;+&#32;2*ntap;
+225 &#32;&#32;&#32;&#32;nz&#32;=&#32;nzmod&#32;+&#32;2*ntap;
+226 
+227 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(verbose)
+228 &#32;&#32;&#32;&#32;{
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis class="stringliteral">&quot;\nxs=%g\n&quot;</emphasis>,&#32;xs);
+230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis class="stringliteral">&quot;nx=%d,&#32;nz=%d\n&quot;</emphasis>,&#32;nx,&#32;nz);
+231 &#32;&#32;&#32;&#32;}
+232 
+233 &#32;&#32;&#32;&#32;<emphasis class="comment">/************************************************************************/</emphasis>
+234 
+235 
+236 &#32;&#32;&#32;&#32;vv&#32;=&#32;alloc2float(nz,&#32;nx);
+237 &#32;&#32;&#32;&#32;memset((<emphasis class="keywordtype">void</emphasis>&#32;*)&#32;vv[0],&#32;0,&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>)&#32;*&#32;nx&#32;*&#32;nz);
+238 
+239 &#32;&#32;&#32;&#32;pp&#32;=&#32;alloc2float(nz,&#32;nx);
+240 &#32;&#32;&#32;&#32;p&#32;=&#32;alloc2float(nz,&#32;nx);
+241 &#32;&#32;&#32;&#32;pm&#32;=&#32;alloc2float(nz,&#32;nx);
+242 
+243 &#32;&#32;&#32;&#32;memset((<emphasis class="keywordtype">void</emphasis>&#32;*)&#32;pp[0],&#32;0,&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>)&#32;*&#32;nx&#32;*&#32;nz);
+244 &#32;&#32;&#32;&#32;memset((<emphasis class="keywordtype">void</emphasis>&#32;*)&#32;p[0],&#32;0,&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>)&#32;*&#32;nx&#32;*&#32;nz);
+245 &#32;&#32;&#32;&#32;memset((<emphasis class="keywordtype">void</emphasis>&#32;*)&#32;pm[0],&#32;0,&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>)&#32;*&#32;nx&#32;*&#32;nz);
+246 
+247 &#32;&#32;&#32;&#32;s&#32;=&#32;alloc2float(nz,&#32;nx);
+248 &#32;&#32;&#32;&#32;memset((<emphasis class="keywordtype">void</emphasis>&#32;*)s[0],&#32;0,&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>)&#32;*&#32;nx&#32;*nz);
+249 
+250 &#32;&#32;&#32;&#32;hseis=alloc2float(nt,&#32;nx);
+251 &#32;&#32;&#32;&#32;memset((<emphasis class="keywordtype">void</emphasis>&#32;*)hseis[0],&#32;0,&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>)*nx*nt);
+252 
+253 &#32;&#32;&#32;&#32;vseis=alloc2float(nt,&#32;nz);
+254 &#32;&#32;&#32;&#32;memset((<emphasis class="keywordtype">void</emphasis>&#32;*)vseis[0],&#32;0,&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>)*nz*nt);
+255 
+256 &#32;&#32;&#32;&#32;taper=alloc1float(ntap);
+257 &#32;&#32;&#32;&#32;memset((<emphasis class="keywordtype">void</emphasis>&#32;*)taper,&#32;0,&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>)*ntap);
+258 
+259 
+260 &#32;&#32;&#32;&#32;v&#32;=&#32;alloc2float(nzmod,&#32;nxmod);
+261 &#32;&#32;&#32;&#32;memset((<emphasis class="keywordtype">void</emphasis>&#32;*)&#32;v[0],&#32;0,&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>)&#32;*&#32;nxmod&#32;*&#32;nzmod);
+262 
+263 &#32;&#32;&#32;&#32;d&#32;=&#32;alloc1float(np);
+264 
+265 &#32;&#32;&#32;&#32;<emphasis class="comment">/*&#32;read&#32;velocities&#32;*/</emphasis>
+266 &#32;&#32;&#32;&#32;efread(v[0],<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>),nxmod*nzmod,fp_vel);
+267 &#32;&#32;&#32;&#32;efclose(fp_vel);
+268 
+269 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;nx-2*ntap;&#32;ix++)
+270 &#32;&#32;&#32;&#32;{
+271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;nz-2*ntap;&#32;iz++)
+272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vv[ntap+ix][ntap+iz]&#32;=&#32;v[ix][iz];
+274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+275 &#32;&#32;&#32;&#32;}
+276 
+277 &#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1ad90abc83e502e0cf87b482e8a67bc9e3">extenModel</link>(nx,&#32;nz,&#32;ntap,&#32;vv,&#32;vv);
+278 &#32;&#32;&#32;&#32;vmin=vmax=vv[0][0];
+279 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix&#32;=&#32;0;&#32;ix&#32;&lt;&#32;nx;&#32;ix++)
+280 &#32;&#32;&#32;&#32;{
+281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz&#32;=&#32;0;&#32;iz&#32;&lt;&#32;nz;&#32;iz++)
+282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vmin=MIN(vmin,&#32;vv[ix][iz]);
+284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vmax=MAX(vmax,&#32;vv[ix][iz]);
+285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+286 &#32;&#32;&#32;&#32;}
+287 
+288 &#32;&#32;&#32;&#32;fprintf(stderr,<emphasis class="stringliteral">&quot;vmin=%g,&#32;vmax=%g\n&quot;</emphasis>,&#32;vmin,&#32;vmax);
+289 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>(vmin==0)
+290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;err(<emphasis class="stringliteral">&quot;error.&#32;vmin=%g&quot;</emphasis>,vmin);
+291 
+292 &#32;&#32;&#32;&#32;<emphasis class="comment">/*stable&#32;condtions*/</emphasis>
+293 &#32;&#32;&#32;&#32;dxstable=vmin/(2*fmax);
+294 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(MAX(dx,&#32;dz)&gt;dxstable)
+295 &#32;&#32;&#32;&#32;{
+296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;warn(<emphasis class="stringliteral">&quot;stable&#32;grid&#32;size&#32;must&#32;be&#32;smaller&#32;than&#32;%g&quot;</emphasis>,&#32;dxstable);
+297 &#32;&#32;&#32;&#32;}
+298 
+299 &#32;&#32;&#32;&#32;<emphasis class="comment">//dtstable=sqrt(2)*MIN(dx,&#32;dz)/(PI*vmax);</emphasis>
+300 &#32;&#32;&#32;&#32;dtstable&#32;=&#32;1.0/1.3167/vmax/sqrt(1./dx/dx+1./dz/dz);
+301 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(dt&gt;dtstable)
+302 &#32;&#32;&#32;&#32;{
+303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;err(<emphasis class="stringliteral">&quot;unstable.&#32;dt&#32;must&#32;be&#32;smaller&#32;than&#32;%g&quot;</emphasis>,&#32;dtstable);
+304 &#32;&#32;&#32;&#32;}
+305 
+306 &#32;&#32;&#32;&#32;<emphasis class="comment">/*source*/</emphasis>
+307 &#32;&#32;&#32;&#32;ntdelay=tdelay/dt;
+308 &#32;&#32;&#32;&#32;wlvt&#32;=&#32;alloc1float(nt+ntdelay);
+309 &#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a6b20993ec01a368bf2e7936b5b22f1d7">ricker1_wavelet</link>(nt+ntdelay,&#32;dt,&#32;fpeak,&#32;wlvt);
+310 
+311 &#32;&#32;&#32;&#32;ixs&#32;=&#32;(int)&#32;((xs-fx)&#32;/&#32;dx)&#32;+&#32;ntap;
+312 &#32;&#32;&#32;&#32;izs&#32;=&#32;(int)&#32;((zs-fz)&#32;/&#32;dz)&#32;+&#32;ntap;
+313 &#32;&#32;&#32;&#32;izhsz&#32;=&#32;(int)&#32;((hsz-fz)&#32;/&#32;dz)&#32;+&#32;ntap;
+314 &#32;&#32;&#32;&#32;ixvsx&#32;=&#32;(int)&#32;((vsx-fx)&#32;/&#32;dx)&#32;+&#32;ntap;
+315 
+316 &#32;&#32;&#32;&#32;warn(<emphasis class="stringliteral">&quot;ixs=%d,&#32;izs=%d\n&quot;</emphasis>,&#32;ixs,&#32;izs);
+317 
+318 &#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a77f8852395acfbe8480c185d9a6af713">cerjan</link>(ntap,&#32;coeff,&#32;taper);
+319 &#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a97972f13a27a253327d118dc9a7559c8">src_spatial_distribution</link>(nx,&#32;nz,&#32;ixs,&#32;izs,&#32;s);
+320 
+321 &#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a334ef00cfa7f725b18826a364b9151d5">cd_coeff_scalar</link>(np,&#32;d);
+322 
+323 <emphasis class="comment">//&#32;&#32;&#32;&#32;for(ix=0;&#32;ix&lt;np;&#32;ix++)</emphasis>
+324 <emphasis class="comment">//&#32;&#32;&#32;&#32;{</emphasis>
+325 <emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;warn(&quot;d[%d]=%g\n&quot;,&#32;ix,&#32;d[ix]);</emphasis>
+326 <emphasis class="comment">//&#32;&#32;&#32;&#32;}</emphasis>
+327 
+328 &#32;&#32;&#32;&#32;<emphasis class="comment">/*verbose*/</emphasis>
+329 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(verbose)
+330 &#32;&#32;&#32;&#32;{
+331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis class="stringliteral">&quot;nx=%d&#32;nz=%d\n&quot;</emphasis>,&#32;nx,&#32;nz);
+332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis class="stringliteral">&quot;ntap=%d&#32;coeff=%g\n&quot;</emphasis>,&#32;ntap,&#32;coeff);
+333 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis class="stringliteral">&quot;dtstable=%g&#32;dxstable=%g\n&quot;</emphasis>,&#32;dtstable,&#32;dxstable);
+334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis class="stringliteral">&quot;dt=%g&#32;dx=%g&#32;dz=%g\n&quot;</emphasis>,&#32;dt,&#32;dx,&#32;dz);
+335 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis class="stringliteral">&quot;ntdelay=%d&#32;tdelay=%g\n&quot;</emphasis>,&#32;ntdelay,&#32;tdelay);
+336 &#32;&#32;&#32;&#32;}
+337 
+338 &#32;&#32;&#32;&#32;memset((<emphasis class="keywordtype">void</emphasis>&#32;*)&#32;pp[0],&#32;0,&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>)&#32;*&#32;nx&#32;*&#32;nz);
+339 &#32;&#32;&#32;&#32;memset((<emphasis class="keywordtype">void</emphasis>&#32;*)&#32;p[0],&#32;0,&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>)&#32;*&#32;nx&#32;*&#32;nz);
+340 &#32;&#32;&#32;&#32;memset((<emphasis class="keywordtype">void</emphasis>&#32;*)&#32;pm[0],&#32;0,&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>)&#32;*&#32;nx&#32;*&#32;nz);
+341 
+342 &#32;&#32;&#32;&#32;t2=time(NULL);
+343 
+344 &#32;&#32;&#32;&#32;warn(<emphasis class="stringliteral">&quot;preprocessing&#32;time&#32;cost(s):%f&quot;</emphasis>,&#32;difftime(t2,t0));
+345 
+346 &#32;&#32;&#32;&#32;<emphasis class="comment">/*forward&#32;modeling*/</emphasis>
+347 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(it=0;&#32;it&lt;ntdelay;&#32;it++)
+348 &#32;&#32;&#32;&#32;{
+349 
+350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;nx;&#32;ix++)
+351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;nz;&#32;iz++)
+353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;p[ix][iz]&#32;+=&#32;wlvt[it]*s[ix][iz];
+355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+357 
+358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a335451e1ec7e61be5649569b8d4b3a3c">time_one_step_cd</link>(nx,&#32;nz,&#32;dt,&#32;dx,&#32;dz,&#32;np,&#32;d,&#32;vv,&#32;pp,&#32;pm,&#32;p);
+359 
+360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a707cef9b52a1fbb50f69a5bdcdc504fe">absorb</link>(ntap,&#32;nx,&#32;nz,&#32;taper,&#32;pm);
+361 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a707cef9b52a1fbb50f69a5bdcdc504fe">absorb</link>(ntap,&#32;nx,&#32;nz,&#32;taper,&#32;p);
+362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a707cef9b52a1fbb50f69a5bdcdc504fe">absorb</link>(ntap,&#32;nx,&#32;nz,&#32;taper,&#32;pp);
+363 
+364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;nx;&#32;ix++)
+365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;nz;&#32;iz++)
+367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pm[ix][iz]&#32;=&#32;p[ix][iz];
+369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;p[ix][iz]&#32;=&#32;pp[ix][iz];
+370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+372 
+373 &#32;&#32;&#32;&#32;}
+374 
+375 &#32;&#32;&#32;&#32;t1=time(NULL);
+376 
+377 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(it&#32;=&#32;0;&#32;it&#32;&lt;&#32;nt;&#32;it++)
+378 &#32;&#32;&#32;&#32;{
+379 
+380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(verbose&#32;&amp;&amp;&#32;(it%100==0)&#32;)
+381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;t2&#32;=&#32;time(NULL);
+383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;warn(<emphasis class="stringliteral">&quot;it=%d,&#32;nt=%d,&#32;time1=%g,&#32;time2=%g&quot;</emphasis>,&#32;it,&#32;nt,&#32;difftime(t2,&#32;t1),&#32;difftime(t2,&#32;t0));
+384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+385 
+386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;nx;&#32;ix++)
+387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;nz;&#32;iz++)
+389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;p[ix][iz]&#32;+=&#32;wlvt[it+ntdelay]*s[ix][iz];
+391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+393 
+394 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a335451e1ec7e61be5649569b8d4b3a3c">time_one_step_cd</link>(nx,&#32;nz,&#32;dt,&#32;dx,&#32;dz,&#32;np,&#32;d,&#32;vv,&#32;pp,&#32;pm,&#32;p);
+395 
+396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a707cef9b52a1fbb50f69a5bdcdc504fe">absorb</link>(ntap,&#32;nx,&#32;nz,&#32;taper,&#32;pm);
+397 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a707cef9b52a1fbb50f69a5bdcdc504fe">absorb</link>(ntap,&#32;nx,&#32;nz,&#32;taper,&#32;p);
+398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a707cef9b52a1fbb50f69a5bdcdc504fe">absorb</link>(ntap,&#32;nx,&#32;nz,&#32;taper,&#32;pp);
+399 
+400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;nx;&#32;ix++)
+401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;nz;&#32;iz++)
+403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pm[ix][iz]&#32;=&#32;p[ix][iz];
+405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;p[ix][iz]&#32;=&#32;pp[ix][iz];
+406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+408 
+409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;nx;&#32;ix++)
+410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hseis[ix][it]&#32;=&#32;p[ix][izhsz];
+412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>(iz=0;&#32;iz&lt;nz;&#32;iz++)
+414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vseis[iz][it]&#32;=&#32;p[ixvsx][iz];
+416 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+417 
+418 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(it&#32;%&#32;mt&#32;==&#32;0)
+419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+420 
+421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;nxmod;&#32;ix++)
+422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;nzmod;&#32;iz++)
+424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v[ix][iz]&#32;=&#32;p[ntap+ix][ntap+iz];
+426 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+428 
+429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a04b292299a5a7ebbba7b88f61efee2da">get_file_snap</link>(file_tmp,&#32;file_snap,&#32;it);
+430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fp_snap&#32;=&#32;efopen(file_tmp,&#32;<emphasis class="stringliteral">&quot;w&quot;</emphasis>);
+431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;efwrite((<emphasis class="keywordtype">void</emphasis>&#32;*)&#32;v[0],&#32;<emphasis class="keyword">sizeof</emphasis>(<emphasis class="keywordtype">float</emphasis>),&#32;nxmod&#32;*&#32;nzmod,&#32;fp_snap);
+432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;efclose(fp_snap);
+433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+434 
+435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(verbose&#32;&amp;&amp;&#32;(it%100==0)&#32;)
+436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;t1&#32;=&#32;time(NULL);
+438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+439 
+440 &#32;&#32;&#32;&#32;}&#32;<emphasis class="comment">/*end&#32;of&#32;time&#32;loop*/</emphasis>
+441 &#32;&#32;&#32;&#32;<emphasis class="comment">/*end&#32;of&#32;forward&#32;modeling*/</emphasis>
+442 
+443 &#32;&#32;&#32;&#32;warn(<emphasis class="stringliteral">&quot;Writing&#32;final&#32;shot&#32;records...&quot;</emphasis>);
+444 
+445 &#32;&#32;&#32;&#32;<emphasis class="comment">/************************************************************************/</emphasis>
+446 &#32;&#32;&#32;&#32;fp_vseis&#32;=&#32;efopen(file_vseis,&#32;<emphasis class="stringliteral">&quot;w&quot;</emphasis>);
+447 
+448 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=ntap;&#32;ix&lt;nx-ntap;&#32;ix++)
+449 &#32;&#32;&#32;&#32;{
+450 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.ns&#32;=&#32;nt;
+451 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.dt&#32;=&#32;dt*1000000;
+452 
+453 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//tr.fldr&#32;=&#32;ixs-ntap;</emphasis>
+454 
+455 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.sx&#32;=&#32;fx&#32;+&#32;(float)(ixs-ntap)*dx;
+456 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.sy&#32;=&#32;fx&#32;+&#32;(float)(izs-ntap)*dz;
+457 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.gx&#32;=&#32;fx&#32;+&#32;(float)(ix-ntap)*dx;
+458 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.gy&#32;=&#32;fx&#32;+&#32;(float)(izhsz-ntap)*dz;
+459 
+460 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//tr.cdp&#32;=&#32;(tr.sx+tr.gx)/2;</emphasis>
+461 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//tr.offset&#32;=&#32;tr.gx-tr.sx;</emphasis>
+462 
+463 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.d1=dz;
+464 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.d2=dx;
+465 
+466 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//tracl++;</emphasis>
+467 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//tr.tracl=tracl;</emphasis>
+468 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(it=0;&#32;it&lt;nt;&#32;it++)
+469 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+470 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.data[it]&#32;=&#32;hseis[ix][it];
+471 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+472 
+473 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fputtr(fp_seis,&#32;&amp;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>);
+474 
+475 &#32;&#32;&#32;&#32;}
+476 
+477 &#32;&#32;&#32;&#32;<emphasis class="comment">//tracl=0;</emphasis>
+478 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=ntap;&#32;iz&lt;nz-ntap;&#32;iz++)
+479 &#32;&#32;&#32;&#32;{
+480 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.ns&#32;=&#32;nt;
+481 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.dt&#32;=&#32;dt*1000000;
+482 
+483 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.sx&#32;=&#32;fx&#32;+&#32;(float)(ixs-ntap)*dx;
+484 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.sy&#32;=&#32;fx&#32;+&#32;(float)(izs-ntap)*dz;
+485 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.gx&#32;=&#32;fx&#32;+&#32;(float)(ixvsx-ntap)*dx;
+486 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.gy&#32;=&#32;fx&#32;+&#32;(float)(iz-ntap)*dz;
+487 
+488 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.d1=dz;
+489 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.d2=dx;
+490 
+491 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//tracl++;</emphasis>
+492 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//tr.tracl=tracl;</emphasis>
+493 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(it=0;&#32;it&lt;nt;&#32;it++)
+494 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+495 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>.data[it]&#32;=&#32;vseis[iz][it];
+496 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+497 
+498 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fputtr(fp_vseis,&#32;&amp;<link linkend="d7/d46/a00002_1a21ee33da3f54e2ea55665c50bfebd740">tr</link>);
+499 
+500 &#32;&#32;&#32;&#32;}
+501 &#32;&#32;&#32;&#32;<emphasis class="comment">/*free&#32;memory*/</emphasis>
+502 &#32;&#32;&#32;&#32;free2float(vv);
+503 &#32;&#32;&#32;&#32;free2float(pp);
+504 &#32;&#32;&#32;&#32;free2float(p);
+505 &#32;&#32;&#32;&#32;free2float(pm);
+506 &#32;&#32;&#32;&#32;free1float(taper);
+507 &#32;&#32;&#32;&#32;free2float(hseis);
+508 &#32;&#32;&#32;&#32;free2float(vseis);
+509 &#32;&#32;&#32;&#32;free2float(v);
+510 &#32;&#32;&#32;&#32;free2float(s);
+511 
+512 &#32;&#32;&#32;&#32;t2=time(NULL);
+513 &#32;&#32;&#32;&#32;warn(<emphasis class="stringliteral">&quot;total&#32;time:&#32;%g&quot;</emphasis>,&#32;difftime(t2,t0));
+514 
+515 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;0;
+516 }
+517 
+518 
+519 
+<link linkend="d7/d46/a00002_1a6b20993ec01a368bf2e7936b5b22f1d7">520 </link><emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a6b20993ec01a368bf2e7936b5b22f1d7">ricker1_wavelet</link>(<emphasis class="keywordtype">int</emphasis>&#32;nt,&#32;<emphasis class="keywordtype">float</emphasis>&#32;dt,&#32;<emphasis class="keywordtype">float</emphasis>&#32;fpeak,&#32;<emphasis class="keywordtype">float</emphasis>&#32;*wavelet)
+521 <emphasis class="comment">/******************************************************************************</emphasis>
+522 <emphasis class="comment">ricker_wavelet&#32;--&#32;Compute&#32;the&#32;&#32;&#32;time&#32;response&#32;of&#32;a&#32;source&#32;function&#32;as</emphasis>
+523 <emphasis class="comment">a&#32;Ricker&#32;wavelet&#32;with&#32;peak&#32;frequency&#32;&quot;fpeak&quot;&#32;Hz.</emphasis>
+524 <emphasis class="comment">*******************************************************************************</emphasis>
+525 <emphasis class="comment">Input:</emphasis>
+526 <emphasis class="comment">int&#32;nt&#32;&#32;&#32;&#32;&#32;&#32;number&#32;samples&#32;in&#32;output&#32;wavelet</emphasis>
+527 <emphasis class="comment">float&#32;dt&#32;&#32;&#32;&#32;time&#32;step</emphasis>
+528 <emphasis class="comment">float&#32;fpeak&#32;peak&#32;frequency&#32;of&#32;the&#32;Ricker&#32;wavelet</emphasis>
+529 <emphasis class="comment"></emphasis>
+530 <emphasis class="comment">*******************************************************************************</emphasis>
+531 <emphasis class="comment">Output:</emphasis>
+532 <emphasis class="comment">float&#32;wavelet&#32;&#32;&#32;array[nt]&#32;of&#32;computed&#32;wavelet</emphasis>
+533 <emphasis class="comment"></emphasis>
+534 <emphasis class="comment">*******************************************************************************</emphasis>
+535 <emphasis class="comment">Author:&#32;Tong&#32;Fei,&#32;1993,&#32;Colorado&#32;School&#32;of&#32;Mines.</emphasis>
+536 <emphasis class="comment">******************************************************************************/</emphasis>
+537 {
+538 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;it;
+539 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;t1,&#32;t0;
+540 
+541 &#32;&#32;&#32;&#32;t0&#32;=&#32;1.0&#32;/&#32;fpeak;
+542 
+543 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(it&#32;=&#32;0;&#32;it&#32;&lt;&#32;nt;&#32;it++)
+544 &#32;&#32;&#32;&#32;{
+545 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;t1&#32;=&#32;it&#32;*&#32;dt;
+546 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;wavelet[it]&#32;=&#32;exp(-PI&#32;*&#32;PI&#32;*&#32;fpeak&#32;*&#32;fpeak&#32;*&#32;(t1&#32;-&#32;t0)&#32;*&#32;(t1&#32;-&#32;t0))
+547 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;(1.0&#32;-&#32;2.&#32;*&#32;PI&#32;*&#32;PI&#32;*&#32;fpeak&#32;*&#32;fpeak&#32;*&#32;(t1&#32;-&#32;t0)&#32;*&#32;(t1&#32;-&#32;t0));
+548 &#32;&#32;&#32;&#32;}
+549 }
+550 
+<link linkend="d7/d46/a00002_1ad90abc83e502e0cf87b482e8a67bc9e3">551 </link><emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1ad90abc83e502e0cf87b482e8a67bc9e3">extenModel</link>(<emphasis class="keywordtype">int</emphasis>&#32;nx,&#32;<emphasis class="keywordtype">int</emphasis>&#32;nz,&#32;<emphasis class="keywordtype">int</emphasis>&#32;ntap,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**v,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**vv)
+552 {
+553 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ix,&#32;iz;
+554 
+555 &#32;&#32;&#32;&#32;<emphasis class="comment">/*internal&#32;zone*/</emphasis>
+556 &#32;&#32;&#32;&#32;<emphasis class="comment">//for&#32;(ix=0;&#32;ix&lt;nx-2*ntap;&#32;ix++)</emphasis>
+557 &#32;&#32;&#32;&#32;<emphasis class="comment">//{</emphasis>
+558 &#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;for&#32;(iz=0;&#32;iz&lt;nz-2*ntap;&#32;iz++)</emphasis>
+559 &#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;{</emphasis>
+560 &#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;vv[ix+ntap][iz+ntap]&#32;=&#32;v[ix][iz];</emphasis>
+561 &#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;}</emphasis>
+562 &#32;&#32;&#32;&#32;<emphasis class="comment">//}</emphasis>
+563 
+564 &#32;&#32;&#32;&#32;<emphasis class="comment">/*upper&#32;and&#32;lower&#32;boundary*/</emphasis>
+565 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;nx;&#32;ix++)
+566 &#32;&#32;&#32;&#32;{
+567 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;ntap;&#32;iz++)
+568 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+569 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vv[ix][iz]&#32;=&#32;vv[ix][ntap];
+570 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vv[ix][nz-iz-1]&#32;=&#32;vv[ix][nz-ntap-1];
+571 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+572 &#32;&#32;&#32;&#32;}
+573 
+574 &#32;&#32;&#32;&#32;<emphasis class="comment">/*left&#32;and&#32;right&#32;boundary*/</emphasis>
+575 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;ntap;&#32;ix++)
+576 &#32;&#32;&#32;&#32;{
+577 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;nz;&#32;iz++)
+578 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+579 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vv[ix][iz]&#32;=&#32;vv[ntap][iz];
+580 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vv[nx-ix-1][iz]&#32;=&#32;vv[nx-ntap-1][iz];
+581 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+582 &#32;&#32;&#32;&#32;}
+583 
+584 }
+585 
+<link linkend="d7/d46/a00002_1a77f8852395acfbe8480c185d9a6af713">586 </link><emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a77f8852395acfbe8480c185d9a6af713">cerjan</link>(<emphasis class="keywordtype">int</emphasis>&#32;ntap,&#32;<emphasis class="keywordtype">float</emphasis>&#32;coeff,&#32;<emphasis class="keywordtype">float</emphasis>&#32;*taper)
+587 {
+588 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;i;
+589 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;a;
+590 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(i=0;&#32;i&lt;ntap;&#32;i++)
+591 &#32;&#32;&#32;&#32;{
+592 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;a&#32;=&#32;(float)(ntap-i)*(float)(ntap-i);
+593 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;taper[i]&#32;=&#32;exp(-coeff*coeff*a);
+594 &#32;&#32;&#32;&#32;}
+595 }
+596 
+<link linkend="d7/d46/a00002_1a707cef9b52a1fbb50f69a5bdcdc504fe">597 </link><emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a707cef9b52a1fbb50f69a5bdcdc504fe">absorb</link>(<emphasis class="keywordtype">int</emphasis>&#32;ntap,&#32;<emphasis class="keywordtype">int</emphasis>&#32;nx,&#32;<emphasis class="keywordtype">int</emphasis>&#32;nz,&#32;<emphasis class="keywordtype">float</emphasis>&#32;*taper,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**p)
+598 {
+599 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ix,&#32;iz;
+600 &#32;&#32;&#32;&#32;<emphasis class="comment">/*&#32;upper&#32;boundary&#32;*/</emphasis>
+601 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;nx;&#32;ix++)
+602 &#32;&#32;&#32;&#32;{
+603 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;ntap;&#32;iz++)
+604 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+605 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;p[ix][iz]&#32;*=&#32;taper[iz];
+606 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+607 &#32;&#32;&#32;&#32;}
+608 
+609 &#32;&#32;&#32;&#32;<emphasis class="comment">/*&#32;left&#32;boundary&#32;*/</emphasis>
+610 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;ntap;&#32;ix++)
+611 &#32;&#32;&#32;&#32;{
+612 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;nz;&#32;iz++)
+613 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+614 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;p[ix][iz]&#32;*=&#32;taper[ix];
+615 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+616 &#32;&#32;&#32;&#32;}
+617 
+618 &#32;&#32;&#32;&#32;<emphasis class="comment">/*lower&#32;boundary*/</emphasis>
+619 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;nx;&#32;ix++)
+620 &#32;&#32;&#32;&#32;{
+621 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;ntap;&#32;iz++)
+622 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+623 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;p[ix][nz-iz-1]&#32;*=&#32;taper[iz];
+624 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+625 &#32;&#32;&#32;&#32;}
+626 
+627 &#32;&#32;&#32;&#32;<emphasis class="comment">/*right&#32;boundary*/</emphasis>
+628 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;ntap;&#32;ix++)
+629 &#32;&#32;&#32;&#32;{
+630 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;nz;&#32;iz++)
+631 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+632 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;p[nx-ix-1][iz]&#32;*=&#32;taper[ix];
+633 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+634 &#32;&#32;&#32;&#32;}
+635 
+636 &#32;&#32;&#32;&#32;<emphasis class="comment">/*end&#32;of&#32;absorb()*/</emphasis>
+637 }
+638 
+<link linkend="d7/d46/a00002_1a04b292299a5a7ebbba7b88f61efee2da">639 </link><emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a04b292299a5a7ebbba7b88f61efee2da">get_file_snap</link>(<emphasis class="keywordtype">char</emphasis>&#32;*dest,&#32;<emphasis class="keywordtype">char</emphasis>&#32;*src,&#32;<emphasis class="keywordtype">int</emphasis>&#32;num)
+640 {
+641 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">char</emphasis>&#32;a[10];
+642 &#32;&#32;&#32;&#32;strcpy(dest,&#32;src);
+643 &#32;&#32;&#32;&#32;strcat(dest,&#32;<emphasis class="stringliteral">&quot;_t&quot;</emphasis>);
+644 &#32;&#32;&#32;&#32;sprintf(a,&#32;<emphasis class="stringliteral">&quot;%05d&quot;</emphasis>,&#32;num);
+645 &#32;&#32;&#32;&#32;strcat(dest,&#32;a);
+646 &#32;&#32;&#32;&#32;strcat(dest,&#32;<emphasis class="stringliteral">&quot;.bin&quot;</emphasis>);
+647 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
+648 }
+649 
+<link linkend="d7/d46/a00002_1a335451e1ec7e61be5649569b8d4b3a3c">650 </link><emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a335451e1ec7e61be5649569b8d4b3a3c">time_one_step_cd</link>(<emphasis class="keywordtype">int</emphasis>&#32;nx,&#32;<emphasis class="keywordtype">int</emphasis>&#32;nz,&#32;<emphasis class="keywordtype">float</emphasis>&#32;dt,&#32;<emphasis class="keywordtype">float</emphasis>&#32;dx,&#32;<emphasis class="keywordtype">float</emphasis>&#32;dz,&#32;<emphasis class="keywordtype">int</emphasis>&#32;np,&#32;<emphasis class="keywordtype">float</emphasis>&#32;*d,
+651 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;**v,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**pp,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**pm,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**p)
+652 <emphasis class="comment">/******************************************************************************</emphasis>
+653 <emphasis class="comment">time_one_step&#32;--&#32;compute&#32;wavefield&#32;of&#32;one&#32;time&#32;step.</emphasis>
+654 <emphasis class="comment">*******************************************************************************</emphasis>
+655 <emphasis class="comment">Input:</emphasis>
+656 <emphasis class="comment">int&#32;nx&#32;&#32;&#32;&#32;&#32;&#32;number&#32;samples&#32;in&#32;x&#32;direction</emphasis>
+657 <emphasis class="comment">int&#32;nz&#32;&#32;&#32;&#32;&#32;&#32;number&#32;samples&#32;in&#32;z&#32;direction</emphasis>
+658 <emphasis class="comment">float&#32;dt&#32;&#32;&#32;&#32;time&#32;step</emphasis>
+659 <emphasis class="comment">float&#32;dx&#32;&#32;&#32;&#32;x&#32;space&#32;step</emphasis>
+660 <emphasis class="comment">float&#32;dz&#32;&#32;&#32;&#32;z&#32;space&#32;step</emphasis>
+661 <emphasis class="comment">float&#32;**v&#32;&#32;&#32;velocity&#32;model&#32;with&#32;v[nx][nz]</emphasis>
+662 <emphasis class="comment">float&#32;**pp&#32;&#32;pressure&#32;wavefiled&#32;at&#32;t+dt</emphasis>
+663 <emphasis class="comment">float&#32;**pm&#32;&#32;pressure&#32;wavefiled&#32;at&#32;t-dt</emphasis>
+664 <emphasis class="comment">float&#32;**p&#32;&#32;&#32;pressure&#32;wavefiled&#32;at&#32;t</emphasis>
+665 <emphasis class="comment"></emphasis>
+666 <emphasis class="comment">*******************************************************************************</emphasis>
+667 <emphasis class="comment">Output:</emphasis>
+668 <emphasis class="comment">float&#32;**p&#32;&#32;&#32;computed&#32;pressure&#32;wavefiled&#32;p</emphasis>
+669 <emphasis class="comment"></emphasis>
+670 <emphasis class="comment">*******************************************************************************</emphasis>
+671 <emphasis class="comment">Author:&#32;Weijia&#32;Sun,&#32;2011,&#32;IGGCAS.</emphasis>
+672 <emphasis class="comment">******************************************************************************/</emphasis>
+673 {
+674 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ix,&#32;iz;
+675 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;dtdx,&#32;dtdz;
+676 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;diffx,&#32;diffz;
+677 
+678 &#32;&#32;&#32;&#32;dtdx&#32;=&#32;dt*dt/dx/dx;
+679 &#32;&#32;&#32;&#32;dtdz&#32;=&#32;dt*dt/dz/dz;
+680 
+681 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>(ix=np/2;&#32;ix&lt;nx-np/2;&#32;ix++)
+682 &#32;&#32;&#32;&#32;{
+683 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=np/2;&#32;iz&lt;nz-np/2;&#32;iz++)
+684 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+685 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diffx&#32;=&#32;d[0]*p[ix][iz];
+686 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diffz&#32;=&#32;d[0]*p[ix][iz];
+687 
+688 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(<emphasis class="keywordtype">int</emphasis>&#32;ip=1;&#32;ip&lt;=np/2;&#32;ip++)
+689 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+690 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diffx&#32;+=&#32;d[ip]*(p[ix+ip][iz]+p[ix-ip][iz]);
+691 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diffz&#32;+=&#32;d[ip]*(p[ix][iz+ip]+p[ix][iz-ip]);
+692 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+693 
+694 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pp[ix][iz]&#32;=&#32;2.0*p[ix][iz]&#32;-&#32;pm[ix][iz]&#32;+
+695 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v[ix][iz]*v[ix][iz]*(dtdx*diffx+dtdz*diffz);
+696 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+697 &#32;&#32;&#32;&#32;}
+698 
+699 }
+700 
+<link linkend="d7/d46/a00002_1a334ef00cfa7f725b18826a364b9151d5">701 </link><emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a334ef00cfa7f725b18826a364b9151d5">cd_coeff_scalar</link>(<emphasis class="keywordtype">int</emphasis>&#32;np,&#32;<emphasis class="keywordtype">float</emphasis>&#32;*d)
+702 {
+703 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;i;
+704 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;nphalf;
+705 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;sum=0;
+706 
+707 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;*w;
+708 
+709 &#32;&#32;&#32;&#32;w&#32;=&#32;alloc1float(np);
+710 
+711 &#32;&#32;&#32;&#32;<link linkend="d7/d46/a00002_1a35ea5f95e81dc63ba8b8002f55d11c7c">hanning</link>(np,&#32;w);
+712 
+713 &#32;&#32;&#32;&#32;nphalf=np/2;
+714 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(i=1;&#32;i&lt;=nphalf;&#32;i++)
+715 &#32;&#32;&#32;&#32;{
+716 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;d[i]&#32;=&#32;2.0*pow(-1.0,&#32;<emphasis class="keywordtype">float</emphasis>(i+1))/float(i*i)&#32;*&#32;w[nphalf+i];
+717 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sum&#32;+=&#32;d[i];
+718 &#32;&#32;&#32;&#32;}
+719 
+720 &#32;&#32;&#32;&#32;d[0]&#32;=&#32;-2.0*sum;
+721 
+722 &#32;&#32;&#32;&#32;free1float(w);
+723 
+724 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
+725 
+726 }
+727 
+<link linkend="d7/d46/a00002_1a35ea5f95e81dc63ba8b8002f55d11c7c">728 </link><emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a35ea5f95e81dc63ba8b8002f55d11c7c">hanning</link>(<emphasis class="keywordtype">int</emphasis>&#32;n,<emphasis class="keywordtype">float</emphasis>&#32;*w)
+729 <emphasis class="comment">/************************************************************************</emphasis>
+730 <emphasis class="comment">hanningnWindow&#32;-&#32;returns&#32;an&#32;n&#32;element&#32;long&#32;hanning&#32;window</emphasis>
+731 <emphasis class="comment">************************************************************************</emphasis>
+732 <emphasis class="comment">Input:</emphasis>
+733 <emphasis class="comment">n&#32;&#32;&#32;size&#32;of&#32;window</emphasis>
+734 <emphasis class="comment">w&#32;&#32;&#32;hanning&#32;window&#32;function&#32;of&#32;size&#32;n</emphasis>
+735 <emphasis class="comment">************************************************************************</emphasis>
+736 <emphasis class="comment">Notes:</emphasis>
+737 <emphasis class="comment">&#32;&#32;&#32;&#32;w[k]&#32;=&#32;0.5(1-cos(2PI&#32;*&#32;K/n+1))&#32;k=1,....n</emphasis>
+738 <emphasis class="comment">************************************************************************/</emphasis>
+739 
+740 {
+741 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;i;
+742 
+743 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>(i=0;&#32;i&lt;n;&#32;i++)
+744 &#32;&#32;&#32;&#32;{
+745 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;w[i]&#32;=&#32;0.5*(1-cos(2.0*PI*(i+1)/(n+1)));
+746 &#32;&#32;&#32;&#32;}
+747 
+748 }
+749 
+<link linkend="d7/d46/a00002_1a97972f13a27a253327d118dc9a7559c8">750 </link><emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d7/d46/a00002_1a97972f13a27a253327d118dc9a7559c8">src_spatial_distribution</link>(<emphasis class="keywordtype">int</emphasis>&#32;nx,&#32;<emphasis class="keywordtype">int</emphasis>&#32;nz,&#32;<emphasis class="keywordtype">int</emphasis>&#32;ixs,&#32;<emphasis class="keywordtype">int</emphasis>&#32;izs,&#32;<emphasis class="keywordtype">float</emphasis>&#32;**s)
+751 {
+752 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ix,&#32;iz;
+753 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">float</emphasis>&#32;xn,&#32;zn;
+754 
+755 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(ix=0;&#32;ix&lt;nx;&#32;ix++)
+756 &#32;&#32;&#32;&#32;{
+757 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xn&#32;=&#32;ix-ixs;
+758 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(iz=0;&#32;iz&lt;nz;&#32;iz++)
+759 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+760 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;zn&#32;=&#32;iz-izs;
+761 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s[ix][iz]&#32;=&#32;exp(-xn*xn-zn*zn);
+762 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+763 &#32;&#32;&#32;&#32;}
+764 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
+765 }
+    </computeroutput></literallayout>
+</section>

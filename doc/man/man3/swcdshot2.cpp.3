@@ -1,0 +1,683 @@
+.TH "src/swcdshot2.cpp" 3 "Wed Sep 23 2015" "CDMOD" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/swcdshot2.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+.SH "Function Documentation"
+.PP 
+.SS "void absorb (int ntap, int nx, int nz, float * taper, float ** p)"
+
+.PP
+.nf
+598 {
+599     int ix, iz;
+600     /* upper boundary */
+601     for (ix=0; ix<nx; ix++)
+602     {
+603         for (iz=0; iz<ntap; iz++)
+604         {
+605             p[ix][iz] *= taper[iz];
+606         }
+607     }
+608 
+609     /* left boundary */
+610     for (ix=0; ix<ntap; ix++)
+611     {
+612         for (iz=0; iz<nz; iz++)
+613         {
+614             p[ix][iz] *= taper[ix];
+615         }
+616     }
+617 
+618     /*lower boundary*/
+619     for (ix=0; ix<nx; ix++)
+620     {
+621         for (iz=0; iz<ntap; iz++)
+622         {
+623             p[ix][nz-iz-1] *= taper[iz];
+624         }
+625     }
+626 
+627     /*right boundary*/
+628     for (ix=0; ix<ntap; ix++)
+629     {
+630         for (iz=0; iz<nz; iz++)
+631         {
+632             p[nx-ix-1][iz] *= taper[ix];
+633         }
+634     }
+635 
+636     /*end of absorb()*/
+637 }
+.fi
+.SS "void cd_coeff_scalar (int np, float * d)"
+
+.PP
+.nf
+702 {
+703     int i;
+704     int nphalf;
+705     float sum=0;
+706 
+707     float *w;
+708 
+709     w = alloc1float(np);
+710 
+711     hanning(np, w);
+712 
+713     nphalf=np/2;
+714     for (i=1; i<=nphalf; i++)
+715     {
+716         d[i] = 2\&.0*pow(-1\&.0, float(i+1))/float(i*i) * w[nphalf+i];
+717         sum += d[i];
+718     }
+719 
+720     d[0] = -2\&.0*sum;
+721 
+722     free1float(w);
+723 
+724     return;
+725 
+726 }
+.fi
+.SS "void cerjan (int ntap, float coeff, float * taper)"
+
+.PP
+.nf
+587 {
+588     int i;
+589     float a;
+590     for (i=0; i<ntap; i++)
+591     {
+592         a = (float)(ntap-i)*(float)(ntap-i);
+593         taper[i] = exp(-coeff*coeff*a);
+594     }
+595 }
+.fi
+.SS "void extenModel (int nx, int nz, int ntap, float ** v, float ** vv)"
+
+.PP
+.nf
+552 {
+553     int ix, iz;
+554 
+555     /*internal zone*/
+556     //for (ix=0; ix<nx-2*ntap; ix++)
+557     //{
+558     //  for (iz=0; iz<nz-2*ntap; iz++)
+559     //  {
+560     //      vv[ix+ntap][iz+ntap] = v[ix][iz];
+561     //  }
+562     //}
+563 
+564     /*upper and lower boundary*/
+565     for (ix=0; ix<nx; ix++)
+566     {
+567         for (iz=0; iz<ntap; iz++)
+568         {
+569             vv[ix][iz] = vv[ix][ntap];
+570             vv[ix][nz-iz-1] = vv[ix][nz-ntap-1];
+571         }
+572     }
+573 
+574     /*left and right boundary*/
+575     for (ix=0; ix<ntap; ix++)
+576     {
+577         for (iz=0; iz<nz; iz++)
+578         {
+579             vv[ix][iz] = vv[ntap][iz];
+580             vv[nx-ix-1][iz] = vv[nx-ntap-1][iz];
+581         }
+582     }
+583 
+584 }
+.fi
+.SS "void get_file_snap (char * dest, char * src, int num)"
+
+.PP
+.nf
+640 {
+641     char a[10];
+642     strcpy(dest, src);
+643     strcat(dest, "_t");
+644     sprintf(a, "%05d", num);
+645     strcat(dest, a);
+646     strcat(dest, "\&.bin");
+647     return;
+648 }
+.fi
+.SS "void hanning (int n, float * w)"
+
+.PP
+.nf
+740 {
+741     int i;
+742 
+743     for(i=0; i<n; i++)
+744     {
+745         w[i] = 0\&.5*(1-cos(2\&.0*PI*(i+1)/(n+1)));
+746     }
+747 
+748 }
+.fi
+.SS "int main (int argc, char ** argv)"
+
+.PP
+.nf
+82 {
+83     int nx, nz;
+84     
+86     int nxmod, nzmod; 
+87 
+88     float fx, fz;
+89 
+90     int nt; /* number of time sampling*/
+91 
+92     int it;
+93     int mt; /*every mt time step to output a snapshot*/
+94 
+95     int ix, iz;     /* counter */
+96 
+97     float *wlvt;    /*wavelet*/
+98     float **v;  /*velocity model*/
+99     float **vv; /*velocity in calculating zone*/
+100 
+101     float **pp, **p, **pm;  /*wavefield at t+dt, t, t-dt*/
+102 
+103     float **s;  /*spatial distribution of source*/
+104 
+105     float **hseis;  /*shor records*/
+106     float hsz;  /*depth of seismic line, =0 in this code*/
+107     int izhsz;
+108 
+109     float **vseis;
+110     float vsx;
+111     int ixvsx;
+112 
+113     int np;
+114     float *d;
+115 
+116     float dx, dz;   /*space sampling interval*/
+117     float fpeak;    /*peak frequency*/
+118     float fmax;
+119     float dt;   /* time sampling interval*/
+120 
+121     float vmin, vmax;   /* min and max value of velocity*/
+122 
+123     float tdelay;   /*time delay of wavelet*/
+124     int ntdelay;
+125 
+126     time_t t0, t1, t2;
+127 
+128     float dtstable;
+129     float dxstable;
+130 
+131     int ntap;
+132     float coeff;
+133     float *taper;
+134 
+135     float xs, zs;
+136     int ixs, izs;
+137 
+138     float sx, gx;
+139     int isx, igx;
+140 
+141     int verbose=0;
+142 
+143     char file_tmp[BUFSIZ];
+144     char *file_snap="";
+145     char *file_vseis="";
+146 
+147     FILE *fp_snap = NULL;
+148     FILE *fp_vel = stdin;
+149     FILE *fp_seis = stdout;
+150     FILE *fp_vseis = NULL;
+151 
+152     //FILE *fp_hseis = stdin;
+153 
+154     /* SEGY fields */
+155     long tracl=0;       /* trace number within a line */
+156     long tracr=0;       /* trace number within a reel */
+157 
+158     /* hook up getpar to handle the parameters */
+159     initargs(argc, argv);
+160     requestdoc(0);
+161 
+162     t0=time(NULL);
+163 
+164     /* get required parameters */
+165     if (!getparint("nxmod", &nxmod))
+166         err("must specify nxmod!\n");
+167     if (!getparint("nzmod", &nzmod))
+168         err("must specify nzmod!\n");
+169     if (!getparstring("file_snap", &file_snap))
+170         err("must specify file_snap!\n");
+171     if (!getparstring("file_vseis", &file_vseis))
+172         err("must specify file_vseis!\n");
+173 
+174     if (!getparfloat("dt", &dt))
+175         err("must specify dt!\n");
+176     if (!getparint("nt", &nt))
+177         err("must specify nt!\n");
+178 
+179     if (!getparfloat("xs", &xs))
+180         err("must specify dt!\n");
+181     if (!getparfloat("zs", &zs))
+182         err("must specify dt!\n");
+183 
+184     /*optional parameters*/
+185     if (!getparfloat("dx", &dx))
+186         dx = 10;
+187     if (!getparfloat("dz", &dz))
+188         dz = 10;
+189     if (!getparfloat("fpeak", &fpeak))
+190         fpeak = 25;
+191     if (!getparfloat("fmax", &fmax))
+192         fmax = 2\&.0*fpeak;
+193     if (!getparfloat("tdelay", &tdelay))
+194         tdelay = 0;
+195 
+196     if (!getparint("np", &np))
+197         np = 9;
+198 
+199     if (!getparint("mt", &mt))
+200         mt = 1;
+201 
+202     if (!getparfloat("coeff", &coeff))
+203         coeff = 0\&.0053;
+204     if (!getparint("ntap", &ntap))
+205         ntap = 45;
+206 
+207     if (!getparfloat("fx", &fx))
+208         fx = 0;
+209     if (!getparfloat("fz", &fz))
+210         fz = 0;
+211 
+212     if (!getparfloat("hsz", &hsz))
+213         hsz = 0;
+214 
+215     if (!getparfloat("vsx", &vsx))
+216         vsx = nxmod/2+ntap;
+217 
+218     if (!getparint("verbose", &verbose))
+219         verbose = 1;
+220 
+221 
+222     /************************************************************************/
+223 
+224     nx = nxmod + 2*ntap;
+225     nz = nzmod + 2*ntap;
+226 
+227     if (verbose)
+228     {
+229         fprintf(stderr, "\nxs=%g\n", xs);
+230         fprintf(stderr, "nx=%d, nz=%d\n", nx, nz);
+231     }
+232 
+233     /************************************************************************/
+234 
+235 
+236     vv = alloc2float(nz, nx);
+237     memset((void *) vv[0], 0, sizeof(float) * nx * nz);
+238 
+239     pp = alloc2float(nz, nx);
+240     p = alloc2float(nz, nx);
+241     pm = alloc2float(nz, nx);
+242 
+243     memset((void *) pp[0], 0, sizeof(float) * nx * nz);
+244     memset((void *) p[0], 0, sizeof(float) * nx * nz);
+245     memset((void *) pm[0], 0, sizeof(float) * nx * nz);
+246 
+247     s = alloc2float(nz, nx);
+248     memset((void *)s[0], 0, sizeof(float) * nx *nz);
+249 
+250     hseis=alloc2float(nt, nx);
+251     memset((void *)hseis[0], 0, sizeof(float)*nx*nt);
+252 
+253     vseis=alloc2float(nt, nz);
+254     memset((void *)vseis[0], 0, sizeof(float)*nz*nt);
+255 
+256     taper=alloc1float(ntap);
+257     memset((void *)taper, 0, sizeof(float)*ntap);
+258 
+259 
+260     v = alloc2float(nzmod, nxmod);
+261     memset((void *) v[0], 0, sizeof(float) * nxmod * nzmod);
+262 
+263     d = alloc1float(np);
+264 
+265     /* read velocities */
+266     efread(v[0],sizeof(float),nxmod*nzmod,fp_vel);
+267     efclose(fp_vel);
+268 
+269     for (ix=0; ix<nx-2*ntap; ix++)
+270     {
+271         for (iz=0; iz<nz-2*ntap; iz++)
+272         {
+273             vv[ntap+ix][ntap+iz] = v[ix][iz];
+274         }
+275     }
+276 
+277     extenModel(nx, nz, ntap, vv, vv);
+278     vmin=vmax=vv[0][0];
+279     for (ix = 0; ix < nx; ix++)
+280     {
+281         for (iz = 0; iz < nz; iz++)
+282         {
+283             vmin=MIN(vmin, vv[ix][iz]);
+284             vmax=MAX(vmax, vv[ix][iz]);
+285         }
+286     }
+287 
+288     fprintf(stderr,"vmin=%g, vmax=%g\n", vmin, vmax);
+289     if(vmin==0)
+290         err("error\&. vmin=%g",vmin);
+291 
+292     /*stable condtions*/
+293     dxstable=vmin/(2*fmax);
+294     if (MAX(dx, dz)>dxstable)
+295     {
+296         warn("stable grid size must be smaller than %g", dxstable);
+297     }
+298 
+299     //dtstable=sqrt(2)*MIN(dx, dz)/(PI*vmax);
+300     dtstable = 1\&.0/1\&.3167/vmax/sqrt(1\&./dx/dx+1\&./dz/dz);
+301     if (dt>dtstable)
+302     {
+303         err("unstable\&. dt must be smaller than %g", dtstable);
+304     }
+305 
+306     /*source*/
+307     ntdelay=tdelay/dt;
+308     wlvt = alloc1float(nt+ntdelay);
+309     ricker1_wavelet(nt+ntdelay, dt, fpeak, wlvt);
+310 
+311     ixs = (int) ((xs-fx) / dx) + ntap;
+312     izs = (int) ((zs-fz) / dz) + ntap;
+313     izhsz = (int) ((hsz-fz) / dz) + ntap;
+314     ixvsx = (int) ((vsx-fx) / dx) + ntap;
+315 
+316     warn("ixs=%d, izs=%d\n", ixs, izs);
+317 
+318     cerjan(ntap, coeff, taper);
+319     src_spatial_distribution(nx, nz, ixs, izs, s);
+320 
+321     cd_coeff_scalar(np, d);
+322 
+323 //    for(ix=0; ix<np; ix++)
+324 //    {
+325 //        warn("d[%d]=%g\n", ix, d[ix]);
+326 //    }
+327 
+328     /*verbose*/
+329     if (verbose)
+330     {
+331         fprintf(stderr, "nx=%d nz=%d\n", nx, nz);
+332         fprintf(stderr, "ntap=%d coeff=%g\n", ntap, coeff);
+333         fprintf(stderr, "dtstable=%g dxstable=%g\n", dtstable, dxstable);
+334         fprintf(stderr, "dt=%g dx=%g dz=%g\n", dt, dx, dz);
+335         fprintf(stderr, "ntdelay=%d tdelay=%g\n", ntdelay, tdelay);
+336     }
+337 
+338     memset((void *) pp[0], 0, sizeof(float) * nx * nz);
+339     memset((void *) p[0], 0, sizeof(float) * nx * nz);
+340     memset((void *) pm[0], 0, sizeof(float) * nx * nz);
+341 
+342     t2=time(NULL);
+343 
+344     warn("preprocessing time cost(s):%f", difftime(t2,t0));
+345 
+346     /*forward modeling*/
+347     for (it=0; it<ntdelay; it++)
+348     {
+349 
+350         for (ix=0; ix<nx; ix++)
+351         {
+352             for (iz=0; iz<nz; iz++)
+353             {
+354                 p[ix][iz] += wlvt[it]*s[ix][iz];
+355             }
+356         }
+357 
+358         time_one_step_cd(nx, nz, dt, dx, dz, np, d, vv, pp, pm, p);
+359 
+360         absorb(ntap, nx, nz, taper, pm);
+361         absorb(ntap, nx, nz, taper, p);
+362         absorb(ntap, nx, nz, taper, pp);
+363 
+364         for (ix=0; ix<nx; ix++)
+365         {
+366             for (iz=0; iz<nz; iz++)
+367             {
+368                 pm[ix][iz] = p[ix][iz];
+369                 p[ix][iz] = pp[ix][iz];
+370             }
+371         }
+372 
+373     }
+374 
+375     t1=time(NULL);
+376 
+377     for (it = 0; it < nt; it++)
+378     {
+379 
+380         if (verbose && (it%100==0) )
+381         {
+382             t2 = time(NULL);
+383             warn("it=%d, nt=%d, time1=%g, time2=%g", it, nt, difftime(t2, t1), difftime(t2, t0));
+384         }
+385 
+386         for (ix=0; ix<nx; ix++)
+387         {
+388             for (iz=0; iz<nz; iz++)
+389             {
+390                 p[ix][iz] += wlvt[it+ntdelay]*s[ix][iz];
+391             }
+392         }
+393 
+394         time_one_step_cd(nx, nz, dt, dx, dz, np, d, vv, pp, pm, p);
+395 
+396         absorb(ntap, nx, nz, taper, pm);
+397         absorb(ntap, nx, nz, taper, p);
+398         absorb(ntap, nx, nz, taper, pp);
+399 
+400         for (ix=0; ix<nx; ix++)
+401         {
+402             for (iz=0; iz<nz; iz++)
+403             {
+404                 pm[ix][iz] = p[ix][iz];
+405                 p[ix][iz] = pp[ix][iz];
+406             }
+407         }
+408 
+409         for (ix=0; ix<nx; ix++)
+410         {
+411             hseis[ix][it] = p[ix][izhsz];
+412         }
+413         for(iz=0; iz<nz; iz++)
+414         {
+415             vseis[iz][it] = p[ixvsx][iz];
+416         }
+417 
+418         if (it % mt == 0)
+419         {
+420 
+421             for (ix=0; ix<nxmod; ix++)
+422             {
+423                 for (iz=0; iz<nzmod; iz++)
+424                 {
+425                     v[ix][iz] = p[ntap+ix][ntap+iz];
+426                 }
+427             }
+428 
+429             get_file_snap(file_tmp, file_snap, it);
+430             fp_snap = efopen(file_tmp, "w");
+431             efwrite((void *) v[0], sizeof(float), nxmod * nzmod, fp_snap);
+432             efclose(fp_snap);
+433         }
+434 
+435         if (verbose && (it%100==0) )
+436         {
+437             t1 = time(NULL);
+438         }
+439 
+440     } /*end of time loop*/
+441     /*end of forward modeling*/
+442 
+443     warn("Writing final shot records\&.\&.\&.");
+444 
+445     /************************************************************************/
+446     fp_vseis = efopen(file_vseis, "w");
+447 
+448     for (ix=ntap; ix<nx-ntap; ix++)
+449     {
+450         tr\&.ns = nt;
+451         tr\&.dt = dt*1000000;
+452 
+453         //tr\&.fldr = ixs-ntap;
+454 
+455         tr\&.sx = fx + (float)(ixs-ntap)*dx;
+456         tr\&.sy = fx + (float)(izs-ntap)*dz;
+457         tr\&.gx = fx + (float)(ix-ntap)*dx;
+458         tr\&.gy = fx + (float)(izhsz-ntap)*dz;
+459 
+460         //tr\&.cdp = (tr\&.sx+tr\&.gx)/2;
+461         //tr\&.offset = tr\&.gx-tr\&.sx;
+462 
+463         tr\&.d1=dz;
+464         tr\&.d2=dx;
+465 
+466         //tracl++;
+467         //tr\&.tracl=tracl;
+468         for (it=0; it<nt; it++)
+469         {
+470             tr\&.data[it] = hseis[ix][it];
+471         }
+472 
+473         fputtr(fp_seis, &tr);
+474 
+475     }
+476 
+477     //tracl=0;
+478     for (iz=ntap; iz<nz-ntap; iz++)
+479     {
+480         tr\&.ns = nt;
+481         tr\&.dt = dt*1000000;
+482 
+483         tr\&.sx = fx + (float)(ixs-ntap)*dx;
+484         tr\&.sy = fx + (float)(izs-ntap)*dz;
+485         tr\&.gx = fx + (float)(ixvsx-ntap)*dx;
+486         tr\&.gy = fx + (float)(iz-ntap)*dz;
+487 
+488         tr\&.d1=dz;
+489         tr\&.d2=dx;
+490 
+491         //tracl++;
+492         //tr\&.tracl=tracl;
+493         for (it=0; it<nt; it++)
+494         {
+495             tr\&.data[it] = vseis[iz][it];
+496         }
+497 
+498         fputtr(fp_vseis, &tr);
+499 
+500     }
+501     /*free memory*/
+502     free2float(vv);
+503     free2float(pp);
+504     free2float(p);
+505     free2float(pm);
+506     free1float(taper);
+507     free2float(hseis);
+508     free2float(vseis);
+509     free2float(v);
+510     free2float(s);
+511 
+512     t2=time(NULL);
+513     warn("total time: %g", difftime(t2,t0));
+514 
+515     return 0;
+516 }
+.fi
+.SS "void ricker1_wavelet (int nt, float dt, float fpeak, float * wavelet)"
+
+.PP
+.nf
+537 {
+538     int it;
+539     float t1, t0;
+540 
+541     t0 = 1\&.0 / fpeak;
+542 
+543     for (it = 0; it < nt; it++)
+544     {
+545         t1 = it * dt;
+546         wavelet[it] = exp(-PI * PI * fpeak * fpeak * (t1 - t0) * (t1 - t0))
+547                       * (1\&.0 - 2\&. * PI * PI * fpeak * fpeak * (t1 - t0) * (t1 - t0));
+548     }
+549 }
+.fi
+.SS "void src_spatial_distribution (int nx, int nz, int ixs, int izs, float ** s)"
+
+.PP
+.nf
+751 {
+752     int ix, iz;
+753     float xn, zn;
+754 
+755     for (ix=0; ix<nx; ix++)
+756     {
+757         xn = ix-ixs;
+758         for (iz=0; iz<nz; iz++)
+759         {
+760             zn = iz-izs;
+761             s[ix][iz] = exp(-xn*xn-zn*zn);
+762         }
+763     }
+764     return;
+765 }
+.fi
+.SS "void time_one_step_cd (int nx, int nz, float dt, float dx, float dz, int np, float * d, float ** v, float ** pp, float ** pm, float ** p)"
+
+.PP
+.nf
+673 {
+674     int ix, iz;
+675     float dtdx, dtdz;
+676     float diffx, diffz;
+677 
+678     dtdx = dt*dt/dx/dx;
+679     dtdz = dt*dt/dz/dz;
+680 
+681     for(ix=np/2; ix<nx-np/2; ix++)
+682     {
+683         for (iz=np/2; iz<nz-np/2; iz++)
+684         {
+685             diffx = d[0]*p[ix][iz];
+686             diffz = d[0]*p[ix][iz];
+687 
+688             for (int ip=1; ip<=np/2; ip++)
+689             {
+690                 diffx += d[ip]*(p[ix+ip][iz]+p[ix-ip][iz]);
+691                 diffz += d[ip]*(p[ix][iz+ip]+p[ix][iz-ip]);
+692             }
+693 
+694             pp[ix][iz] = 2\&.0*p[ix][iz] - pm[ix][iz] +
+695                          v[ix][iz]*v[ix][iz]*(dtdx*diffx+dtdz*diffz);
+696         }
+697     }
+698 
+699 }
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "char* sdoc[]"
+
+.SS "segy tr"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CDMOD from the source code\&.

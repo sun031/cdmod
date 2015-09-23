@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/dcc/a00102">
+<title>std::smart_ptr class Reference</title>
+<para>Inheritance diagram for std::smart_ptr</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d5/d0f/a00308.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for std::smart_ptr</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d2/d71/a00309.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+        <section>
+            <title>Data Fields</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T ptr<para><emphasis>STL member.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T* <link linkend="d9/dcc/a00102_1af6e485beee07fd401de29c8cdf898c69">operator-&gt;</link> (
+)<para><emphasis>STL member.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>STL class. </para>
+    </simplesect>
+        <section>
+            <title>Field Documentation</title>
+        </section>
+            <section xml:id="d9/dcc/a00102_1af6e485beee07fd401de29c8cdf898c69">
+                <title>T* operator-&gt; ()</title> <emphasis>STL member.</emphasis>
+                
+            </section>
+</section>

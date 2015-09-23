@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+  <namespace>org.doxygen.Project</namespace>
+  <virtualFolder>doc</virtualFolder>
+  <filterSection>
+    <filterAttribute>doxygen</filterAttribute>
+    <toc>
+      <section title="CDMOD" ref="index.html">
+        <section title="Design Unit Hierarchy" ref="hierarchy.html">
+          <section title="basic_string&lt;char&gt;" />
+          <section title="basic_string&lt;wchar_t&gt;" />
+          <section title="allocator&lt;T&gt;" />
+          <section title="array&lt;T&gt;" />
+          <section title="auto_ptr&lt;T&gt;" />
+          <section title="basic_string&lt;Char&gt;">
+            <section title="string" />
+            <section title="wstring" />
+          </section>
+          <section title="basic_string&lt;Char&gt;::const_iterator" />
+          <section title="basic_string&lt;Char&gt;::const_reverse_iterator" />
+          <section title="basic_string&lt;Char&gt;::iterator" />
+          <section title="basic_string&lt;Char&gt;::reverse_iterator" />
+          <section title="bitset&lt;Bits&gt;" />
+          <section title="complex" />
+          <section title="deque&lt;T&gt;" />
+          <section title="deque&lt;T&gt;::const_iterator" />
+          <section title="deque&lt;T&gt;::const_reverse_iterator" />
+          <section title="deque&lt;T&gt;::iterator" />
+          <section title="deque&lt;T&gt;::reverse_iterator" />
+          <section title="error_category" />
+          <section title="error_code" />
+          <section title="error_condition" />
+          <section title="exception">
+            <section title="bad_alloc" />
+            <section title="bad_cast" />
+            <section title="bad_exception" />
+            <section title="bad_typeid" />
+            <section title="ios_base::failure" />
+            <section title="logic_error">
+              <section title="domain_error" />
+              <section title="invalid_argument" />
+              <section title="length_error" />
+              <section title="out_of_range" />
+            </section>
+            <section title="runtime_error">
+              <section title="overflow_error" />
+              <section title="range_error" />
+              <section title="underflow_error" />
+            </section>
+          </section>
+          <section title="forward_list&lt;T&gt;" />
+          <section title="forward_list&lt;T&gt;::const_iterator" />
+          <section title="forward_list&lt;T&gt;::const_reverse_iterator" />
+          <section title="forward_list&lt;T&gt;::iterator" />
+          <section title="forward_list&lt;T&gt;::reverse_iterator" />
+          <section title="ios_base">
+            <section title="basic_ios&lt;char  &gt;" />
+            <section title="basic_ios&lt;char &gt;" />
+            <section title="basic_ios&lt;char&gt;" />
+            <section title="basic_ios&lt;wchar_t  &gt;" />
+            <section title="basic_ios&lt;wchar_t &gt;" />
+            <section title="basic_ios&lt;wchar_t&gt;" />
+            <section title="basic_ios&lt;Char&gt;">
+              <section title="basic_istream&lt;char  &gt;" />
+              <section title="basic_istream&lt;char &gt;" />
+              <section title="basic_istream&lt;char&gt;" />
+              <section title="basic_istream&lt;wchar_t  &gt;" />
+              <section title="basic_istream&lt;wchar_t &gt;" />
+              <section title="basic_istream&lt;wchar_t&gt;" />
+              <section title="basic_ostream&lt;char  &gt;" />
+              <section title="basic_ostream&lt;char &gt;" />
+              <section title="basic_ostream&lt;char&gt;" />
+              <section title="basic_ostream&lt;wchar_t  &gt;" />
+              <section title="basic_ostream&lt;wchar_t &gt;" />
+              <section title="basic_ostream&lt;wchar_t&gt;" />
+              <section title="basic_istream&lt;Char&gt;">
+                <section title="basic_ifstream&lt;char&gt;" />
+                <section title="basic_ifstream&lt;wchar_t&gt;" />
+                <section title="basic_iostream&lt;char &gt;" />
+                <section title="basic_iostream&lt;wchar_t &gt;" />
+                <section title="basic_istringstream&lt;char&gt;" />
+                <section title="basic_istringstream&lt;wchar_t&gt;" />
+                <section title="basic_ifstream&lt;Char&gt;">
+                  <section title="ifstream" />
+                  <section title="wifstream" />
+                </section>
+                <section title="basic_iostream&lt;Char&gt;">
+                  <section title="basic_fstream&lt;char&gt;" />
+                  <section title="basic_fstream&lt;wchar_t&gt;" />
+                  <section title="basic_stringstream&lt;char&gt;" />
+                  <section title="basic_stringstream&lt;wchar_t&gt;" />
+                  <section title="basic_fstream&lt;Char&gt;">
+                    <section title="fstream" />
+                    <section title="wfstream" />
+                  </section>
+                  <section title="basic_stringstream&lt;Char&gt;">
+                    <section title="stringstream" />
+                    <section title="wstringstream" />
+                  </section>
+                </section>
+                <section title="basic_istringstream&lt;Char&gt;">
+                  <section title="istringstream" />
+                  <section title="wistringstream" />
+                </section>
+                <section title="istream" />
+                <section title="wistream" />
+              </section>
+              <section title="basic_ostream&lt;Char&gt;">
+                <section title="basic_iostream&lt;char &gt;" />
+                <section title="basic_iostream&lt;wchar_t &gt;" />
+                <section title="basic_ofstream&lt;char&gt;" />
+                <section title="basic_ofstream&lt;wchar_t&gt;" />
+                <section title="basic_ostringstream&lt;char&gt;" />
+                <section title="basic_ostringstream&lt;wchar_t&gt;" />
+                <section title="basic_iostream&lt;Char&gt;" />
+                <section title="basic_ofstream&lt;Char&gt;">
+                  <section title="ofstream" />
+                  <section title="wofstream" />
+                </section>
+                <section title="basic_ostringstream&lt;Char&gt;">
+                  <section title="ostringstream" />
+                  <section title="wostringstream" />
+                </section>
+                <section title="ostream" />
+                <section title="wostream" />
+              </section>
+              <section title="ios" />
+              <section title="wios" />
+            </section>
+          </section>
+          <section title="list&lt;T&gt;" />
+          <section title="list&lt;T&gt;::const_iterator" />
+          <section title="list&lt;T&gt;::const_reverse_iterator" />
+          <section title="list&lt;T&gt;::iterator" />
+          <section title="list&lt;T&gt;::reverse_iterator" />
+          <section title="map&lt;K, T&gt;" />
+          <section title="map&lt;K, T&gt;::const_iterator" />
+          <section title="map&lt;K, T&gt;::const_reverse_iterator" />
+          <section title="map&lt;K, T&gt;::iterator" />
+          <section title="map&lt;K, T&gt;::reverse_iterator" />
+          <section title="multimap&lt;K, T&gt;" />
+          <section title="multimap&lt;K, T&gt;::const_iterator" />
+          <section title="multimap&lt;K, T&gt;::const_reverse_iterator" />
+          <section title="multimap&lt;K, T&gt;::iterator" />
+          <section title="multimap&lt;K, T&gt;::reverse_iterator" />
+          <section title="multiset&lt;K&gt;" />
+          <section title="multiset&lt;K&gt;::const_iterator" />
+          <section title="multiset&lt;K&gt;::const_reverse_iterator" />
+          <section title="multiset&lt;K&gt;::iterator" />
+          <section title="multiset&lt;K&gt;::reverse_iterator" />
+          <section title="priority_queue&lt;T&gt;" />
+          <section title="queue&lt;T&gt;" />
+          <section title="set&lt;K&gt;" />
+          <section title="set&lt;K&gt;::const_iterator" />
+          <section title="set&lt;K&gt;::const_reverse_iterator" />
+          <section title="set&lt;K&gt;::iterator" />
+          <section title="set&lt;K&gt;::reverse_iterator" />
+          <section title="smart_ptr&lt;T&gt;" />
+          <section title="stack&lt;T&gt;" />
+          <section title="string::const_iterator" />
+          <section title="string::const_reverse_iterator" />
+          <section title="string::iterator" />
+          <section title="string::reverse_iterator" />
+          <section title="system_error" />
+          <section title="thread" />
+          <section title="unique_ptr&lt;T&gt;" />
+          <section title="unordered_map&lt;K, T&gt;" />
+          <section title="unordered_map&lt;K, T&gt;::const_iterator" />
+          <section title="unordered_map&lt;K, T&gt;::const_reverse_iterator" />
+          <section title="unordered_map&lt;K, T&gt;::iterator" />
+          <section title="unordered_map&lt;K, T&gt;::reverse_iterator" />
+          <section title="unordered_multimap&lt;K, T&gt;" />
+          <section title="unordered_multimap&lt;K, T&gt;::const_iterator" />
+          <section title="unordered_multimap&lt;K, T&gt;::const_reverse_iterator" />
+          <section title="unordered_multimap&lt;K, T&gt;::iterator" />
+          <section title="unordered_multimap&lt;K, T&gt;::reverse_iterator" />
+          <section title="unordered_multiset&lt;K&gt;" />
+          <section title="unordered_multiset&lt;K&gt;::const_iterator" />
+          <section title="unordered_multiset&lt;K&gt;::const_reverse_iterator" />
+          <section title="unordered_multiset&lt;K&gt;::iterator" />
+          <section title="unordered_multiset&lt;K&gt;::reverse_iterator" />
+          <section title="unordered_set&lt;K&gt;" />
+          <section title="unordered_set&lt;K&gt;::const_iterator" />
+          <section title="unordered_set&lt;K&gt;::const_reverse_iterator" />
+          <section title="unordered_set&lt;K&gt;::iterator" />
+          <section title="unordered_set&lt;K&gt;::reverse_iterator" />
+          <section title="valarray&lt;T&gt;" />
+          <section title="vector&lt;T&gt;" />
+          <section title="vector&lt;T&gt;::const_iterator" />
+          <section title="vector&lt;T&gt;::const_reverse_iterator" />
+          <section title="vector&lt;T&gt;::iterator" />
+          <section title="vector&lt;T&gt;::reverse_iterator" />
+          <section title="weak_ptr&lt;T&gt;" />
+          <section title="wstring::const_iterator" />
+          <section title="wstring::const_reverse_iterator" />
+          <section title="wstring::iterator" />
+          <section title="wstring::reverse_iterator" />
+          <section title="K" />
+          <section title="T" />
+        </section>
+        <section title="Files">
+          <section title="File List" ref="files.html">
+            <section title="src" ref="dir_68267d1309a1af8e8297ef4c3efbcdba.html">
+              <section title="cdcoeff.c" ref="d8/d84/a00001.html">
+                <section title="cdcoeff" ref="d8/d84/a00001.html#aebeab242545084906cda6e74300f4011" />
+                <section title="cdcoeff_stg" ref="d8/d84/a00001.html#a3ac5877a236e4d1e769ecd715f44b559" />
+                <section title="factorial" ref="d8/d84/a00001.html#aaa44a6c56572fc4081f172df9aac983f" />
+                <section title="main" ref="d8/d84/a00001.html#ac26bf1b1b45ee7970f3ac54892104b13" />
+              </section>
+              <section title="swcdshot2.cpp" ref="d7/d46/a00002.html">
+                <section title="absorb" ref="d7/d46/a00002.html#a707cef9b52a1fbb50f69a5bdcdc504fe" />
+                <section title="cd_coeff_scalar" ref="d7/d46/a00002.html#a334ef00cfa7f725b18826a364b9151d5" />
+                <section title="cerjan" ref="d7/d46/a00002.html#a77f8852395acfbe8480c185d9a6af713" />
+                <section title="extenModel" ref="d7/d46/a00002.html#ad90abc83e502e0cf87b482e8a67bc9e3" />
+                <section title="get_file_snap" ref="d7/d46/a00002.html#a04b292299a5a7ebbba7b88f61efee2da" />
+                <section title="hanning" ref="d7/d46/a00002.html#a35ea5f95e81dc63ba8b8002f55d11c7c" />
+                <section title="main" ref="d7/d46/a00002.html#a19d2e3a4f2ab4b079420a1be709d06bb" />
+                <section title="ricker1_wavelet" ref="d7/d46/a00002.html#a6b20993ec01a368bf2e7936b5b22f1d7" />
+                <section title="src_spatial_distribution" ref="d7/d46/a00002.html#a97972f13a27a253327d118dc9a7559c8" />
+                <section title="time_one_step_cd" ref="d7/d46/a00002.html#a335451e1ec7e61be5649569b8d4b3a3c" />
+                <section title="sdoc" ref="d7/d46/a00002.html#a381b0229c6cf78ce56a4749e35972291" />
+                <section title="tr" ref="d7/d46/a00002.html#a21ee33da3f54e2ea55665c50bfebd740" />
+              </section>
+            </section>
+          </section>
+          <section title="Globals" ref="globals.html">
+            <section title="All" ref="globals.html" />
+            <section title="Functions/Subroutines" ref="globals_func.html" />
+            <section title="Variables" ref="globals_vars.html" />
+          </section>
+        </section>
+      </section>
+    </toc>
+    <keywords>
+    </keywords>
+    <files>
+      <file>tabs.css</file>
+      <file>tab_a.png</file>
+      <file>tab_b.png</file>
+      <file>tab_h.png</file>
+      <file>tab_s.png</file>
+      <file>nav_h.png</file>
+      <file>nav_f.png</file>
+      <file>bc_s.png</file>
+      <file>doxygen.png</file>
+      <file>closed.png</file>
+      <file>open.png</file>
+      <file>bdwn.png</file>
+      <file>sync_on.png</file>
+      <file>sync_off.png</file>
+      <file>doc.png</file>
+      <file>folderopen.png</file>
+      <file>folderclosed.png</file>
+      <file>arrowdown.png</file>
+      <file>arrowright.png</file>
+      <file>splitbar.png</file>
+      <file>doxygen.css</file>
+      <file>d8/d84/a00001.html</file>
+      <file>d7/d46/a00002.html</file>
+      <file>graph_legend.png</file>
+      <file>graph_legend.html</file>
+      <file>dir_68267d1309a1af8e8297ef4c3efbcdba.html</file>
+      <file>dir_68267d1309a1af8e8297ef4c3efbcdba_dep.png</file>
+      <file>dir_68267d1309a1af8e8297ef4c3efbcdba_dep.png</file>
+      <file>dir_68267d1309a1af8e8297ef4c3efbcdba_dep.png</file>
+      <file>index.html</file>
+      <file>hierarchy.html</file>
+      <file>inherits.html</file>
+      <file>inherit_graph_0.png</file>
+      <file>inherit_graph_1.png</file>
+      <file>inherit_graph_2.png</file>
+      <file>inherit_graph_3.png</file>
+      <file>inherit_graph_4.png</file>
+      <file>inherit_graph_5.png</file>
+      <file>inherit_graph_6.png</file>
+      <file>inherit_graph_7.png</file>
+      <file>inherit_graph_8.png</file>
+      <file>inherit_graph_9.png</file>
+      <file>inherit_graph_10.png</file>
+      <file>inherit_graph_11.png</file>
+      <file>inherit_graph_12.png</file>
+      <file>inherit_graph_13.png</file>
+      <file>inherit_graph_14.png</file>
+      <file>inherit_graph_15.png</file>
+      <file>inherit_graph_16.png</file>
+      <file>inherit_graph_17.png</file>
+      <file>inherit_graph_18.png</file>
+      <file>inherit_graph_19.png</file>
+      <file>inherit_graph_20.png</file>
+      <file>inherit_graph_21.png</file>
+      <file>inherit_graph_22.png</file>
+      <file>inherit_graph_23.png</file>
+      <file>inherit_graph_24.png</file>
+      <file>inherit_graph_25.png</file>
+      <file>inherit_graph_26.png</file>
+      <file>inherit_graph_27.png</file>
+      <file>inherit_graph_28.png</file>
+      <file>inherit_graph_29.png</file>
+      <file>inherit_graph_30.png</file>
+      <file>inherit_graph_31.png</file>
+      <file>inherit_graph_32.png</file>
+      <file>inherit_graph_33.png</file>
+      <file>inherit_graph_34.png</file>
+      <file>inherit_graph_35.png</file>
+      <file>inherit_graph_36.png</file>
+      <file>inherit_graph_37.png</file>
+      <file>inherit_graph_38.png</file>
+      <file>inherit_graph_39.png</file>
+      <file>inherit_graph_40.png</file>
+      <file>inherit_graph_41.png</file>
+      <file>inherit_graph_42.png</file>
+      <file>inherit_graph_43.png</file>
+      <file>inherit_graph_44.png</file>
+      <file>inherit_graph_45.png</file>
+      <file>inherit_graph_46.png</file>
+      <file>inherit_graph_47.png</file>
+      <file>inherit_graph_48.png</file>
+      <file>inherit_graph_49.png</file>
+      <file>inherit_graph_50.png</file>
+      <file>inherit_graph_51.png</file>
+      <file>inherit_graph_52.png</file>
+      <file>inherit_graph_53.png</file>
+      <file>inherit_graph_54.png</file>
+      <file>inherit_graph_55.png</file>
+      <file>inherit_graph_56.png</file>
+      <file>inherit_graph_57.png</file>
+      <file>inherit_graph_58.png</file>
+      <file>inherit_graph_59.png</file>
+      <file>inherit_graph_60.png</file>
+      <file>inherit_graph_61.png</file>
+      <file>inherit_graph_62.png</file>
+      <file>inherit_graph_63.png</file>
+      <file>inherit_graph_64.png</file>
+      <file>inherit_graph_65.png</file>
+      <file>inherit_graph_66.png</file>
+      <file>inherit_graph_67.png</file>
+      <file>inherit_graph_68.png</file>
+      <file>inherit_graph_69.png</file>
+      <file>inherit_graph_70.png</file>
+      <file>inherit_graph_71.png</file>
+      <file>inherit_graph_72.png</file>
+      <file>inherit_graph_73.png</file>
+      <file>inherit_graph_74.png</file>
+      <file>inherit_graph_75.png</file>
+      <file>inherit_graph_76.png</file>
+      <file>inherit_graph_77.png</file>
+      <file>inherit_graph_78.png</file>
+      <file>inherit_graph_79.png</file>
+      <file>inherit_graph_80.png</file>
+      <file>inherit_graph_81.png</file>
+      <file>inherit_graph_82.png</file>
+      <file>inherit_graph_83.png</file>
+      <file>inherit_graph_84.png</file>
+      <file>inherit_graph_85.png</file>
+      <file>inherit_graph_86.png</file>
+      <file>inherit_graph_87.png</file>
+      <file>inherit_graph_88.png</file>
+      <file>inherit_graph_89.png</file>
+      <file>inherit_graph_90.png</file>
+      <file>inherit_graph_91.png</file>
+      <file>inherit_graph_92.png</file>
+      <file>inherit_graph_93.png</file>
+      <file>inherit_graph_94.png</file>
+      <file>inherit_graph_95.png</file>
+      <file>files.html</file>
+      <file>globals.html</file>
+      <file>globals.html</file>
+      <file>globals.html</file>
+      <file>globals.html</file>
+      <file>globals.html</file>
+      <file>globals.html</file>
+      <file>globals.html</file>
+      <file>globals.html</file>
+      <file>globals.html</file>
+      <file>globals.html</file>
+      <file>globals_func.html</file>
+      <file>globals_func.html</file>
+      <file>globals_func.html</file>
+      <file>globals_func.html</file>
+      <file>globals_func.html</file>
+      <file>globals_func.html</file>
+      <file>globals_func.html</file>
+      <file>globals_func.html</file>
+      <file>globals_func.html</file>
+      <file>globals_func.html</file>
+      <file>globals_vars.html</file>
+      <file>globals_vars.html</file>
+    </files>
+  </filterSection>
+</QtHelpProject>

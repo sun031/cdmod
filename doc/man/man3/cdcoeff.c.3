@@ -1,0 +1,132 @@
+.TH "src/cdcoeff.c" 3 "Wed Sep 23 2015" "CDMOD" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/cdcoeff.c \- 
+.SH SYNOPSIS
+.br
+.PP
+.SH "Function Documentation"
+.PP 
+.SS "void cdcoeff (int m, int n, double * cc)"
+
+.PP
+calculation of CD coefficients 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP order of the derivatives, m=1,2,3,4 
+.br
+\fIn\fP order of spatial accuray, e\&.g\&., n=4, 10 
+.RE
+.PP
+
+.PP
+.nf
+31 {
+32     m = abs(m);
+33     n = abs(n);
+34     
+35     double PI = acos(-1);
+36     double kn = PI;
+37     
+38     int k; 
+39     int nn;
+40     
+41     double complex tmp, tmp1, tmp2;
+42     double complex sum;
+43     
+44     tmp = pow(I,m)*factorial(m)*0\&.5/PI;
+45         
+46     nn = n;
+47     for(n=1; n<=nn; n++)
+48     {
+49         sum = 0\&.0;
+50         for(k=0; k<=m; k++)
+51         {
+52             tmp1 = exp(I*kn*n)+pow(-1, m-k+1)*exp(-I*kn*n);
+53             tmp2 = factorial(m-k)*pow(n*I, k+1);
+54         
+55             sum += pow(-1\&.0, k)*pow(kn, m-k)*tmp1/tmp2;
+56             
+57 //          printf("tmp1=,%f, %f\n", creal(tmp1), cimag(tmp1));
+58 //          printf("tmp2=,%f, %f\n", creal(tmp2), cimag(tmp2));
+59 //          printf("sum=,%f, %f\n", creal(sum), cimag(sum));
+60 
+61         }
+62         tmp2 = tmp*sum;
+63         cc[n] = creal(tmp2);
+64 //      printf("n=%d, coeff=%f\n", n, cc[n]);
+65     }
+66     
+67     // n=0
+68     tmp = pow(I, m)*pow(kn, m+1)*0\&.5/PI*(1+pow(-1,m))/(m+1);
+69     cc[0] = creal(tmp);
+70     
+71     for(n=0; n<=nn; n++)
+72     {
+73         printf("cc[%d]=%f\n", n, cc[n]);
+74     }
+75     
+76     return;
+77 }
+.fi
+.SS "void cdcoeff_stg (int m, int n, double * cc)"
+
+.PP
+.nf
+80 {
+81     m = abs(m);
+82     n = abs(n);
+83 
+84     return; 
+85 }
+.fi
+.SS "int factorial (int m)"
+
+.PP
+calculate factorial 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP 
+.br
+\fIfact\fP 
+.RE
+.PP
+
+.PP
+.nf
+12 {
+13     int fact=1;
+14     int i;
+15     for(i=0; i<m; i++)
+16     {
+17         fact *= (i+1); 
+18     }
+19     
+20     if(m==0)
+21         fact = 1;
+22         
+23     return fact;
+24 }
+.fi
+.SS "int main ()"
+
+.PP
+.nf
+91 {
+92     int m=2;
+93     int n=10;
+94     int result;
+95     double cc[2*n+1];
+96     
+97     result = factorial(m);
+98     printf("result=%d\n", result);
+99     
+100     cdcoeff(m,n,cc);
+101 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CDMOD from the source code\&.

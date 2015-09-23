@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d8/d84/a00001">
+    <title>cdcoeff.c File Reference</title>
+<para>Include dependency diagram for cdcoeff.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d4/dbc/a00414.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for cdcoeff.c</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="../../d0/dd6/a00415.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d8/d84/a00001_1aebeab242545084906cda6e74300f4011">cdcoeff</link> (
+int m, int n, double * cc)<para><emphasis>calculation of CD coefficients</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d8/d84/a00001_1a3ac5877a236e4d1e769ecd715f44b559">cdcoeff_stg</link> (
+int m, int n, double * cc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d8/d84/a00001_1aaa44a6c56572fc4081f172df9aac983f">factorial</link> (
+int m)<para><emphasis>calculate factorial</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d8/d84/a00001_1ac26bf1b1b45ee7970f3ac54892104b13">main</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /media/weijia/ANU/exploration/cdmod/src/cdcoeff.c</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="preprocessor">#include&#32;&lt;stdio.h&gt;</emphasis>
+2 <emphasis class="preprocessor">#include&#32;&lt;complex.h&gt;</emphasis>
+3 <emphasis class="preprocessor">#include&#32;&lt;tgmath.h&gt;</emphasis>
+4 <emphasis class="preprocessor">#include&#32;&lt;stdlib.h&gt;</emphasis>
+5 <emphasis class="preprocessor">#include&#32;&lt;math.h&gt;</emphasis>
+6 
+<link linkend="d8/d84/a00001_1aaa44a6c56572fc4081f172df9aac983f">11 </link><emphasis class="keywordtype">int</emphasis>&#32;<link linkend="d8/d84/a00001_1aaa44a6c56572fc4081f172df9aac983f">factorial</link>(<emphasis class="keywordtype">int</emphasis>&#32;m)
+12 {
+13 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;fact=1;
+14 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;i;
+15 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>(i=0;&#32;i&lt;m;&#32;i++)
+16 &#32;&#32;&#32;&#32;{
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fact&#32;*=&#32;(i+1);&#32;
+18 &#32;&#32;&#32;&#32;}
+19 &#32;&#32;&#32;&#32;
+20 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>(m==0)
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fact&#32;=&#32;1;
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+23 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;fact;
+24 }
+25 
+<link linkend="d8/d84/a00001_1aebeab242545084906cda6e74300f4011">30 </link><emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d8/d84/a00001_1aebeab242545084906cda6e74300f4011">cdcoeff</link>(<emphasis class="keywordtype">int</emphasis>&#32;m,&#32;<emphasis class="keywordtype">int</emphasis>&#32;n,&#32;<emphasis class="keywordtype">double</emphasis>&#32;*cc)
+31 {
+32 &#32;&#32;&#32;&#32;m&#32;=&#32;abs(m);
+33 &#32;&#32;&#32;&#32;n&#32;=&#32;abs(n);
+34 &#32;&#32;&#32;&#32;
+35 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">double</emphasis>&#32;PI&#32;=&#32;acos(-1);
+36 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">double</emphasis>&#32;kn&#32;=&#32;PI;
+37 &#32;&#32;&#32;&#32;
+38 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;k;&#32;
+39 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;nn;
+40 &#32;&#32;&#32;&#32;
+41 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">double</emphasis>&#32;complex&#32;tmp,&#32;tmp1,&#32;tmp2;
+42 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">double</emphasis>&#32;complex&#32;sum;
+43 &#32;&#32;&#32;&#32;
+44 &#32;&#32;&#32;&#32;tmp&#32;=&#32;pow(I,m)*<link linkend="d8/d84/a00001_1aaa44a6c56572fc4081f172df9aac983f">factorial</link>(m)*0.5/PI;
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+46 &#32;&#32;&#32;&#32;nn&#32;=&#32;n;
+47 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>(n=1;&#32;n&lt;=nn;&#32;n++)
+48 &#32;&#32;&#32;&#32;{
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sum&#32;=&#32;0.0;
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>(k=0;&#32;k&lt;=m;&#32;k++)
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp1&#32;=&#32;exp(I*kn*n)+pow(-1,&#32;m-k+1)*exp(-I*kn*n);
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp2&#32;=&#32;<link linkend="d8/d84/a00001_1aaa44a6c56572fc4081f172df9aac983f">factorial</link>(m-k)*pow(n*I,&#32;k+1);
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sum&#32;+=&#32;pow(-1.0,&#32;k)*pow(kn,&#32;m-k)*tmp1/tmp2;
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+57 <emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(&quot;tmp1=,%f,&#32;%f\n&quot;,&#32;creal(tmp1),&#32;cimag(tmp1));</emphasis>
+58 <emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(&quot;tmp2=,%f,&#32;%f\n&quot;,&#32;creal(tmp2),&#32;cimag(tmp2));</emphasis>
+59 <emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(&quot;sum=,%f,&#32;%f\n&quot;,&#32;creal(sum),&#32;cimag(sum));</emphasis>
+60 
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp2&#32;=&#32;tmp*sum;
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cc[n]&#32;=&#32;creal(tmp2);
+64 <emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;printf(&quot;n=%d,&#32;coeff=%f\n&quot;,&#32;n,&#32;cc[n]);</emphasis>
+65 &#32;&#32;&#32;&#32;}
+66 &#32;&#32;&#32;&#32;
+67 &#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;n=0</emphasis>
+68 &#32;&#32;&#32;&#32;tmp&#32;=&#32;pow(I,&#32;m)*pow(kn,&#32;m+1)*0.5/PI*(1+pow(-1,m))/(m+1);
+69 &#32;&#32;&#32;&#32;cc[0]&#32;=&#32;creal(tmp);
+70 &#32;&#32;&#32;&#32;
+71 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>(n=0;&#32;n&lt;=nn;&#32;n++)
+72 &#32;&#32;&#32;&#32;{
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis class="stringliteral">&quot;cc[%d]=%f\n&quot;</emphasis>,&#32;n,&#32;cc[n]);
+74 &#32;&#32;&#32;&#32;}
+75 &#32;&#32;&#32;&#32;
+76 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
+77 }
+78 
+<link linkend="d8/d84/a00001_1a3ac5877a236e4d1e769ecd715f44b559">79 </link><emphasis class="keywordtype">void</emphasis>&#32;<link linkend="d8/d84/a00001_1a3ac5877a236e4d1e769ecd715f44b559">cdcoeff_stg</link>(<emphasis class="keywordtype">int</emphasis>&#32;m,&#32;<emphasis class="keywordtype">int</emphasis>&#32;n,&#32;<emphasis class="keywordtype">double</emphasis>&#32;*cc)
+80 {
+81 &#32;&#32;&#32;&#32;m&#32;=&#32;abs(m);
+82 &#32;&#32;&#32;&#32;n&#32;=&#32;abs(n);
+83 
+84 &#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;&#32;
+85 }
+86 
+87 <emphasis class="preprocessor">#define&#32;MAIN</emphasis>
+88 <emphasis class="preprocessor">#ifdef&#32;MAIN</emphasis>
+89 
+<link linkend="d8/d84/a00001_1ac26bf1b1b45ee7970f3ac54892104b13">90 </link><emphasis class="keywordtype">int</emphasis>&#32;<link linkend="d8/d84/a00001_1ac26bf1b1b45ee7970f3ac54892104b13">main</link>()
+91 {
+92 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;m=2;
+93 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;n=10;
+94 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;result;
+95 &#32;&#32;&#32;&#32;<emphasis class="keywordtype">double</emphasis>&#32;cc[2*n+1];
+96 &#32;&#32;&#32;&#32;
+97 &#32;&#32;&#32;&#32;result&#32;=&#32;<link linkend="d8/d84/a00001_1aaa44a6c56572fc4081f172df9aac983f">factorial</link>(m);
+98 &#32;&#32;&#32;&#32;printf(<emphasis class="stringliteral">&quot;result=%d\n&quot;</emphasis>,&#32;result);
+99 &#32;&#32;&#32;&#32;
+100 &#32;&#32;&#32;&#32;<link linkend="d8/d84/a00001_1aebeab242545084906cda6e74300f4011">cdcoeff</link>(m,n,cc);
+101 }
+102 
+103 <emphasis class="preprocessor">#endif</emphasis>
+    </computeroutput></literallayout>
+</section>

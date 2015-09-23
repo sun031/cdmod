@@ -1,0 +1,899 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 5;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 9;}
+{\s50\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext51 List Continue 0;}
+{\s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext52 List Continue 1;}
+{\s52\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext53 List Continue 2;}
+{\s53\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext54 List Continue 3;}
+{\s54\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext55 List Continue 4;}
+{\s55\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext56 List Continue 5;}
+{\s56\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext57 List Continue 6;}
+{\s57\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext58 List Continue 7;}
+{\s58\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext59 List Continue 8;}
+{\s59\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext59 List Continue 9;}
+{\s60\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext61 DescContinue 0;}
+{\s61\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext62 DescContinue 1;}
+{\s62\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext63 DescContinue 2;}
+{\s63\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext64 DescContinue 3;}
+{\s64\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext65 DescContinue 4;}
+{\s65\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext66 DescContinue 5;}
+{\s66\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext67 DescContinue 6;}
+{\s67\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext68 DescContinue 7;}
+{\s68\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext69 DescContinue 8;}
+{\s69\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext69 DescContinue 9;}
+{\s70\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext81 LatexTOC 0;}
+{\s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext82 LatexTOC 1;}
+{\s72\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext83 LatexTOC 2;}
+{\s73\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext84 LatexTOC 3;}
+{\s74\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext85 LatexTOC 4;}
+{\s75\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext86 LatexTOC 5;}
+{\s76\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext87 LatexTOC 6;}
+{\s77\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext88 LatexTOC 7;}
+{\s78\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext89 LatexTOC 8;}
+{\s79\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext89 LatexTOC 9;}
+{\s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext81 \sautoupd List Bullet 0;}
+{\s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid \sbasedon0 \snext82 \sautoupd List Bullet 1;}
+{\s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid \sbasedon0 \snext83 \sautoupd List Bullet 2;}
+{\s83\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls4\adjustright \fs20\cgrid \sbasedon0 \snext84 \sautoupd List Bullet 3;}
+{\s84\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls5\adjustright \fs20\cgrid \sbasedon0 \snext85 \sautoupd List Bullet 4;}
+{\s85\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls6\adjustright \fs20\cgrid \sbasedon0 \snext86 \sautoupd List Bullet 5;}
+{\s86\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls7\adjustright \fs20\cgrid \sbasedon0 \snext87 \sautoupd List Bullet 6;}
+{\s87\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls8\adjustright \fs20\cgrid \sbasedon0 \snext88 \sautoupd List Bullet 7;}
+{\s88\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls9\adjustright \fs20\cgrid \sbasedon0 \snext89 \sautoupd List Bullet 8;}
+{\s89\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls10\adjustright \fs20\cgrid \sbasedon0 \snext89 \sautoupd List Bullet 9;}
+{\s90\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext91 \sautoupd List Enum 0;}
+{\s91\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext92 \sautoupd List Enum 1;}
+{\s92\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext93 \sautoupd List Enum 2;}
+{\s93\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext94 \sautoupd List Enum 3;}
+{\s94\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext95 \sautoupd List Enum 4;}
+{\s95\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext96 \sautoupd List Enum 5;}
+{\s96\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext96 \sautoupd List Enum 5;}
+{\s97\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext98 \sautoupd List Enum 7;}
+{\s98\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext99 \sautoupd List Enum 8;}
+{\s99\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext99 \sautoupd List Enum 9;}
+}
+{\comment begin body}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+src/swcdshot2.cpp File Reference\par \pard\plain 
+{\tc\tcl2 \v src/swcdshot2.cpp}
+{\xe \v src/swcdshot2.cpp}
+{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v absorb\:swcdshot2.cpp}
+{\xe \v swcdshot2.cpp\:absorb}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void absorb (int  {\i ntap}, int  {\i nx}, int  {\i nz}, float *  {\i taper}, float **  {\i p})}}
+\par
+{\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   598 \{\par
+  599     int ix, iz;\par
+  600     /* upper boundary */\par
+  601     for (ix=0; ix<nx; ix++)\par
+  602     \{\par
+  603         for (iz=0; iz<ntap; iz++)\par
+  604         \{\par
+  605             p[ix][iz] *= taper[iz];\par
+  606         \}\par
+  607     \}\par
+  608 \par
+  609     /* left boundary */\par
+  610     for (ix=0; ix<ntap; ix++)\par
+  611     \{\par
+  612         for (iz=0; iz<nz; iz++)\par
+  613         \{\par
+  614             p[ix][iz] *= taper[ix];\par
+  615         \}\par
+  616     \}\par
+  617 \par
+  618     /*lower boundary*/\par
+  619     for (ix=0; ix<nx; ix++)\par
+  620     \{\par
+  621         for (iz=0; iz<ntap; iz++)\par
+  622         \{\par
+  623             p[ix][nz-iz-1] *= taper[iz];\par
+  624         \}\par
+  625     \}\par
+  626 \par
+  627     /*right boundary*/\par
+  628     for (ix=0; ix<ntap; ix++)\par
+  629     \{\par
+  630         for (iz=0; iz<nz; iz++)\par
+  631         \{\par
+  632             p[nx-ix-1][iz] *= taper[ix];\par
+  633         \}\par
+  634     \}\par
+  635 \par
+  636     /*end of absorb()*/\par
+  637 \}\par
+}
+}
+{\xe \v cd_coeff_scalar\:swcdshot2.cpp}
+{\xe \v swcdshot2.cpp\:cd_coeff_scalar}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void cd_coeff_scalar (int  {\i np}, float *  {\i d})}}
+\par
+{\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   702 \{\par
+  703     int i;\par
+  704     int nphalf;\par
+  705     float sum=0;\par
+  706 \par
+  707     float *w;\par
+  708 \par
+  709     w = alloc1float(np);\par
+  710 \par
+  711     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAI" }{}}{\fldrslt {\cs37\ul\cf2 hanning}}}
+(np, w);\par
+  712 \par
+  713     nphalf=np/2;\par
+  714     for (i=1; i<=nphalf; i++)\par
+  715     \{\par
+  716         d[i] = 2.0*pow(-1.0, float(i+1))/float(i*i) * w[nphalf+i];\par
+  717         sum += d[i];\par
+  718     \}\par
+  719 \par
+  720     d[0] = -2.0*sum;\par
+  721 \par
+  722     free1float(w);\par
+  723 \par
+  724     return;\par
+  725 \par
+  726 \}\par
+}
+}
+{\xe \v cerjan\:swcdshot2.cpp}
+{\xe \v swcdshot2.cpp\:cerjan}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void cerjan (int  {\i ntap}, float  {\i coeff}, float *  {\i taper})}}
+\par
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   587 \{\par
+  588     int i;\par
+  589     float a;\par
+  590     for (i=0; i<ntap; i++)\par
+  591     \{\par
+  592         a = (float)(ntap-i)*(float)(ntap-i);\par
+  593         taper[i] = exp(-coeff*coeff*a);\par
+  594     \}\par
+  595 \}\par
+}
+}
+{\xe \v extenModel\:swcdshot2.cpp}
+{\xe \v swcdshot2.cpp\:extenModel}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void extenModel (int  {\i nx}, int  {\i nz}, int  {\i ntap}, float **  {\i v}, float **  {\i vv})}}
+\par
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   552 \{\par
+  553     int ix, iz;\par
+  554 \par
+  555     /*internal zone*/\par
+  556     //for (ix=0; ix<nx-2*ntap; ix++)\par
+  557     //\{\par
+  558     //  for (iz=0; iz<nz-2*ntap; iz++)\par
+  559     //  \{\par
+  560     //      vv[ix+ntap][iz+ntap] = v[ix][iz];\par
+  561     //  \}\par
+  562     //\}\par
+  563 \par
+  564     /*upper and lower boundary*/\par
+  565     for (ix=0; ix<nx; ix++)\par
+  566     \{\par
+  567         for (iz=0; iz<ntap; iz++)\par
+  568         \{\par
+  569             vv[ix][iz] = vv[ix][ntap];\par
+  570             vv[ix][nz-iz-1] = vv[ix][nz-ntap-1];\par
+  571         \}\par
+  572     \}\par
+  573 \par
+  574     /*left and right boundary*/\par
+  575     for (ix=0; ix<ntap; ix++)\par
+  576     \{\par
+  577         for (iz=0; iz<nz; iz++)\par
+  578         \{\par
+  579             vv[ix][iz] = vv[ntap][iz];\par
+  580             vv[nx-ix-1][iz] = vv[nx-ntap-1][iz];\par
+  581         \}\par
+  582     \}\par
+  583 \par
+  584 \}\par
+}
+}
+{\xe \v get_file_snap\:swcdshot2.cpp}
+{\xe \v swcdshot2.cpp\:get_file_snap}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void get_file_snap (char *  {\i dest}, char *  {\i src}, int  {\i num})}}
+\par
+{\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   640 \{\par
+  641     char a[10];\par
+  642     strcpy(dest, src);\par
+  643     strcat(dest, "_t");\par
+  644     sprintf(a, "%05d", num);\par
+  645     strcat(dest, a);\par
+  646     strcat(dest, ".bin");\par
+  647     return;\par
+  648 \}\par
+}
+}
+{\xe \v hanning\:swcdshot2.cpp}
+{\xe \v swcdshot2.cpp\:hanning}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void hanning (int  {\i n}, float *  {\i w})}}
+\par
+{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   740 \{\par
+  741     int i;\par
+  742 \par
+  743     for(i=0; i<n; i++)\par
+  744     \{\par
+  745         w[i] = 0.5*(1-cos(2.0*PI*(i+1)/(n+1)));\par
+  746     \}\par
+  747 \par
+  748 \}\par
+}
+}
+{\xe \v main\:swcdshot2.cpp}
+{\xe \v swcdshot2.cpp\:main}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int main (int  {\i argc}, char **  {\i argv})}}
+\par
+{\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid    82 \{\par
+   83     int nx, nz;\par
+   84     \par
+   86     int nxmod, nzmod; \par
+   87 \par
+   88     float fx, fz;\par
+   89 \par
+   90     int nt; /* number of time sampling*/\par
+   91 \par
+   92     int it;\par
+   93     int mt; /*every mt time step to output a snapshot*/\par
+   94 \par
+   95     int ix, iz;     /* counter */\par
+   96 \par
+   97     float *wlvt;    /*wavelet*/\par
+   98     float **v;  /*velocity model*/\par
+   99     float **vv; /*velocity in calculating zone*/\par
+  100 \par
+  101     float **pp, **p, **pm;  /*wavefield at t+dt, t, t-dt*/\par
+  102 \par
+  103     float **s;  /*spatial distribution of source*/\par
+  104 \par
+  105     float **hseis;  /*shor records*/\par
+  106     float hsz;  /*depth of seismic line, =0 in this code*/\par
+  107     int izhsz;\par
+  108 \par
+  109     float **vseis;\par
+  110     float vsx;\par
+  111     int ixvsx;\par
+  112 \par
+  113     int np;\par
+  114     float *d;\par
+  115 \par
+  116     float dx, dz;   /*space sampling interval*/\par
+  117     float fpeak;    /*peak frequency*/\par
+  118     float fmax;\par
+  119     float dt;   /* time sampling interval*/\par
+  120 \par
+  121     float vmin, vmax;   /* min and max value of velocity*/\par
+  122 \par
+  123     float tdelay;   /*time delay of wavelet*/\par
+  124     int ntdelay;\par
+  125 \par
+  126     time_t t0, t1, t2;\par
+  127 \par
+  128     float dtstable;\par
+  129     float dxstable;\par
+  130 \par
+  131     int ntap;\par
+  132     float coeff;\par
+  133     float *taper;\par
+  134 \par
+  135     float xs, zs;\par
+  136     int ixs, izs;\par
+  137 \par
+  138     float sx, gx;\par
+  139     int isx, igx;\par
+  140 \par
+  141     int verbose=0;\par
+  142 \par
+  143     char file_tmp[BUFSIZ];\par
+  144     char *file_snap="";\par
+  145     char *file_vseis="";\par
+  146 \par
+  147     FILE *fp_snap = NULL;\par
+  148     FILE *fp_vel = stdin;\par
+  149     FILE *fp_seis = stdout;\par
+  150     FILE *fp_vseis = NULL;\par
+  151 \par
+  152     //FILE *fp_hseis = stdin;\par
+  153 \par
+  154     /* SEGY fields */\par
+  155     long tracl=0;       /* trace number within a line */\par
+  156     long tracr=0;       /* trace number within a reel */\par
+  157 \par
+  158     /* hook up getpar to handle the parameters */\par
+  159     initargs(argc, argv);\par
+  160     requestdoc(0);\par
+  161 \par
+  162     t0=time(NULL);\par
+  163 \par
+  164     /* get required parameters */\par
+  165     if (!getparint("nxmod", &nxmod))\par
+  166         err("must specify nxmod!\\n");\par
+  167     if (!getparint("nzmod", &nzmod))\par
+  168         err("must specify nzmod!\\n");\par
+  169     if (!getparstring("file_snap", &file_snap))\par
+  170         err("must specify file_snap!\\n");\par
+  171     if (!getparstring("file_vseis", &file_vseis))\par
+  172         err("must specify file_vseis!\\n");\par
+  173 \par
+  174     if (!getparfloat("dt", &dt))\par
+  175         err("must specify dt!\\n");\par
+  176     if (!getparint("nt", &nt))\par
+  177         err("must specify nt!\\n");\par
+  178 \par
+  179     if (!getparfloat("xs", &xs))\par
+  180         err("must specify dt!\\n");\par
+  181     if (!getparfloat("zs", &zs))\par
+  182         err("must specify dt!\\n");\par
+  183 \par
+  184     /*optional parameters*/\par
+  185     if (!getparfloat("dx", &dx))\par
+  186         dx = 10;\par
+  187     if (!getparfloat("dz", &dz))\par
+  188         dz = 10;\par
+  189     if (!getparfloat("fpeak", &fpeak))\par
+  190         fpeak = 25;\par
+  191     if (!getparfloat("fmax", &fmax))\par
+  192         fmax = 2.0*fpeak;\par
+  193     if (!getparfloat("tdelay", &tdelay))\par
+  194         tdelay = 0;\par
+  195 \par
+  196     if (!getparint("np", &np))\par
+  197         np = 9;\par
+  198 \par
+  199     if (!getparint("mt", &mt))\par
+  200         mt = 1;\par
+  201 \par
+  202     if (!getparfloat("coeff", &coeff))\par
+  203         coeff = 0.0053;\par
+  204     if (!getparint("ntap", &ntap))\par
+  205         ntap = 45;\par
+  206 \par
+  207     if (!getparfloat("fx", &fx))\par
+  208         fx = 0;\par
+  209     if (!getparfloat("fz", &fz))\par
+  210         fz = 0;\par
+  211 \par
+  212     if (!getparfloat("hsz", &hsz))\par
+  213         hsz = 0;\par
+  214 \par
+  215     if (!getparfloat("vsx", &vsx))\par
+  216         vsx = nxmod/2+ntap;\par
+  217 \par
+  218     if (!getparint("verbose", &verbose))\par
+  219         verbose = 1;\par
+  220 \par
+  221 \par
+  222     /************************************************************************/\par
+  223 \par
+  224     nx = nxmod + 2*ntap;\par
+  225     nz = nzmod + 2*ntap;\par
+  226 \par
+  227     if (verbose)\par
+  228     \{\par
+  229         fprintf(stderr, "\\nxs=%g\\n", xs);\par
+  230         fprintf(stderr, "nx=%d, nz=%d\\n", nx, nz);\par
+  231     \}\par
+  232 \par
+  233     /************************************************************************/\par
+  234 \par
+  235 \par
+  236     vv = alloc2float(nz, nx);\par
+  237     memset((void *) vv[0], 0, sizeof(float) * nx * nz);\par
+  238 \par
+  239     pp = alloc2float(nz, nx);\par
+  240     p = alloc2float(nz, nx);\par
+  241     pm = alloc2float(nz, nx);\par
+  242 \par
+  243     memset((void *) pp[0], 0, sizeof(float) * nx * nz);\par
+  244     memset((void *) p[0], 0, sizeof(float) * nx * nz);\par
+  245     memset((void *) pm[0], 0, sizeof(float) * nx * nz);\par
+  246 \par
+  247     s = alloc2float(nz, nx);\par
+  248     memset((void *)s[0], 0, sizeof(float) * nx *nz);\par
+  249 \par
+  250     hseis=alloc2float(nt, nx);\par
+  251     memset((void *)hseis[0], 0, sizeof(float)*nx*nt);\par
+  252 \par
+  253     vseis=alloc2float(nt, nz);\par
+  254     memset((void *)vseis[0], 0, sizeof(float)*nz*nt);\par
+  255 \par
+  256     taper=alloc1float(ntap);\par
+  257     memset((void *)taper, 0, sizeof(float)*ntap);\par
+  258 \par
+  259 \par
+  260     v = alloc2float(nzmod, nxmod);\par
+  261     memset((void *) v[0], 0, sizeof(float) * nxmod * nzmod);\par
+  262 \par
+  263     d = alloc1float(np);\par
+  264 \par
+  265     /* read velocities */\par
+  266     efread(v[0],sizeof(float),nxmod*nzmod,fp_vel);\par
+  267     efclose(fp_vel);\par
+  268 \par
+  269     for (ix=0; ix<nx-2*ntap; ix++)\par
+  270     \{\par
+  271         for (iz=0; iz<nz-2*ntap; iz++)\par
+  272         \{\par
+  273             vv[ntap+ix][ntap+iz] = v[ix][iz];\par
+  274         \}\par
+  275     \}\par
+  276 \par
+  277     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAK" }{}}{\fldrslt {\cs37\ul\cf2 extenModel}}}
+(nx, nz, ntap, vv, vv);\par
+  278     vmin=vmax=vv[0][0];\par
+  279     for (ix = 0; ix < nx; ix++)\par
+  280     \{\par
+  281         for (iz = 0; iz < nz; iz++)\par
+  282         \{\par
+  283             vmin=MIN(vmin, vv[ix][iz]);\par
+  284             vmax=MAX(vmax, vv[ix][iz]);\par
+  285         \}\par
+  286     \}\par
+  287 \par
+  288     fprintf(stderr,"vmin=%g, vmax=%g\\n", vmin, vmax);\par
+  289     if(vmin==0)\par
+  290         err("error. vmin=%g",vmin);\par
+  291 \par
+  292     /*stable condtions*/\par
+  293     dxstable=vmin/(2*fmax);\par
+  294     if (MAX(dx, dz)>dxstable)\par
+  295     \{\par
+  296         warn("stable grid size must be smaller than %g", dxstable);\par
+  297     \}\par
+  298 \par
+  299     //dtstable=sqrt(2)*MIN(dx, dz)/(PI*vmax);\par
+  300     dtstable = 1.0/1.3167/vmax/sqrt(1./dx/dx+1./dz/dz);\par
+  301     if (dt>dtstable)\par
+  302     \{\par
+  303         err("unstable. dt must be smaller than %g", dtstable);\par
+  304     \}\par
+  305 \par
+  306     /*source*/\par
+  307     ntdelay=tdelay/dt;\par
+  308     wlvt = alloc1float(nt+ntdelay);\par
+  309     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAN" }{}}{\fldrslt {\cs37\ul\cf2 ricker1_wavelet}}}
+(nt+ntdelay, dt, fpeak, wlvt);\par
+  310 \par
+  311     ixs = (int) ((xs-fx) / dx) + ntap;\par
+  312     izs = (int) ((zs-fz) / dz) + ntap;\par
+  313     izhsz = (int) ((hsz-fz) / dz) + ntap;\par
+  314     ixvsx = (int) ((vsx-fx) / dx) + ntap;\par
+  315 \par
+  316     warn("ixs=%d, izs=%d\\n", ixs, izs);\par
+  317 \par
+  318     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAJ" }{}}{\fldrslt {\cs37\ul\cf2 cerjan}}}
+(ntap, coeff, taper);\par
+  319     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAO" }{}}{\fldrslt {\cs37\ul\cf2 src_spatial_distribution}}}
+(nx, nz, ixs, izs, s);\par
+  320 \par
+  321     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAH" }{}}{\fldrslt {\cs37\ul\cf2 cd_coeff_scalar}}}
+(np, d);\par
+  322 \par
+  323 //    for(ix=0; ix<np; ix++)\par
+  324 //    \{\par
+  325 //        warn("d[%d]=%g\\n", ix, d[ix]);\par
+  326 //    \}\par
+  327 \par
+  328     /*verbose*/\par
+  329     if (verbose)\par
+  330     \{\par
+  331         fprintf(stderr, "nx=%d nz=%d\\n", nx, nz);\par
+  332         fprintf(stderr, "ntap=%d coeff=%g\\n", ntap, coeff);\par
+  333         fprintf(stderr, "dtstable=%g dxstable=%g\\n", dtstable, dxstable);\par
+  334         fprintf(stderr, "dt=%g dx=%g dz=%g\\n", dt, dx, dz);\par
+  335         fprintf(stderr, "ntdelay=%d tdelay=%g\\n", ntdelay, tdelay);\par
+  336     \}\par
+  337 \par
+  338     memset((void *) pp[0], 0, sizeof(float) * nx * nz);\par
+  339     memset((void *) p[0], 0, sizeof(float) * nx * nz);\par
+  340     memset((void *) pm[0], 0, sizeof(float) * nx * nz);\par
+  341 \par
+  342     t2=time(NULL);\par
+  343 \par
+  344     warn("preprocessing time cost(s):%f", difftime(t2,t0));\par
+  345 \par
+  346     /*forward modeling*/\par
+  347     for (it=0; it<ntdelay; it++)\par
+  348     \{\par
+  349 \par
+  350         for (ix=0; ix<nx; ix++)\par
+  351         \{\par
+  352             for (iz=0; iz<nz; iz++)\par
+  353             \{\par
+  354                 p[ix][iz] += wlvt[it]*s[ix][iz];\par
+  355             \}\par
+  356         \}\par
+  357 \par
+  358         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAP" }{}}{\fldrslt {\cs37\ul\cf2 time_one_step_cd}}}
+(nx, nz, dt, dx, dz, np, d, vv, pp, pm, p);\par
+  359 \par
+  360         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAG" }{}}{\fldrslt {\cs37\ul\cf2 absorb}}}
+(ntap, nx, nz, taper, pm);\par
+  361         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAG" }{}}{\fldrslt {\cs37\ul\cf2 absorb}}}
+(ntap, nx, nz, taper, p);\par
+  362         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAG" }{}}{\fldrslt {\cs37\ul\cf2 absorb}}}
+(ntap, nx, nz, taper, pp);\par
+  363 \par
+  364         for (ix=0; ix<nx; ix++)\par
+  365         \{\par
+  366             for (iz=0; iz<nz; iz++)\par
+  367             \{\par
+  368                 pm[ix][iz] = p[ix][iz];\par
+  369                 p[ix][iz] = pp[ix][iz];\par
+  370             \}\par
+  371         \}\par
+  372 \par
+  373     \}\par
+  374 \par
+  375     t1=time(NULL);\par
+  376 \par
+  377     for (it = 0; it < nt; it++)\par
+  378     \{\par
+  379 \par
+  380         if (verbose && (it%100==0) )\par
+  381         \{\par
+  382             t2 = time(NULL);\par
+  383             warn("it=%d, nt=%d, time1=%g, time2=%g", it, nt, difftime(t2, t1), difftime(t2, t0));\par
+  384         \}\par
+  385 \par
+  386         for (ix=0; ix<nx; ix++)\par
+  387         \{\par
+  388             for (iz=0; iz<nz; iz++)\par
+  389             \{\par
+  390                 p[ix][iz] += wlvt[it+ntdelay]*s[ix][iz];\par
+  391             \}\par
+  392         \}\par
+  393 \par
+  394         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAP" }{}}{\fldrslt {\cs37\ul\cf2 time_one_step_cd}}}
+(nx, nz, dt, dx, dz, np, d, vv, pp, pm, p);\par
+  395 \par
+  396         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAG" }{}}{\fldrslt {\cs37\ul\cf2 absorb}}}
+(ntap, nx, nz, taper, pm);\par
+  397         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAG" }{}}{\fldrslt {\cs37\ul\cf2 absorb}}}
+(ntap, nx, nz, taper, p);\par
+  398         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAG" }{}}{\fldrslt {\cs37\ul\cf2 absorb}}}
+(ntap, nx, nz, taper, pp);\par
+  399 \par
+  400         for (ix=0; ix<nx; ix++)\par
+  401         \{\par
+  402             for (iz=0; iz<nz; iz++)\par
+  403             \{\par
+  404                 pm[ix][iz] = p[ix][iz];\par
+  405                 p[ix][iz] = pp[ix][iz];\par
+  406             \}\par
+  407         \}\par
+  408 \par
+  409         for (ix=0; ix<nx; ix++)\par
+  410         \{\par
+  411             hseis[ix][it] = p[ix][izhsz];\par
+  412         \}\par
+  413         for(iz=0; iz<nz; iz++)\par
+  414         \{\par
+  415             vseis[iz][it] = p[ixvsx][iz];\par
+  416         \}\par
+  417 \par
+  418         if (it % mt == 0)\par
+  419         \{\par
+  420 \par
+  421             for (ix=0; ix<nxmod; ix++)\par
+  422             \{\par
+  423                 for (iz=0; iz<nzmod; iz++)\par
+  424                 \{\par
+  425                     v[ix][iz] = p[ntap+ix][ntap+iz];\par
+  426                 \}\par
+  427             \}\par
+  428 \par
+  429             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAL" }{}}{\fldrslt {\cs37\ul\cf2 get_file_snap}}}
+(file_tmp, file_snap, it);\par
+  430             fp_snap = efopen(file_tmp, "w");\par
+  431             efwrite((void *) v[0], sizeof(float), nxmod * nzmod, fp_snap);\par
+  432             efclose(fp_snap);\par
+  433         \}\par
+  434 \par
+  435         if (verbose && (it%100==0) )\par
+  436         \{\par
+  437             t1 = time(NULL);\par
+  438         \}\par
+  439 \par
+  440     \} /*end of time loop*/\par
+  441     /*end of forward modeling*/\par
+  442 \par
+  443     warn("Writing final shot records...");\par
+  444 \par
+  445     /************************************************************************/\par
+  446     fp_vseis = efopen(file_vseis, "w");\par
+  447 \par
+  448     for (ix=ntap; ix<nx-ntap; ix++)\par
+  449     \{\par
+  450         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.ns = nt;\par
+  451         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.dt = dt*1000000;\par
+  452 \par
+  453         //tr.fldr = ixs-ntap;\par
+  454 \par
+  455         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.sx = fx + (float)(ixs-ntap)*dx;\par
+  456         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.sy = fx + (float)(izs-ntap)*dz;\par
+  457         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.gx = fx + (float)(ix-ntap)*dx;\par
+  458         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.gy = fx + (float)(izhsz-ntap)*dz;\par
+  459 \par
+  460         //tr.cdp = (tr.sx+tr.gx)/2;\par
+  461         //tr.offset = tr.gx-tr.sx;\par
+  462 \par
+  463         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.d1=dz;\par
+  464         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.d2=dx;\par
+  465 \par
+  466         //tracl++;\par
+  467         //tr.tracl=tracl;\par
+  468         for (it=0; it<nt; it++)\par
+  469         \{\par
+  470             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.data[it] = hseis[ix][it];\par
+  471         \}\par
+  472 \par
+  473         fputtr(fp_seis, &{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+);\par
+  474 \par
+  475     \}\par
+  476 \par
+  477     //tracl=0;\par
+  478     for (iz=ntap; iz<nz-ntap; iz++)\par
+  479     \{\par
+  480         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.ns = nt;\par
+  481         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.dt = dt*1000000;\par
+  482 \par
+  483         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.sx = fx + (float)(ixs-ntap)*dx;\par
+  484         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.sy = fx + (float)(izs-ntap)*dz;\par
+  485         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.gx = fx + (float)(ixvsx-ntap)*dx;\par
+  486         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.gy = fx + (float)(iz-ntap)*dz;\par
+  487 \par
+  488         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.d1=dz;\par
+  489         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.d2=dx;\par
+  490 \par
+  491         //tracl++;\par
+  492         //tr.tracl=tracl;\par
+  493         for (it=0; it<nt; it++)\par
+  494         \{\par
+  495             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+.data[it] = vseis[iz][it];\par
+  496         \}\par
+  497 \par
+  498         fputtr(fp_vseis, &{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAQ" }{}}{\fldrslt {\cs37\ul\cf2 tr}}}
+);\par
+  499 \par
+  500     \}\par
+  501     /*free memory*/\par
+  502     free2float(vv);\par
+  503     free2float(pp);\par
+  504     free2float(p);\par
+  505     free2float(pm);\par
+  506     free1float(taper);\par
+  507     free2float(hseis);\par
+  508     free2float(vseis);\par
+  509     free2float(v);\par
+  510     free2float(s);\par
+  511 \par
+  512     t2=time(NULL);\par
+  513     warn("total time: %g", difftime(t2,t0));\par
+  514 \par
+  515     return 0;\par
+  516 \}\par
+}
+}
+{\xe \v ricker1_wavelet\:swcdshot2.cpp}
+{\xe \v swcdshot2.cpp\:ricker1_wavelet}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void ricker1_wavelet (int  {\i nt}, float  {\i dt}, float  {\i fpeak}, float *  {\i wavelet})}}
+\par
+{\bkmkstart AAAAAAAAAN}
+{\bkmkend AAAAAAAAAN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   537 \{\par
+  538     int it;\par
+  539     float t1, t0;\par
+  540 \par
+  541     t0 = 1.0 / fpeak;\par
+  542 \par
+  543     for (it = 0; it < nt; it++)\par
+  544     \{\par
+  545         t1 = it * dt;\par
+  546         wavelet[it] = exp(-PI * PI * fpeak * fpeak * (t1 - t0) * (t1 - t0))\par
+  547                       * (1.0 - 2. * PI * PI * fpeak * fpeak * (t1 - t0) * (t1 - t0));\par
+  548     \}\par
+  549 \}\par
+}
+}
+{\xe \v src_spatial_distribution\:swcdshot2.cpp}
+{\xe \v swcdshot2.cpp\:src_spatial_distribution}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void src_spatial_distribution (int  {\i nx}, int  {\i nz}, int  {\i ixs}, int  {\i izs}, float **  {\i s})}}
+\par
+{\bkmkstart AAAAAAAAAO}
+{\bkmkend AAAAAAAAAO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   751 \{\par
+  752     int ix, iz;\par
+  753     float xn, zn;\par
+  754 \par
+  755     for (ix=0; ix<nx; ix++)\par
+  756     \{\par
+  757         xn = ix-ixs;\par
+  758         for (iz=0; iz<nz; iz++)\par
+  759         \{\par
+  760             zn = iz-izs;\par
+  761             s[ix][iz] = exp(-xn*xn-zn*zn);\par
+  762         \}\par
+  763     \}\par
+  764     return;\par
+  765 \}\par
+}
+}
+{\xe \v time_one_step_cd\:swcdshot2.cpp}
+{\xe \v swcdshot2.cpp\:time_one_step_cd}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void time_one_step_cd (int  {\i nx}, int  {\i nz}, float  {\i dt}, float  {\i dx}, float  {\i dz}, int  {\i np}, float *  {\i d}, float **  {\i v}, float **  {\i pp}, float **  {\i pm}, float **  {\i p})}}
+\par
+{\bkmkstart AAAAAAAAAP}
+{\bkmkend AAAAAAAAAP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   673 \{\par
+  674     int ix, iz;\par
+  675     float dtdx, dtdz;\par
+  676     float diffx, diffz;\par
+  677 \par
+  678     dtdx = dt*dt/dx/dx;\par
+  679     dtdz = dt*dt/dz/dz;\par
+  680 \par
+  681     for(ix=np/2; ix<nx-np/2; ix++)\par
+  682     \{\par
+  683         for (iz=np/2; iz<nz-np/2; iz++)\par
+  684         \{\par
+  685             diffx = d[0]*p[ix][iz];\par
+  686             diffz = d[0]*p[ix][iz];\par
+  687 \par
+  688             for (int ip=1; ip<=np/2; ip++)\par
+  689             \{\par
+  690                 diffx += d[ip]*(p[ix+ip][iz]+p[ix-ip][iz]);\par
+  691                 diffz += d[ip]*(p[ix][iz+ip]+p[ix][iz-ip]);\par
+  692             \}\par
+  693 \par
+  694             pp[ix][iz] = 2.0*p[ix][iz] - pm[ix][iz] +\par
+  695                          v[ix][iz]*v[ix][iz]*(dtdx*diffx+dtdz*diffz);\par
+  696         \}\par
+  697     \}\par
+  698 \par
+  699 \}\par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v sdoc\:swcdshot2.cpp}
+{\xe \v swcdshot2.cpp\:sdoc}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+char* sdoc[]}}
+\par
+{\bkmkstart AAAAAAAAAR}
+{\bkmkend AAAAAAAAAR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v tr\:swcdshot2.cpp}
+{\xe \v swcdshot2.cpp\:tr}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+segy tr}}
+\par
+{\bkmkstart AAAAAAAAAQ}
+{\bkmkend AAAAAAAAAQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+}
