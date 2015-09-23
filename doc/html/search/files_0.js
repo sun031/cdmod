@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cdcoeff_2ecpp',['cdcoeff.cpp',['../cdcoeff_8cpp.html',1,'']]]
+  ['cdcoeff_2ec',['cdcoeff.c',['../cdcoeff_8c.html',1,'']]]
 ];

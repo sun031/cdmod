@@ -1,0 +1,55 @@
+\hypertarget{cdcoeff_8c}{}\section{src/cdcoeff.c File Reference}
+\label{cdcoeff_8c}\index{src/cdcoeff.\+c@{src/cdcoeff.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$complex.\+h$>$}\\*
+{\ttfamily \#include $<$tgmath.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{cdcoeff_8c_a4f584a09520aa7bf51d7df5645faabc0}{factorial} (int m)
+\item 
+void \hyperlink{cdcoeff_8c_ac35f100e6516509af9f07515f449bc9d}{cdcoeff} (int m, int n)
+\item 
+int \hyperlink{cdcoeff_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{cdcoeff_8c_ac35f100e6516509af9f07515f449bc9d}{}\index{cdcoeff.\+c@{cdcoeff.\+c}!cdcoeff@{cdcoeff}}
+\index{cdcoeff@{cdcoeff}!cdcoeff.\+c@{cdcoeff.\+c}}
+\subsubsection[{cdcoeff(int m, int n)}]{\setlength{\rightskip}{0pt plus 5cm}void cdcoeff (
+\begin{DoxyParamCaption}
+\item[{int}]{m, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\label{cdcoeff_8c_ac35f100e6516509af9f07515f449bc9d}
+calculation of C\+D coefficients 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & order of the derivatives, m=1,2,3,4 \\
+\hline
+\mbox{\tt in}  & {\em n} & order of spatial accuray, e.\+g., n=4, 10 \\
+\hline
+\end{DoxyParams}
+loop variable, innter \hypertarget{cdcoeff_8c_a4f584a09520aa7bf51d7df5645faabc0}{}\index{cdcoeff.\+c@{cdcoeff.\+c}!factorial@{factorial}}
+\index{factorial@{factorial}!cdcoeff.\+c@{cdcoeff.\+c}}
+\subsubsection[{factorial(int m)}]{\setlength{\rightskip}{0pt plus 5cm}int factorial (
+\begin{DoxyParamCaption}
+\item[{int}]{m}
+\end{DoxyParamCaption}
+)}\label{cdcoeff_8c_a4f584a09520aa7bf51d7df5645faabc0}
+calculate factorial 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & \\
+\hline
+\mbox{\tt out}  & {\em fact} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{cdcoeff_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\index{cdcoeff.\+c@{cdcoeff.\+c}!main@{main}}
+\index{main@{main}!cdcoeff.\+c@{cdcoeff.\+c}}
+\subsubsection[{main()}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{cdcoeff_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
