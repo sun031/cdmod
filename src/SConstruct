@@ -27,10 +27,11 @@ include = [prod_dir+'/mkl/include', \
 env=Environment()
 env.Prepend(LIBPATH=libpath, CPPPATH=include, LIBS=libs)
 env.Replace(CXX=prod_dir+'/bin/icpc', CCFLAGS='-O2')
+env.Replace(CC=prod_dir+'/bin/icc', CCFLAGS='-O2')
 
 mains = Split(progs)
 for prog in mains:
-	prog = env.Program([prog + '.cpp'])
+	prog = env.Program([prog + '.c', 'cdcoeff.c'])
 	env.Install(installdir, prog)
 
 env.Alias('install', installdir)

@@ -84,7 +84,7 @@ void cdcoeff_stg(int m, int n, double *cc)
 	return;	
 }
 
-#define MAIN
+#define NOMAIN
 #ifdef MAIN
 
 int main()
