@@ -154,10 +154,12 @@ int main(int argc, char **argv)
     char file_tmp[BUFSIZ];
     char *file_snap="";
     char *file_vseis="";
+    char *file_hseis="";
 
     FILE *fp_snap = NULL;
     FILE *fp_vel = stdin;
-    FILE *fp_seis = stdout;
+//    FILE *fp_seis = stdout;
+    FILE *fp_seis = NULL;
     FILE *fp_vseis = NULL;
 
     //FILE *fp_hseis = stdin;
@@ -180,8 +182,11 @@ int main(int argc, char **argv)
     if (!getparstring("file_snap", &file_snap))	/// \param[in] file_snap filename of snapshot, default file_snap = "snap", no extension.
     	file_snap = "snap";
 //        err("must specify file_snap!\n");
-    if (!getparstring("file_vseis", &file_vseis))	/// \param[in] file_vseis filename of velocity model, default file_vseis = "vseis.su"
-    	file_vseis = "vseis.su";
+    if (!getparstring("file_vseis", &file_vseis))	/// \param[in] file_vseis filename of velocity model, default file_vseis = "vseisht.su"
+    	file_vseis = "vseisht.su";
+//        err("must specify file_vseis!\n");
+    if (!getparstring("file_hseis", &file_hseis))	/// \param[in] file_hseis filename of velocity model, default file_hseis = "hseisht.su"
+    	file_hseis = "hseisht.su";
 //        err("must specify file_vseis!\n");
 
     if (!getparfloat("dt", &dt))	/// \param[in] dt time sampling interval
@@ -459,6 +464,7 @@ int main(int argc, char **argv)
 
     /************************************************************************/
     fp_vseis = efopen(file_vseis, "w");
+    fp_seis = efopen(file_hseis, "w");
 
     for (ix=ntap; ix<nx-ntap; ix++)
     {

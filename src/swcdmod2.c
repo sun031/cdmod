@@ -153,10 +153,12 @@ int main(int argc, char **argv)
     char file_tmp[BUFSIZ];
     char *file_snap="";
     char *file_vseis="";
-
+    char *file_hseis="";
+    
     FILE *fp_snap = NULL;
     FILE *fp_vel = stdin;
-    FILE *fp_seis = stdout;
+//    FILE *fp_seis = stdout;
+    FILE *fp_seis = NULL;
     FILE *fp_vseis = NULL;
 
     //FILE *fp_hseis = stdin;
@@ -182,6 +184,9 @@ int main(int argc, char **argv)
     if (!getparstring("file_vseis", &file_vseis))	/// \param[in] file_vseis filename of velocity model, default file_vseis = "vseis.su"
     	file_vseis = "vseis.su";
 //        err("must specify file_vseis!\n");
+    if (!getparstring("file_hseis", &file_hseis))	/// \param[in] file_hseis filename of velocity model, default file_vseis = "hseis.su"
+    	file_hseis = "hseis.su";
+//        err("must specify file_hseis!\n");
 
     if (!getparfloat("dt", &dt))	/// \param[in] dt time sampling interval
         err("must specify dt!\n");
@@ -325,7 +330,8 @@ int main(int argc, char **argv)
     izhsz = (int) ((hsz-fz) / dz) + ntap;
     ixvsx = (int) ((vsx-fx) / dx) + ntap;
 
-    warn("ixs=%d, izs=%d\n", ixs, izs);
+    warn("ixs=%d, izs=%d\n", ixs, izs); 
+    warn("izhsz=%d, ixvsx=%d\n", izhsz, ixvsx);
 
     cerjan(ntap, coeff, taper);
     src_spatial_distribution(nx, nz, ixs, izs, s);
@@ -456,6 +462,7 @@ int main(int argc, char **argv)
 
     /************************************************************************/
     fp_vseis = efopen(file_vseis, "w");
+    fp_seis = efopen(file_hseis, "w");
 
     for (ix=ntap; ix<nx-ntap; ix++)
     {
