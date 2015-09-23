@@ -2,6 +2,7 @@
 #include "par.h"
 #include "su.h"
 #include "segy.h"
+#include <math.h>
 //#include "mkl_dfti.h"
 
 /*********************** self documentation **********************/
@@ -71,17 +72,17 @@ void get_file_snap(char *dest, char *src, int num);
 void src_spatial_distribution(int nx, int nz, int ixs, int izs, float **s);
 
 void hanning(int n,float *w);
-void cd_coeff_scalar(int np, float *d);
+void cd_coeff_scalar(int m, int np, float *d);
 void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, float *d,
                       float **v, float **pp, float **pm, float **p);
 extern void cdcoeff(int m, int n, double *cc);
 
 segy tr;	/* horizontal line seismogram traces */
 
-/*! \brief main function of cdshot2 \n
+/*! \brief main function of cdmod2 using acoustic equation \n
  * shot seismograms calculated by CD method \n
  * Usage: \n
- * swcdshot2 < file_vel args > file_seis \n
+ * swcdmod2 < file_vel args > file_seis \n
  * args: nxmod=100 nzmod=100 for example \n
  * \li velocity model must be a binary file with v[nx][nz] order
  * \li output file  is in SU format
@@ -329,7 +330,7 @@ int main(int argc, char **argv)
     cerjan(ntap, coeff, taper);
     src_spatial_distribution(nx, nz, ixs, izs, s);
 
-    cd_coeff_scalar(np, d);
+    cd_coeff_scalar(2, np, d);
 
 //    for(ix=0; ix<np; ix++)
 //    {
@@ -693,6 +694,7 @@ void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, floa
     int ix, iz;
     float dtdx, dtdz;
     float diffx, diffz;
+    int ip;
 
     dtdx = dt*dt/dx/dx;
     dtdz = dt*dt/dz/dz;
@@ -704,7 +706,7 @@ void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, floa
             diffx = d[0]*p[ix][iz];
             diffz = d[0]*p[ix][iz];
 
-            for (int ip=1; ip<=np/2; ip++)
+            for (ip=1; ip<=np/2; ip++)
             {
                 diffx += d[ip]*(p[ix+ip][iz]+p[ix-ip][iz]);
                 diffz += d[ip]*(p[ix][iz+ip]+p[ix][iz-ip]);
@@ -720,7 +722,7 @@ void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, floa
 /*!
  * \brief calculating CD coefficients
  */
-void cd_coeff_scalar(int np, float *d)
+void cd_coeff_scalar(int m, int np, float *d)
 {
     int i;
     int nphalf;
@@ -729,37 +731,24 @@ void cd_coeff_scalar(int np, float *d)
     float *w;
     double *cc;
 
+    nphalf=np/2;
+    
     w = alloc1float(np);
     cc = alloc1double(np);
 
     hanning(np, w);
+    cdcoeff(m, nphalf, cc);
 
-    nphalf=np/2;
     for (i=1; i<=nphalf; i++)
     {
-        d[i] = 2.0*pow(-1.0, float(i+1))/float(i*i);
-//        d[i] = 2.0*pow(-1.0, float(i+1))/float(i*i) * w[nphalf+i];
+    	d[i] =  cc[i] * w[nphalf+i];
         sum += d[i];
     }
 
     d[0] = -2.0*sum;
 
     free1float(w);
-    
-    for(i=0; i<=nphalf; i++)
-    {
-    	warn("c[%d]=%f\n",i, d[i]);
-    }
-    
-    cdcoeff(2, 4, cc);
-//    
-//    for(i=0; i<=nphalf; i++)
-//    {
-//    	warn("c[%d]=%f\n",i, cc[i]);
-//    }
     free1double(cc);
-    
-    exit(0);
 
     return;
 

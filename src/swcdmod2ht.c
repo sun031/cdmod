@@ -73,16 +73,16 @@ void src_spatial_distribution(int nx, int nz, int ixs, int izs, float **s);
 
 void hanning(int n,float *w);
 void cd_coeff_scalar(int m, int np, float *d);
-void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, float *d,
+void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, float *d, float *d4,
                       float **v, float **pp, float **pm, float **p);
 extern void cdcoeff(int m, int n, double *cc);
 
 segy tr;	/* horizontal line seismogram traces */
 
-/*! \brief main function of cdshot2 \n
+/*! \brief main function of cdmod2 using acoustic equation and higher-order in time \n
  * shot seismograms calculated by CD method \n
  * Usage: \n
- * swcdshot2 < file_vel args > file_seis \n
+ * swcdmod2ht < file_vel args > file_seis \n
  * args: nxmod=100 nzmod=100 for example \n
  * \li velocity model must be a binary file with v[nx][nz] order
  * \li output file  is in SU format
@@ -122,6 +122,7 @@ int main(int argc, char **argv)
 
     int np;
     float *d;
+    float *d4;
 
     float dx, dz;	/* dx,dz space sampling interval*/
     float fpeak;	/* fpeak peak frequency*/
@@ -273,6 +274,7 @@ int main(int argc, char **argv)
     memset((void *) v[0], 0, sizeof(float) * nxmod * nzmod);
 
     d = alloc1float(np);
+    d4 = alloc1float(np);
 
     /* read velocities */
     efread(v[0],sizeof(float),nxmod*nzmod,fp_vel);
@@ -331,6 +333,7 @@ int main(int argc, char **argv)
     src_spatial_distribution(nx, nz, ixs, izs, s);
 
     cd_coeff_scalar(2, np, d);
+    cd_coeff_scalar(4, np, d4);
 
 //    for(ix=0; ix<np; ix++)
 //    {
@@ -367,7 +370,7 @@ int main(int argc, char **argv)
             }
         }
 
-        time_one_step_cd(nx, nz, dt, dx, dz, np, d, vv, pp, pm, p);
+        time_one_step_cd(nx, nz, dt, dx, dz, np, d, d4, vv, pp, pm, p);
 
         absorb(ntap, nx, nz, taper, pm);
         absorb(ntap, nx, nz, taper, p);
@@ -403,7 +406,7 @@ int main(int argc, char **argv)
             }
         }
 
-        time_one_step_cd(nx, nz, dt, dx, dz, np, d, vv, pp, pm, p);
+        time_one_step_cd(nx, nz, dt, dx, dz, np, d, d4, vv, pp, pm, p);
 
         absorb(ntap, nx, nz, taper, pm);
         absorb(ntap, nx, nz, taper, p);
@@ -678,7 +681,8 @@ void get_file_snap(char *dest, char *src, int num)
 \param[in] dx	x space step
 \param[in] dz	z space step
 \param[in] np	length of spatial operators
-\param[in] *d	array containing CD coefficients
+\param[in] *d	array containing CD coefficients for 2nd-order spatial deritives
+\param[in] *d4	array containing CD coefficients for 4th-order spatial deritives
 \param[in] **v	velocity model with v[nx][nz]
 \param[in] **pp	pressure wavefiled at t+dt
 \param[in] **pm	pressure wavefiled at t-dt
@@ -688,13 +692,18 @@ void get_file_snap(char *dest, char *src, int num)
 \author Weijia Sun, 2011, IGGCAS.
 
 ******************************************************************************/
-void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, float *d,
+void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, float *d, float *d4,
                       float **v, float **pp, float **pm, float **p)
 {
     int ix, iz;
     float dtdx, dtdz;
     float diffx, diffz;
     int ip;
+    int iq;
+    
+    int ip0, iq0;
+    
+    float diffx4, diffz4, diffx2z2;
 
     dtdx = dt*dt/dx/dx;
     dtdz = dt*dt/dz/dz;
@@ -705,15 +714,38 @@ void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, floa
         {
             diffx = d[0]*p[ix][iz];
             diffz = d[0]*p[ix][iz];
+            
+            diffx4 = d4[0]*p[ix][iz];
+            diffz4 = d4[0]*p[ix][iz];
 
             for (ip=1; ip<=np/2; ip++)
             {
                 diffx += d[ip]*(p[ix+ip][iz]+p[ix-ip][iz]);
                 diffz += d[ip]*(p[ix][iz+ip]+p[ix][iz-ip]);
             }
+            
+            // 4th-order
+            for (ip=1; ip<=np/2; ip++)
+            {
+                diffx4 += d4[ip]*(p[ix+ip][iz]+p[ix-ip][iz]);
+                diffz4 += d4[ip]*(p[ix][iz+ip]+p[ix][iz-ip]);
+            }
+            
+            // mixed spatial deritives
+            diffx2z2 = 0.0;
+            for (ip=-np/2; ip<=np/2; ip++)
+            {
+            	ip0 = abs(ip);
+            	for(iq=-np/2; iq<=np/2; iq++)
+            	{
+            		iq0 = abs(iq);
+					diffx2z2 += d[ip0]*d[iq0]*p[ix+ip][iz+iq];
+            	}
+            }
 
             pp[ix][iz] = 2.0*p[ix][iz] - pm[ix][iz] +
-                         v[ix][iz]*v[ix][iz]*(dtdx*diffx+dtdz*diffz);
+                         v[ix][iz]*v[ix][iz]*(dtdx*diffx+dtdz*diffz) + 
+                         pow(v[ix][iz], 4)*pow(dt, 4)/12.0*(diffx4/pow(dx, 4) + diffz4/pow(dz, 4) + 2.0*diffx2z2/(dx*dx*dz*dz));
         }
     }
 
