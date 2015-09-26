@@ -10,6 +10,7 @@ installdir = ['../bin']
 progs='''
 swcdmod2
 swcdmod2ht
+swfdmod2
 '''
 
 libs = Split("""mkl_intel_ilp64 mkl_intel_thread mkl_core iomp5 pthread
