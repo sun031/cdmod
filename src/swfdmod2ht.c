@@ -3,7 +3,7 @@
 #include "su.h"
 #include "segy.h"
 #include <math.h>
-//#include "mkl_dfti.h"
+#include "cwp.h"
 
 /*********************** self documentation **********************/
 char
@@ -71,11 +71,10 @@ void get_file_snap(char *dest, char *src, int num);
 
 void src_spatial_distribution(int nx, int nz, int ixs, int izs, float **s);
 
-void hanning(int n,float *w);
-void cd_coeff_scalar(int m, int np, float *d);
-void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, float *d, float *d4,
+
+void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, double *d, double *d4,
                       float **v, float **pp, float **pm, float **p);
-extern void cdcoeff(int m, int n, double *cc);
+void fdcoeff(int m, int n, double *cc);
 
 segy tr;	/* horizontal line seismogram traces */
 
@@ -122,8 +121,8 @@ int main(int argc, char **argv)
 
     int norder;
     int np;
-    float *d;
-    float *d4;
+    double *d;
+    double *d4;
 
     float dx, dz;	/* dx,dz space sampling interval*/
     float fpeak;	/* fpeak peak frequency*/
@@ -282,8 +281,8 @@ int main(int argc, char **argv)
     v = alloc2float(nzmod, nxmod);
     memset((void *) v[0], 0, sizeof(float) * nxmod * nzmod);
 
-    d = alloc1float(np);
-    d4 = alloc1float(np);
+    d = alloc1double(np);
+    d4 = alloc1double(np);
 
     /* read velocities */
     efread(v[0],sizeof(float),nxmod*nzmod,fp_vel);
@@ -340,14 +339,10 @@ int main(int argc, char **argv)
 
     cerjan(ntap, coeff, taper);
     src_spatial_distribution(nx, nz, ixs, izs, s);
+    
 
-    cd_coeff_scalar(2, np, d);
-    cd_coeff_scalar(4, np, d4);
-
-//    for(ix=0; ix<np; ix++)
-//    {
-//        warn("d[%d]=%g\n", ix, d[ix]);
-//    }
+    fdcoeff(2, norder, d);
+    fdcoeff(4, norder, d4);
 
     /*verbose*/
     if (verbose)
@@ -702,7 +697,7 @@ void get_file_snap(char *dest, char *src, int num)
 \author Weijia Sun, 2011, IGGCAS.
 
 ******************************************************************************/
-void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, float *d, float *d4,
+void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, double *d, double *d4,
                       float **v, float **pp, float **pm, float **p)
 {
     int ix, iz;
@@ -761,62 +756,6 @@ void time_one_step_cd(int nx, int nz, float dt, float dx, float dz, int np, floa
 
 }
 
-/*!
- * \brief calculating CD coefficients
- */
-void cd_coeff_scalar(int m, int np, float *d)
-{
-    int i;
-    int nphalf;
-    float sum=0;
-
-    float *w;
-    double *cc;
-
-    nphalf=np/2;
-    
-    w = alloc1float(np);
-    cc = alloc1double(np);
-
-    hanning(np, w);
-    cdcoeff(m, np, cc);
-
-    for (i=1; i<=nphalf; i++)
-    {
-    	d[i] =  cc[i] * w[nphalf+i];
-        sum += d[i];
-    }
-
-    d[0] = -2.0*sum;
-
-    free1float(w);
-    free1double(cc);
-
-    return;
-
-}
-
-/*!***********************************************************************
-\brief hanningnWindow - returns an n element long hanning window
-\param[in] n	size of window
-\param[in] *w	hanning window function of size n
-\param[out] *w	hanning window function of size n
-
-Notes:
-	w[k] = 0.5(1-cos(2PI * K/n+1)) k=1,....n
-
-************************************************************************/
-void hanning(int n,float *w)
-
-{
-    int i;
-
-    for(i=0; i<n; i++)
-    {
-        w[i] = 0.5*(1-cos(2.0*PI*(i+1)/(n+1)));
-    }
-
-}
 
 /*!
  * \brief source spatial dist for stability

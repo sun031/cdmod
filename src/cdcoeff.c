@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "cwp.h"
+//#include "sge.c"
 
 /*! calculate factorial
 \param[in] m 
@@ -131,8 +132,8 @@ void fdcoeff_2nd_regulargrd(float r, int n, double *cc)
  */
 void fdcoeff(int k, int m, double *cc)
 {
-	float **a;
-	float *b;
+	double **a;
+	double *b;
 	int *ipvt;
 
 	
@@ -142,8 +143,9 @@ void fdcoeff(int k, int m, double *cc)
 	
 	k = k/2;
 	
-	a = alloc2float(M,M);
-	b = alloc1float(M);
+	
+	a = alloc2double(M,M);
+	b = alloc1double(M);
 	ipvt = alloc1int(M);
 	
 	for(n=0; n<M; n++)
@@ -169,8 +171,10 @@ void fdcoeff(int k, int m, double *cc)
 //		printf("b[%d]=%f\n",n,b[n]);
 //	}
 	
-	sgefa(a, M, ipvt, &info);
-	sgesl(a, M, ipvt, b, 1);
+	printf("k=%d, M=%d\n", k,M);
+	dgefa(a, M, ipvt, &info);
+	printf("k=%d, M=%d\n", k,M);
+	dgesl(a, M, ipvt, b, 1);
 	
 	cc[0] = 0.0;
 	for(n=0; n<M; n++)
@@ -183,12 +187,12 @@ void fdcoeff(int k, int m, double *cc)
 	
 	for(n=0; n<=M; n++)
 	{
-		printf("cc[%d]=%f\n", n, cc[n]);
+		printf("cc[%d]=%lf\n", n, cc[n]);
 	}
 
 	free1int(ipvt);
-	free1float(b);
-	free2float(a);
+	free1double(b);
+	free2double(a);
 	
 }
 
@@ -202,12 +206,12 @@ int main()
 	int result;
 	double cc[2*n+1];
 	
-	result = factorial(m);
-	printf("result=%d\n", result);
+//	result = factorial(m);
+//	printf("result=%d\n", result);
 	
-	cdcoeff(m,n,cc);
-//	fdcoeff_2nd_regulargrd(0.0, 6, cc);
-//	fdcoeff(4,6,cc);
+//	cdcoeff(m,n,cc);
+	fdcoeff_2nd_regulargrd(0.0, 6, cc);
+	fdcoeff(2,6,cc);
 
 }
 

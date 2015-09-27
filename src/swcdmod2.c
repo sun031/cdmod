@@ -742,13 +742,13 @@ void cd_coeff_scalar(int m, int np, float *d)
     float *w;
     double *cc;
 
-    nphalf=np/2;
+    nphalf=np;
     
     w = alloc1float(np);
     cc = alloc1double(np);
 
     hanning(np, w);
-    cdcoeff(m, nphalf, cc);
+    cdcoeff(m, np, cc);
 
     for (i=1; i<=nphalf; i++)
     {

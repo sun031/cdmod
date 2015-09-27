@@ -1,0 +1,3 @@
+icc cdcoeff.c swfdmod2ht.c  -lm -lsu -lpar -lcwp -I$CWPROOT/include -L$CWPROOT/lib -o swfdmod2ht
+cp swfdmod2ht ../bin/
+
