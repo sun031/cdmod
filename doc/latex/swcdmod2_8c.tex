@@ -1,0 +1,319 @@
+\hypertarget{swcdmod2_8c}{}\section{src/swcdmod2.c File Reference}
+\label{swcdmod2_8c}\index{src/swcdmod2.\+c@{src/swcdmod2.\+c}}
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}par.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}su.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}segy.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{swcdmod2_8c_a6b20993ec01a368bf2e7936b5b22f1d7}{ricker1\+\_\+wavelet} (int nt, float dt, float fpeak, float $\ast$wavelet)
+\begin{DoxyCompactList}\small\item\em ricker\+\_\+wavelet -- Compute the time response of a source function as a Ricker wavelet with peak frequency \char`\"{}fpeak\char`\"{} Hz. \end{DoxyCompactList}\item 
+void \hyperlink{swcdmod2_8c_ad90abc83e502e0cf87b482e8a67bc9e3}{exten\+Model} (int nx, int nz, int ntap, float $\ast$$\ast$v, float $\ast$$\ast$vv)
+\begin{DoxyCompactList}\small\item\em extend the absorbing layer for velocity model \end{DoxyCompactList}\item 
+void \hyperlink{swcdmod2_8c_a707cef9b52a1fbb50f69a5bdcdc504fe}{absorb} (int ntap, int nx, int nz, float $\ast$taper, float $\ast$$\ast$p)
+\begin{DoxyCompactList}\small\item\em applying A\+B\+C \end{DoxyCompactList}\item 
+void \hyperlink{swcdmod2_8c_a77f8852395acfbe8480c185d9a6af713}{cerjan} (int ntap, float coeff, float $\ast$taper)
+\begin{DoxyCompactList}\small\item\em cerjan A\+B\+C coefficients \end{DoxyCompactList}\item 
+void \hyperlink{swcdmod2_8c_a04b292299a5a7ebbba7b88f61efee2da}{get\+\_\+file\+\_\+snap} (char $\ast$dest, char $\ast$src, int num)
+\begin{DoxyCompactList}\small\item\em get snapshot file name \end{DoxyCompactList}\item 
+void \hyperlink{swcdmod2_8c_a97972f13a27a253327d118dc9a7559c8}{src\+\_\+spatial\+\_\+distribution} (int nx, int nz, int ixs, int izs, float $\ast$$\ast$s)
+\begin{DoxyCompactList}\small\item\em source spatial dist for stability \end{DoxyCompactList}\item 
+void \hyperlink{swcdmod2_8c_aa669def8dcd0bd78943d67d117749803}{hanning} (int n, float $\ast$w)
+\begin{DoxyCompactList}\small\item\em hanningn\+Window -\/ returns an n element long hanning window \end{DoxyCompactList}\item 
+void \hyperlink{swcdmod2_8c_aa01b8ceb43a2685d2809b9132b1ca0f5}{cd\+\_\+coeff\+\_\+scalar} (int m, int np, float $\ast$d)
+\begin{DoxyCompactList}\small\item\em calculating C\+D coefficients \end{DoxyCompactList}\item 
+void \hyperlink{swcdmod2_8c_a335451e1ec7e61be5649569b8d4b3a3c}{time\+\_\+one\+\_\+step\+\_\+cd} (int nx, int nz, float dt, float dx, float dz, int np, float $\ast$d, float $\ast$$\ast$v, float $\ast$$\ast$pp, float $\ast$$\ast$pm, float $\ast$$\ast$p)
+\begin{DoxyCompactList}\small\item\em time\+\_\+one\+\_\+step -- compute wavefield of one time step. \end{DoxyCompactList}\item 
+void \hyperlink{swcdmod2_8c_a753846abe99de978826841647bc11d0b}{cdcoeff} (int m, int n, double $\ast$cc)
+\item 
+int \hyperlink{swcdmod2_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em main function of cdmod2 using acoustic equation ~\newline
+shot seismograms calculated by C\+D method ~\newline
+Usage\+: ~\newline
+swcdmod2 $<$ file\+\_\+vel args $>$ file\+\_\+seis ~\newline
+args\+: nxmod=100 nzmod=100 for example ~\newline
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{swcdmod2_8c_a381b0229c6cf78ce56a4749e35972291}{sdoc} \mbox{[}$\,$\mbox{]}
+\item 
+segy \hyperlink{swcdmod2_8c_a21ee33da3f54e2ea55665c50bfebd740}{tr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{swcdmod2_8c_a707cef9b52a1fbb50f69a5bdcdc504fe}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!absorb@{absorb}}
+\index{absorb@{absorb}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{absorb(int ntap, int nx, int nz, float $\ast$taper, float $\ast$$\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void absorb (
+\begin{DoxyParamCaption}
+\item[{int}]{ntap, }
+\item[{int}]{nx, }
+\item[{int}]{nz, }
+\item[{float $\ast$}]{taper, }
+\item[{float $\ast$$\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{swcdmod2_8c_a707cef9b52a1fbb50f69a5bdcdc504fe}
+
+
+applying A\+B\+C 
+
+\hypertarget{swcdmod2_8c_aa01b8ceb43a2685d2809b9132b1ca0f5}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!cd\+\_\+coeff\+\_\+scalar@{cd\+\_\+coeff\+\_\+scalar}}
+\index{cd\+\_\+coeff\+\_\+scalar@{cd\+\_\+coeff\+\_\+scalar}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{cd\+\_\+coeff\+\_\+scalar(int m, int np, float $\ast$d)}]{\setlength{\rightskip}{0pt plus 5cm}void cd\+\_\+coeff\+\_\+scalar (
+\begin{DoxyParamCaption}
+\item[{int}]{m, }
+\item[{int}]{np, }
+\item[{float $\ast$}]{d}
+\end{DoxyParamCaption}
+)}\label{swcdmod2_8c_aa01b8ceb43a2685d2809b9132b1ca0f5}
+
+
+calculating C\+D coefficients 
+
+\hypertarget{swcdmod2_8c_a753846abe99de978826841647bc11d0b}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!cdcoeff@{cdcoeff}}
+\index{cdcoeff@{cdcoeff}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{cdcoeff(int m, int n, double $\ast$cc)}]{\setlength{\rightskip}{0pt plus 5cm}void cdcoeff (
+\begin{DoxyParamCaption}
+\item[{int}]{m, }
+\item[{int}]{n, }
+\item[{double $\ast$}]{cc}
+\end{DoxyParamCaption}
+)}\label{swcdmod2_8c_a753846abe99de978826841647bc11d0b}
+calculation of C\+D coefficients for 2nd-\/order wave equations 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & order of the derivatives, m=1,2,3,4 \\
+\hline
+\mbox{\tt in}  & {\em n} & order of spatial accuray, e.\+g., n=4, 10 \\
+\hline
+\end{DoxyParams}
+loop variable, innter \hypertarget{swcdmod2_8c_a77f8852395acfbe8480c185d9a6af713}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!cerjan@{cerjan}}
+\index{cerjan@{cerjan}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{cerjan(int ntap, float coeff, float $\ast$taper)}]{\setlength{\rightskip}{0pt plus 5cm}void cerjan (
+\begin{DoxyParamCaption}
+\item[{int}]{ntap, }
+\item[{float}]{coeff, }
+\item[{float $\ast$}]{taper}
+\end{DoxyParamCaption}
+)}\label{swcdmod2_8c_a77f8852395acfbe8480c185d9a6af713}
+
+
+cerjan A\+B\+C coefficients 
+
+\hypertarget{swcdmod2_8c_ad90abc83e502e0cf87b482e8a67bc9e3}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!exten\+Model@{exten\+Model}}
+\index{exten\+Model@{exten\+Model}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{exten\+Model(int nx, int nz, int ntap, float $\ast$$\ast$v, float $\ast$$\ast$vv)}]{\setlength{\rightskip}{0pt plus 5cm}void exten\+Model (
+\begin{DoxyParamCaption}
+\item[{int}]{nx, }
+\item[{int}]{nz, }
+\item[{int}]{ntap, }
+\item[{float $\ast$$\ast$}]{v, }
+\item[{float $\ast$$\ast$}]{vv}
+\end{DoxyParamCaption}
+)}\label{swcdmod2_8c_ad90abc83e502e0cf87b482e8a67bc9e3}
+
+
+extend the absorbing layer for velocity model 
+
+\hypertarget{swcdmod2_8c_a04b292299a5a7ebbba7b88f61efee2da}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!get\+\_\+file\+\_\+snap@{get\+\_\+file\+\_\+snap}}
+\index{get\+\_\+file\+\_\+snap@{get\+\_\+file\+\_\+snap}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{get\+\_\+file\+\_\+snap(char $\ast$dest, char $\ast$src, int num)}]{\setlength{\rightskip}{0pt plus 5cm}void get\+\_\+file\+\_\+snap (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dest, }
+\item[{char $\ast$}]{src, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}\label{swcdmod2_8c_a04b292299a5a7ebbba7b88f61efee2da}
+
+
+get snapshot file name 
+
+\hypertarget{swcdmod2_8c_aa669def8dcd0bd78943d67d117749803}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!hanning@{hanning}}
+\index{hanning@{hanning}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{hanning(int n, float $\ast$w)}]{\setlength{\rightskip}{0pt plus 5cm}void hanning (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{float $\ast$}]{w}
+\end{DoxyParamCaption}
+)}\label{swcdmod2_8c_aa669def8dcd0bd78943d67d117749803}
+
+
+hanningn\+Window -\/ returns an n element long hanning window 
+
+
+
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & size of window \\
+\hline
+\mbox{\tt in}  & {\em $\ast$w} & hanning window function of size n \\
+\hline
+\mbox{\tt out}  & {\em $\ast$w} & hanning window function of size n\\
+\hline
+\end{DoxyParams}
+Notes\+: w\mbox{[}k\mbox{]} = 0.\+5(1-\/cos(2\+P\+I $\ast$ K/n+1)) k=1,....n \hypertarget{swcdmod2_8c_a3c04138a5bfe5d72780bb7e82a18e627}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!main@{main}}
+\index{main@{main}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{main(int argc, char $\ast$$\ast$argv)}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\label{swcdmod2_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+main function of cdmod2 using acoustic equation ~\newline
+shot seismograms calculated by C\+D method ~\newline
+Usage\+: ~\newline
+swcdmod2 $<$ file\+\_\+vel args $>$ file\+\_\+seis ~\newline
+args\+: nxmod=100 nzmod=100 for example ~\newline
+
+
+\begin{DoxyItemize}
+\item velocity model must be a binary file with v\mbox{[}nx\mbox{]}\mbox{[}nz\mbox{]} order \item output file is in S\+U format \item snapshot file is in B\+I\+N\+A\+R\+Y format same as velocity model, filename with no extension, e.\+g., file\+\_\+snap=\char`\"{}snap\char`\"{} \end{DoxyItemize}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nxmod,nzmod} & grid number of velocity model\\
+\hline
+\mbox{\tt in}  & {\em file\+\_\+snap} & filename of snapshot, default file\+\_\+snap = \char`\"{}snap\char`\"{}, no extension.\\
+\hline
+\mbox{\tt in}  & {\em file\+\_\+vseis} & filename of velocity model, default file\+\_\+vseis = \char`\"{}vseis.\+su\char`\"{}\\
+\hline
+\mbox{\tt in}  & {\em file\+\_\+hseis} & filename of velocity model, default file\+\_\+vseis = \char`\"{}hseis.\+su\char`\"{}\\
+\hline
+\mbox{\tt in}  & {\em dt} & time sampling interval\\
+\hline
+\mbox{\tt in}  & {\em nt} & time sampling number\\
+\hline
+\mbox{\tt in}  & {\em xs,zs} & shot position\\
+\hline
+\mbox{\tt in}  & {\em dx,dz} & spatial sampling interval\\
+\hline
+\mbox{\tt in}  & {\em fpeak} & peak frequency, default fpeak=25\\
+\hline
+\mbox{\tt in}  & {\em fmax} & maximum frequency, default fmax = 2.\+0$\ast$fpeak\\
+\hline
+\mbox{\tt in}  & {\em tdelay} & time delay, default tdelay = 0\\
+\hline
+\mbox{\tt in}  & {\em norder} & spatial accuracy, default norder = 10\\
+\hline
+\mbox{\tt in}  & {\em mt} & every mt time step to output snapshot, default mt=1\\
+\hline
+\mbox{\tt in}  & {\em coeff} & coefficient for A\+B\+C, default coeff = 0.\+0053\\
+\hline
+\mbox{\tt in}  & {\em ntap} & grid number used to A\+B\+C, default ntap=45\\
+\hline
+\mbox{\tt in}  & {\em fx,fz} & start position, default fx=fz=0\\
+\hline
+\mbox{\tt in}  & {\em hsz} & depth of horizontal line, default hsz=0\\
+\hline
+\mbox{\tt in}  & {\em vsx} & horizontal position of V\+S\+P,default vsx = nxmod/2+ntap\\
+\hline
+\mbox{\tt in}  & {\em verbose} & flag output info, default verbose=1 \\
+\hline
+\end{DoxyParams}
+\hypertarget{swcdmod2_8c_a6b20993ec01a368bf2e7936b5b22f1d7}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!ricker1\+\_\+wavelet@{ricker1\+\_\+wavelet}}
+\index{ricker1\+\_\+wavelet@{ricker1\+\_\+wavelet}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{ricker1\+\_\+wavelet(int nt, float dt, float fpeak, float $\ast$wavelet)}]{\setlength{\rightskip}{0pt plus 5cm}void ricker1\+\_\+wavelet (
+\begin{DoxyParamCaption}
+\item[{int}]{nt, }
+\item[{float}]{dt, }
+\item[{float}]{fpeak, }
+\item[{float $\ast$}]{wavelet}
+\end{DoxyParamCaption}
+)}\label{swcdmod2_8c_a6b20993ec01a368bf2e7936b5b22f1d7}
+
+
+ricker\+\_\+wavelet -- Compute the time response of a source function as a Ricker wavelet with peak frequency \char`\"{}fpeak\char`\"{} Hz. 
+
+
+
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nt} & time sampling number \\
+\hline
+\mbox{\tt in}  & {\em dt} & time sampling interval \\
+\hline
+\mbox{\tt in}  & {\em fpeak} & dominant frequency \\
+\hline
+\mbox{\tt out}  & {\em wavelet} & array of wavelet\\
+\hline
+\end{DoxyParams}
+Author\+: Tong Fei, 1993, Colorado School of Mines. \hypertarget{swcdmod2_8c_a97972f13a27a253327d118dc9a7559c8}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!src\+\_\+spatial\+\_\+distribution@{src\+\_\+spatial\+\_\+distribution}}
+\index{src\+\_\+spatial\+\_\+distribution@{src\+\_\+spatial\+\_\+distribution}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{src\+\_\+spatial\+\_\+distribution(int nx, int nz, int ixs, int izs, float $\ast$$\ast$s)}]{\setlength{\rightskip}{0pt plus 5cm}void src\+\_\+spatial\+\_\+distribution (
+\begin{DoxyParamCaption}
+\item[{int}]{nx, }
+\item[{int}]{nz, }
+\item[{int}]{ixs, }
+\item[{int}]{izs, }
+\item[{float $\ast$$\ast$}]{s}
+\end{DoxyParamCaption}
+)}\label{swcdmod2_8c_a97972f13a27a253327d118dc9a7559c8}
+
+
+source spatial dist for stability 
+
+\hypertarget{swcdmod2_8c_a335451e1ec7e61be5649569b8d4b3a3c}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!time\+\_\+one\+\_\+step\+\_\+cd@{time\+\_\+one\+\_\+step\+\_\+cd}}
+\index{time\+\_\+one\+\_\+step\+\_\+cd@{time\+\_\+one\+\_\+step\+\_\+cd}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{time\+\_\+one\+\_\+step\+\_\+cd(int nx, int nz, float dt, float dx, float dz, int np, float $\ast$d, float $\ast$$\ast$v, float $\ast$$\ast$pp, float $\ast$$\ast$pm, float $\ast$$\ast$p)}]{\setlength{\rightskip}{0pt plus 5cm}void time\+\_\+one\+\_\+step\+\_\+cd (
+\begin{DoxyParamCaption}
+\item[{int}]{nx, }
+\item[{int}]{nz, }
+\item[{float}]{dt, }
+\item[{float}]{dx, }
+\item[{float}]{dz, }
+\item[{int}]{np, }
+\item[{float $\ast$}]{d, }
+\item[{float $\ast$$\ast$}]{v, }
+\item[{float $\ast$$\ast$}]{pp, }
+\item[{float $\ast$$\ast$}]{pm, }
+\item[{float $\ast$$\ast$}]{p}
+\end{DoxyParamCaption}
+)}\label{swcdmod2_8c_a335451e1ec7e61be5649569b8d4b3a3c}
+
+
+time\+\_\+one\+\_\+step -- compute wavefield of one time step. 
+
+
+
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nx} & number samples in x direction \\
+\hline
+\mbox{\tt in}  & {\em nz} & number samples in z direction \\
+\hline
+\mbox{\tt in}  & {\em dt} & time step \\
+\hline
+\mbox{\tt in}  & {\em dx} & x space step \\
+\hline
+\mbox{\tt in}  & {\em dz} & z space step \\
+\hline
+\mbox{\tt in}  & {\em np} & length of spatial operators \\
+\hline
+\mbox{\tt in}  & {\em $\ast$d} & array containing C\+D coefficients \\
+\hline
+\mbox{\tt in}  & {\em $\ast$$\ast$v} & velocity model with v\mbox{[}nx\mbox{]}\mbox{[}nz\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em $\ast$$\ast$pp} & pressure wavefiled at t+dt \\
+\hline
+\mbox{\tt in}  & {\em $\ast$$\ast$pm} & pressure wavefiled at t-\/dt \\
+\hline
+\mbox{\tt in}  & {\em $\ast$$\ast$p} & pressure wavefiled at t \\
+\hline
+\mbox{\tt out}  & {\em $\ast$$\ast$p} & computed pressure wavefiled p\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Weijia Sun, 2011, I\+G\+G\+C\+A\+S. 
+\end{DoxyAuthor}
+
+
+\subsection{Variable Documentation}
+\hypertarget{swcdmod2_8c_a381b0229c6cf78ce56a4749e35972291}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!sdoc@{sdoc}}
+\index{sdoc@{sdoc}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{sdoc}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ sdoc\mbox{[}$\,$\mbox{]}}\label{swcdmod2_8c_a381b0229c6cf78ce56a4749e35972291}
+\hypertarget{swcdmod2_8c_a21ee33da3f54e2ea55665c50bfebd740}{}\index{swcdmod2.\+c@{swcdmod2.\+c}!tr@{tr}}
+\index{tr@{tr}!swcdmod2.\+c@{swcdmod2.\+c}}
+\subsubsection[{tr}]{\setlength{\rightskip}{0pt plus 5cm}segy tr}\label{swcdmod2_8c_a21ee33da3f54e2ea55665c50bfebd740}

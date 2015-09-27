@@ -5,10 +5,11 @@
 {\ttfamily \#include $<$tgmath.\+h$>$}\\*
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
 {\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}cwp.\+h\char`\"{}}\\*
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{cdcoeff_8c_a34b04bd23b07b485921a728ad0805ac4}{M\+A\+I\+N}
+\#define \hyperlink{cdcoeff_8c_ae5281c7ea2cbf6df36036abc988c8b48}{N\+O\+M\+A\+I\+N}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -19,14 +20,16 @@ void \hyperlink{cdcoeff_8c_a753846abe99de978826841647bc11d0b}{cdcoeff} (int m, i
 \item 
 void \hyperlink{cdcoeff_8c_a74a1661748b43c105c3208fc73c17053}{cdcoeff\+\_\+stg} (int m, int n, double $\ast$cc)
 \item 
-int \hyperlink{cdcoeff_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+void \hyperlink{cdcoeff_8c_ae210f9e85f51c804843589b502eda1df}{fdcoeff\+\_\+2nd\+\_\+regulargrd} (float r, int n, double $\ast$cc)
+\item 
+void \hyperlink{cdcoeff_8c_ad169cca8eca50c9156608f2ce7863f4e}{fdcoeff} (int k, int m, double $\ast$cc)
 \end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\hypertarget{cdcoeff_8c_a34b04bd23b07b485921a728ad0805ac4}{}\index{cdcoeff.\+c@{cdcoeff.\+c}!M\+A\+I\+N@{M\+A\+I\+N}}
-\index{M\+A\+I\+N@{M\+A\+I\+N}!cdcoeff.\+c@{cdcoeff.\+c}}
-\subsubsection[{M\+A\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+I\+N}\label{cdcoeff_8c_a34b04bd23b07b485921a728ad0805ac4}
+\hypertarget{cdcoeff_8c_ae5281c7ea2cbf6df36036abc988c8b48}{}\index{cdcoeff.\+c@{cdcoeff.\+c}!N\+O\+M\+A\+I\+N@{N\+O\+M\+A\+I\+N}}
+\index{N\+O\+M\+A\+I\+N@{N\+O\+M\+A\+I\+N}!cdcoeff.\+c@{cdcoeff.\+c}}
+\subsubsection[{N\+O\+M\+A\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+O\+M\+A\+I\+N}\label{cdcoeff_8c_ae5281c7ea2cbf6df36036abc988c8b48}
 
 
 \subsection{Function Documentation}
@@ -39,7 +42,7 @@ int \hyperlink{cdcoeff_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
 \item[{double $\ast$}]{cc}
 \end{DoxyParamCaption}
 )}\label{cdcoeff_8c_a753846abe99de978826841647bc11d0b}
-calculation of C\+D coefficients 
+calculation of C\+D coefficients for 2nd-\/order wave equations 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em m} & order of the derivatives, m=1,2,3,4 \\
 \hline
@@ -69,10 +72,35 @@ calculate factorial
 \mbox{\tt out}  & {\em fact} & \\
 \hline
 \end{DoxyParams}
-\hypertarget{cdcoeff_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\index{cdcoeff.\+c@{cdcoeff.\+c}!main@{main}}
-\index{main@{main}!cdcoeff.\+c@{cdcoeff.\+c}}
-\subsubsection[{main()}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\hypertarget{cdcoeff_8c_ad169cca8eca50c9156608f2ce7863f4e}{}\index{cdcoeff.\+c@{cdcoeff.\+c}!fdcoeff@{fdcoeff}}
+\index{fdcoeff@{fdcoeff}!cdcoeff.\+c@{cdcoeff.\+c}}
+\subsubsection[{fdcoeff(int k, int m, double $\ast$cc)}]{\setlength{\rightskip}{0pt plus 5cm}void fdcoeff (
 \begin{DoxyParamCaption}
-{}
+\item[{int}]{k, }
+\item[{int}]{m, }
+\item[{double $\ast$}]{cc}
 \end{DoxyParamCaption}
-)}\label{cdcoeff_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+)}\label{cdcoeff_8c_ad169cca8eca50c9156608f2ce7863f4e}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em k} & order of the derivatives, m=1,2,3,4 \\
+\hline
+\mbox{\tt in}  & {\em m} & order of spatial accuray, e.\+g., n=4, 10 reference Liu and Sen, 2009, J\+G\+E, eq 3.\+12 \\
+\hline
+\end{DoxyParams}
+\hypertarget{cdcoeff_8c_ae210f9e85f51c804843589b502eda1df}{}\index{cdcoeff.\+c@{cdcoeff.\+c}!fdcoeff\+\_\+2nd\+\_\+regulargrd@{fdcoeff\+\_\+2nd\+\_\+regulargrd}}
+\index{fdcoeff\+\_\+2nd\+\_\+regulargrd@{fdcoeff\+\_\+2nd\+\_\+regulargrd}!cdcoeff.\+c@{cdcoeff.\+c}}
+\subsubsection[{fdcoeff\+\_\+2nd\+\_\+regulargrd(float r, int n, double $\ast$cc)}]{\setlength{\rightskip}{0pt plus 5cm}void fdcoeff\+\_\+2nd\+\_\+regulargrd (
+\begin{DoxyParamCaption}
+\item[{float}]{r, }
+\item[{int}]{n, }
+\item[{double $\ast$}]{cc}
+\end{DoxyParamCaption}
+)}\label{cdcoeff_8c_ae210f9e85f51c804843589b502eda1df}
+calculation of F\+D coefficients for convential 2nd-\/order acoustic wave equation 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em r} & r=v$\ast$delta\+\_\+t/delta\+\_\+x, if r=0, then conventional coefficients \\
+\hline
+\mbox{\tt in}  & {\em n} & order of spatial accuray, e.\+g., n=4, 10 references\+: Liu and Sen 2009, J\+G\+E. \\
+\hline
+\end{DoxyParams}

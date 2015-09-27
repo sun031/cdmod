@@ -3,6 +3,7 @@
 #include <tgmath.h>
 #include <stdlib.h>
 #include <math.h>
+#include "cwp.h"
 
 /*! calculate factorial
 \param[in] m 
@@ -30,9 +31,9 @@ int factorial(int m)
 void cdcoeff(int m, int n, double *cc)
 {
 	m = abs(m);
-	n = abs(n);
+	n = abs(n)/2;
 	
-	double PI = acos(-1);
+//	double PI = acos(-1);
 	double kn = PI;
 	
 	int k; //! loop variable, innter
@@ -123,6 +124,73 @@ void fdcoeff_2nd_regulargrd(float r, int n, double *cc)
 		printf("cc[%d]=%f\n", n, cc[n]);
 	}
 }
+/*!
+@param[in] k: order of the derivatives, m=1,2,3,4
+@param[in] m: order of spatial accuray, e.g., n=4, 10
+ * reference Liu and Sen, 2009, JGE, eq 3.12
+ */
+void fdcoeff(int k, int m, double *cc)
+{
+	float **a;
+	float *b;
+	int *ipvt;
+
+	
+	int M = m/2;
+	int n;
+	int info;
+	
+	k = k/2;
+	
+	a = alloc2float(M,M);
+	b = alloc1float(M);
+	ipvt = alloc1int(M);
+	
+	for(n=0; n<M; n++)
+	{
+		b[n] = 0.0;
+		for(m=0; m<M; m++)
+		{
+			a[n][m] = pow(m+1, 2*(n+1));
+		}
+	}
+	b[k-1] = 1.0*factorial(2*k)/2.0;
+	
+//	for(n=0; n<M; n++)
+//	{
+//		for(m=0; m<M; m++)
+//		{
+//			printf("%f ", a[n][m]);
+//		}
+//		printf("%f\n", b[n]);
+//	}
+//	for(n=0; n<M; n++)
+//	{
+//		printf("b[%d]=%f\n",n,b[n]);
+//	}
+	
+	sgefa(a, M, ipvt, &info);
+	sgesl(a, M, ipvt, b, 1);
+	
+	cc[0] = 0.0;
+	for(n=0; n<M; n++)
+	{
+		cc[n+1] = b[n];
+		cc[0] += b[n];
+//		printf("b[%d]=%f\n", n+1, b[n]);
+	}
+	cc[0] = -2.0*cc[0];
+	
+	for(n=0; n<=M; n++)
+	{
+		printf("cc[%d]=%f\n", n, cc[n]);
+	}
+
+	free1int(ipvt);
+	free1float(b);
+	free2float(a);
+	
+}
 
 #define NOMAIN
 #ifdef MAIN
@@ -138,7 +206,8 @@ int main()
 	printf("result=%d\n", result);
 	
 	cdcoeff(m,n,cc);
-	fdcoeff_2nd_regulargrd(0.0, 10, cc);
+//	fdcoeff_2nd_regulargrd(0.0, 6, cc);
+//	fdcoeff(4,6,cc);
 
 }
 

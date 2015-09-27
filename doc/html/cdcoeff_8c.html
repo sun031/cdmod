@@ -95,11 +95,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;tgmath.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;cwp.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a34b04bd23b07b485921a728ad0805ac4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cdcoeff_8c.html#a34b04bd23b07b485921a728ad0805ac4">MAIN</a></td></tr>
-<tr class="separator:a34b04bd23b07b485921a728ad0805ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5281c7ea2cbf6df36036abc988c8b48"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cdcoeff_8c.html#ae5281c7ea2cbf6df36036abc988c8b48">NOMAIN</a></td></tr>
+<tr class="separator:ae5281c7ea2cbf6df36036abc988c8b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -109,16 +110,18 @@ Functions</h2></td></tr>
 <tr class="separator:a753846abe99de978826841647bc11d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74a1661748b43c105c3208fc73c17053"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cdcoeff_8c.html#a74a1661748b43c105c3208fc73c17053">cdcoeff_stg</a> (int m, int n, double *cc)</td></tr>
 <tr class="separator:a74a1661748b43c105c3208fc73c17053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cdcoeff_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae210f9e85f51c804843589b502eda1df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cdcoeff_8c.html#ae210f9e85f51c804843589b502eda1df">fdcoeff_2nd_regulargrd</a> (float r, int n, double *cc)</td></tr>
+<tr class="separator:ae210f9e85f51c804843589b502eda1df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad169cca8eca50c9156608f2ce7863f4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cdcoeff_8c.html#ad169cca8eca50c9156608f2ce7863f4e">fdcoeff</a> (int k, int m, double *cc)</td></tr>
+<tr class="separator:ad169cca8eca50c9156608f2ce7863f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a34b04bd23b07b485921a728ad0805ac4"></a>
+<a class="anchor" id="ae5281c7ea2cbf6df36036abc988c8b48"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAIN</td>
+          <td class="memname">#define NOMAIN</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -155,7 +158,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>calculation of CD coefficients </p><dl class="params"><dt>Parameters</dt><dd>
+<p>calculation of CD coefficients for 2nd-order wave equations </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>order of the derivatives, m=1,2,3,4 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>order of spatial accuray, e.g., n=4, 10 </td></tr>
@@ -221,18 +224,81 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<a class="anchor" id="ad169cca8eca50c9156608f2ce7863f4e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int main </td>
+          <td class="memname">void fdcoeff </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>cc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">k</td><td>order of the derivatives, m=1,2,3,4 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>order of spatial accuray, e.g., n=4, 10 reference Liu and Sen, 2009, JGE, eq 3.12 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae210f9e85f51c804843589b502eda1df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fdcoeff_2nd_regulargrd </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>cc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>calculation of FD coefficients for convential 2nd-order acoustic wave equation </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>r=v*delta_t/delta_x, if r=0, then conventional coefficients </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>order of spatial accuray, e.g., n=4, 10 references: Liu and Sen 2009, JGE. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -120,6 +120,7 @@ int main(int argc, char **argv)
     float vsx;
     int ixvsx;
 
+    int norder;
     int np;
     float *d;
     float *d4;
@@ -211,8 +212,11 @@ int main(int argc, char **argv)
     if (!getparfloat("tdelay", &tdelay))	/// \param[in] tdelay time delay, default tdelay = 0
         tdelay = 0;
 
-    if (!getparint("np", &np))	/// \param[in] np length of spatial operator, default np = 9
-        np = 9;
+//    if (!getparint("np", &np))	/// \param[in] np length of spatial operator, default np = 9
+//        np = 9;
+    if (!getparint("norder", &norder))	/// \param[in] norder spatial accuracy, default norder = 10
+        norder = 10;
+    np = norder+1;
 
     if (!getparint("mt", &mt))	/// \param[in] mt every mt time step to output snapshot, default mt=1
         mt = 1;
