@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>CDMOD: src Directory Reference</title>
+<title>CDMOD: src/cwpdge.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,7 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -55,6 +55,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
           </span>
         </div>
       </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -78,28 +84,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">src Directory Reference</div>  </div>
+<div class="title">cwpdge.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:cdcoeff_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cdcoeff_8c.html">cdcoeff.c</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:cwpdge_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cwpdge_8c.html">cwpdge.c</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:cwpdge_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cwpdge_8h.html">cwpdge.h</a> <a href="cwpdge_8h_source.html">[code]</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:swcdmod2_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="swcdmod2_8c.html">swcdmod2.c</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:swcdmod2ht_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="swcdmod2ht_8c.html">swcdmod2ht.c</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:swfdmod2_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="swfdmod2_8c.html">swfdmod2.c</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:swfdmod2ht_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="swfdmod2ht_8c.html">swfdmod2ht.c</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+<a href="cwpdge_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cwpdge_8h.html#ada49a8e45a10c94a0dd82b4dba052f11">cwpdgefa</a> (<span class="keywordtype">double</span> **a, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> *ipvt, <span class="keywordtype">int</span> *info);</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cwpdge_8h.html#a4b8fd483da1e5043cfbe1f96a672ec65">cwpdgeco</a> (<span class="keywordtype">double</span> **a, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> *ipvt, <span class="keywordtype">double</span> *rcond, <span class="keywordtype">double</span> *z);</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cwpdge_8h.html#a7a76c974be2602022f5bec0bc8473118">cwpdgesl</a> (<span class="keywordtype">double</span> **a, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> *ipvt, <span class="keywordtype">double</span> *b, <span class="keywordtype">int</span> job);</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="ttc" id="cwpdge_8h_html_a7a76c974be2602022f5bec0bc8473118"><div class="ttname"><a href="cwpdge_8h.html#a7a76c974be2602022f5bec0bc8473118">cwpdgesl</a></div><div class="ttdeci">void cwpdgesl(double **a, int n, int *ipvt, double *b, int job)</div><div class="ttdef"><b>Definition:</b> cwpdge.c:344</div></div>
+<div class="ttc" id="cwpdge_8h_html_ada49a8e45a10c94a0dd82b4dba052f11"><div class="ttname"><a href="cwpdge_8h.html#ada49a8e45a10c94a0dd82b4dba052f11">cwpdgefa</a></div><div class="ttdeci">void cwpdgefa(double **a, int n, int *ipvt, int *info)</div><div class="ttdef"><b>Definition:</b> cwpdge.c:97</div></div>
+<div class="ttc" id="cwpdge_8h_html_a4b8fd483da1e5043cfbe1f96a672ec65"><div class="ttname"><a href="cwpdge_8h.html#a4b8fd483da1e5043cfbe1f96a672ec65">cwpdgeco</a></div><div class="ttdeci">void cwpdgeco(double **a, int n, int *ipvt, double *rcond, double *z)</div><div class="ttdef"><b>Definition:</b> cwpdge.c:176</div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

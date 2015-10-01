@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "cwp.h"
-//#include "sge.c"
+
 
 /*! calculate factorial
 \param[in] m 
@@ -171,9 +171,8 @@ void fdcoeff(int k, int m, double *cc)
 //		printf("b[%d]=%f\n",n,b[n]);
 //	}
 	
-	printf("k=%d, M=%d\n", k,M);
+
 	dgefa(a, M, ipvt, &info);
-	printf("k=%d, M=%d\n", k,M);
 	dgesl(a, M, ipvt, b, 1);
 	
 	cc[0] = 0.0;

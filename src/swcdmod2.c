@@ -742,7 +742,7 @@ void cd_coeff_scalar(int m, int np, float *d)
     float *w;
     double *cc;
 
-    nphalf=np;
+    nphalf=np/2;
     
     w = alloc1float(np);
     cc = alloc1double(np);
